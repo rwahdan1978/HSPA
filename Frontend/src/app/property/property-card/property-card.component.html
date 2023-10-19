@@ -1,70 +1,25 @@
-<div class="row">
-    
-    <div class="shadow-lg col-sm-4 p-1" style="width: 18rem; margin-right: 1rem; margin-bottom: 1rem;">
-        <div class="card" style="width: 18rem;">
-            <img class="propImage" src="assets/images/default_house.png">
-            <div class="card-body p-1">
-                <h1>{{ Property.Name }}</h1>
-                <h2>{{ Property.Type }}</h2>
-                <h3>{{ Property.Price }}</h3>
-            </div>
-        </div>
-    </div>
 
-    <div class="shadow-lg col-sm-4 p-1" style="width: 18rem; margin-right: 1rem; margin-bottom: 1rem;">
-        <div class="card" style="width: 18rem;">
-            <img class="propImage" src="assets/images/default_house.png">
-            <div class="card-body p-1">
-                <h1>{{ Property2.Name }}</h1>
-                <h2>{{ Property2.Type }}</h2>
-                <h3>{{ Property2.Price }}</h3>
-            </div>
-        </div>
-    </div>
+        <div class="card">
 
-    <div class="shadow-lg col-sm-4 p-1" style="width: 18rem; margin-right: 1rem; margin-bottom: 1rem;">
-        <div class="card" style="width: 18rem;">
-            <img class="propImage" src="assets/images/default_house.png">
-            <div class="card-body p-1">
-                <h1>{{ Property.Name }}</h1>
-                <h2>{{ Property.Type }}</h2>
-                <h3>{{ Property.Price }}</h3>
-            </div>
-        </div>
-    </div>
+            <div class="card-img-wrapper">
 
-    <div class="shadow-lg col-sm-4 p-1" style="width: 18rem; margin-right: 1rem; margin-bottom: 1rem;">
-        <div class="card" style="width: 18rem;">
-            <img class="propImage" src="assets/images/default_house.png">
-            <div class="card-body p-1">
-                <h1>{{ Property2.Name }}</h1>
-                <h2>{{ Property2.Type }}</h2>
-                <h3>{{ Property2.Price }}</h3>
-            </div>
-        </div>
-    </div>
+                <img class="card-img-top" src="assets/images/default_house.png" />
 
-    <div class="shadow-lg col-sm-4 p-1" style="width: 18rem; margin-right: 1rem; margin-bottom: 1rem;">
-        <div class="card" style="width: 18rem;">
-            <img class="propImage" src="assets/images/default_house.png">
-            <div class="card-body p-1">
-                <h1>{{ Property.Name }}</h1>
-                <h2>{{ Property.Type }}</h2>
-                <h3>{{ Property.Price }}</h3>
-            </div>
-        </div>
-    </div>
+                <ul class="list-inline text-center member-icons animate">
+                    <li class="list-inline-item">
+                        <button class="btn btn-primary"><i class="far fa-edit"></i></button>
+                    </li>
+                    <li class="list-inline-item">
+                        <button class="btn btn-primary"><i class="far fa-address-book"></i></button>
+                    </li>
+                </ul>
 
-    <div class="shadow-lg col-sm-4 p-1" style="width: 18rem; margin-right: 1rem; margin-bottom: 1rem;">
-        <div class="card" style="width: 18rem;">
-            <img class="propImage" src="assets/images/default_house.png">
-            <div class="card-body p-1">
-                <h1>{{ Property2.Name }}</h1>
-                <h2>{{ Property2.Type }}</h2>
-                <h3>{{ Property2.Price }}</h3>
             </div>
-        </div>
-    </div>
-    
 
-</div>
+            <div class="card-body p-1">
+                <h4>{{ property.Name }}</h4>
+                <h5>{{ property.Type }}</h5>
+                <h6>{{ property.Price }}</h6>
+            </div>
+
+        </div>

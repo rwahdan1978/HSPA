@@ -44,22 +44,18 @@
         </div>
 
         <div class="form-group col-12">
-
-          <label for="password" class="form-label">Confirm Password</label>
+          <label for="cpassword" class="form-label">Confirm Password</label>
           <input type="password" class="form-control" formControlName="confirmPassword">
-          
-          <span  *ngIf="!confirmPassword.valid && confirmPassword.touched" class="error-block">
-            <span *ngIf="(confirmPassword.hasError('required') || userSubmitted)" class="error-block">
+          <span  *ngIf="!confirmPassword.valid && confirmPassword.touched">
+            <span *ngIf="confirmPassword.hasError('required')">
               Please confirm password
             </span>
-    
-            <span *ngIf="(registerationForm.hasError('notmatched'))" class="error-block">
+          </span>
+            <span *ngIf="registerationForm.hasError('passwordMatchError') && confirmPassword.valid">
               Password not matched
             </span>
-          </span>
-
         </div>
-
+        
         <div class="form-group col-12">
           <label for="mobile" class="form-label">Mobile</label>
           <input type="text" class="form-control" formControlName="mobile">
@@ -76,3 +72,4 @@
     </div>
   </div>
 </div>
+

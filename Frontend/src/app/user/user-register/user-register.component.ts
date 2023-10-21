@@ -17,25 +17,27 @@ export class UserRegisterComponent implements OnInit {
   constructor(private fb: FormBuilder, private UserServiceService: UserServiceService) { }
 
   ngOnInit() {
-    this.createRegistrationForm();
+    this.registerationForm = new FormGroup({
+      userName: new FormControl(null, Validators.required),
+      email: new FormControl(null, [Validators.required, Validators.email]),
+      password: new FormControl(null, [Validators.required, Validators.minLength(8)]),
+      confirmPassword: new FormControl(null, [Validators.required]),
+      mobile: new FormControl(null, [Validators.required, Validators.maxLength(10)])
+    }, {validators : this.passwordMatchingValidator})
   }
-
-  createRegistrationForm(){
-    this.registerationForm = this.fb.group({
-      userName: [null, Validators.required],
-      email: [null, [Validators.required, Validators.email]],
-      password: [null, [Validators.required, Validators.minLength(8)]],
-      confirmPassword: [null, Validators.required],
-      mobile: [null, [Validators.required, Validators.maxLength(10)]],
+  
+    passwordMatchingValidator(fc: AbstractControl): ValidationErrors | null{
+  
+      const password = fc.get('password');
+      const confirmPassword = fc.get('confirmPassword');
       
-    }, {Validators: this.passwordMatchingValidator}
-    
-    )}
-
-  passwordMatchingValidator(fc: AbstractControl): ValidationErrors | null {
-    return fc.get('password')?.value === fc.get('confirmPassword')?.value ? null :
-      { notmatched: true }
-  };
+      if (password && confirmPassword && password?.value != confirmPassword?.value){
+        return{
+                passwordMatchError : true 
+        }
+      }
+      return null;
+    }
 
   // ------------------------------------
   // Getter methods for all form controls
@@ -80,5 +82,4 @@ export class UserRegisterComponent implements OnInit {
       mobile: this.mobile.value
     }
   }
-
 }

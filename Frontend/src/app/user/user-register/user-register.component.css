@@ -5,3 +5,8 @@
 .error-block{
     color: red;
 }
+
+.required::after {
+    content: ' *';
+    color: red;
+}

@@ -11,6 +11,7 @@ import { User } from 'src/app/model/user';
 export class UserRegisterComponent implements OnInit {
 
   registerationForm: FormGroup;
+  countrycode: string = "971";
   user: User;
   userSubmitted: boolean;
 
@@ -19,11 +20,20 @@ export class UserRegisterComponent implements OnInit {
   ngOnInit() {
     this.registerationForm = new FormGroup({
       userName: new FormControl(null, Validators.required),
+      countrycode: new FormControl(null, Validators.required),
       email: new FormControl(null, [Validators.required, Validators.email]),
       password: new FormControl(null, [Validators.required, Validators.minLength(8)]),
       confirmPassword: new FormControl(null, [Validators.required]),
-      mobile: new FormControl(null, [Validators.required, Validators.maxLength(10)])
+      mobile: new FormControl(null, [Validators.required, 
+        Validators.pattern("^[0-9]{9}$")
+        
+      
+    ]),
+      
     }, {validators : this.passwordMatchingValidator})
+
+    this.registerationForm.controls['countrycode'].setValue("+971");
+
   }
   
     passwordMatchingValidator(fc: AbstractControl): ValidationErrors | null{
@@ -77,9 +87,11 @@ export class UserRegisterComponent implements OnInit {
   userData(): User{
     return this.user = {
       userName: this.userName.value,
+      countrycode: this.countrycode.toString(),
       email: this.email.value,
       password: this.password.value,
       mobile: this.mobile.value
+      
     }
   }
 }

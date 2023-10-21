@@ -55,18 +55,28 @@
               Password not matched
             </span>
         </div>
+        
+        <div class="row">
 
-        <div class="form-group col-12">
-          <label for="mobile" class="form-label">Mobile</label>
-          <input type="text" class="form-control" formControlName="mobile">
-          <span class="error-block" *ngIf="(mobile.errors?.['required'] && userSubmitted)">
-            Please enter mobile number
-          </span>
+          <div class="form-group col-3">
+            <label for="mobile" class="form-label" class="error-block">UAE Country Code</label>
+            <input type="text" class="form-control" formControlName="countrycode" readonly>
+          </div>
+
+          <div class="form-group col-12">
+            <label for="mobile" class="form-label">Mobile Number</label>
+            <input type="text" class="form-control" formControlName="mobile">
+            <span class="error-block" *ngIf="(mobile.errors?.['required'] && userSubmitted)">
+              Enter mobile number without first digit of "0", Example 501234567
+            </span>
+          </div>
+
         </div>
 
+        <hr/>
         <div class="form-group col-12">
-          <button type="submit" class="btn btn-primary">Save</button>
-          <button type="reset" class="btn btn-secondary ml-2">Cancel</button>
+          <button type="submit" class="btn btn-primary" style="margin-right: 2px; width: 290px;">Save</button>
+          <button type="reset" class="btn btn-secondary" style="width: 300px;">Cancel</button>
         </div>
       </form>
     </div>

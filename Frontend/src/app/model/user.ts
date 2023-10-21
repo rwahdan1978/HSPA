@@ -3,4 +3,6 @@ export interface User {
     email: string;
     password: string;
     mobile: number;
+    countrycode: string;
+
 }

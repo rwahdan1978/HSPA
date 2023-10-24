@@ -1,5 +1,5 @@
 <div class="row mb-5">
-  <div class="col-8">
+  <div class="col-8 shadow-lg p-0 bg-white">
     <div class="card">
         <div class="card-header">
           <h3>List Your Property</h3>
@@ -7,8 +7,8 @@
         <div class="card-body">
           <form (ngSubmit)='onSubmit()' #Form="ngForm">
 
-            <div>
-              <tabset #formTabs>
+            <div class="tab-panel">
+              <tabset class="member-tabset" #formTabs>
                 <tab heading="Basic Info">
                   <div heading="Basic Info">
                   
@@ -172,10 +172,16 @@
                   <div class="form-group col-3">
                     <label>Possession/Avaialble From</label>
                     <input type="text"
+                            bsDatepicker
                             placeholder="Datepicker"
                             class="form-control"
-                            bsDatepicker [bsConfig]="{containerClass: 'theme-dark-blue', 
-                            dateInputFormat:'DD-MM-YYYY', customTodayClass: 'custom-today-class'}">
+                            [bsConfig]="{
+                              containerClass:   'theme-dark-blue',
+                              dateInputFormat:  'DD-MM-YYYY',
+                              showTodayButton:  true,
+                              todayPosition: 'right',
+                              customTodayClass: 'custom-today-class'
+                            }"/>
                   </div>
       
                   <div class="form-group col-12">
@@ -251,8 +257,8 @@
   <div class="col-4">
     <div class="card-header">
       <h3>Your Property Review</h3>
-      <div>
-        <app-property-card [property] = "propertyView"></app-property-card>
+      <div class="shadow-lg p-3 bg-white">
+        <app-property-card [property] = "propertyView" [hideIcons]="true"></app-property-card>
       </div>
     </div>
   </div>

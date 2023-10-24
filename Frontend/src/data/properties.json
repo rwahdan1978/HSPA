@@ -1,63 +1,64 @@
 [
     {
-      "id":1,
+      "Id":1,
       "SellRent": 2,
       "Name": "Rami Wahdan",
-      "Type":"House",
+      "PType":"House",
+      "FType":"test",
       "Price": 1200000,
       "Image": "1"
     },
 
     {
-      "id":2,
+      "Id":2,
       "SellRent": 2,
       "Name": "Fatima habib",
-      "Type":"Villa",
+      "PType":"Villa",
       "Price": 1800000,
       "Image": "2"
     },
 
     {
-      "id":3,
+      "Id":3,
       "SellRent": 1,
       "Name": "Ahmad Rami Wahdan",
-      "Type":"Challete",
+      "PType":"Challete",
       "Price": 3500000,
       "Image": "3"
     },    
 
     {
-      "id":4,
+      "Id":4,
       "SellRent": 1,
       "Name": "Shahed Rami Wahdan",
-      "Type":"Building 5 Floors",
+      "PType":"Building 5 Floors",
       "Price": 18000000,
       "Image": "4"
     },    
 
     {
-      "id":5,
+      "Id":5,
       "SellRent": 1,
       "Name": "Taleen Rami Wahdan",
-      "Type":"Hotel",
+      "PType":"Hotel",
       "Price": 9000000,
       "Image": "5"
     },    
 
     {
-      "id":6,
+      "Id":6,
       "SellRent": 2,
       "Name": "Talya Rami Wahdan",
-      "Type":"Motel",
+      "PType":"Motel",
       "Price": 5000000,
       "Image": "6"
     },
 
     {
-      "id":7,
+      "Id":7,
       "SellRent": 1,
       "Name": "Rateel Rami Wahdan",
-      "Type":"Farm",
+      "PType":"Farm",
       "Price": 3500000
     }   
 

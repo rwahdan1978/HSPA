@@ -1,55 +1,67 @@
-import { Component, OnInit,ViewChild } from '@angular/core';
+import { Component, OnInit, ViewChild } from '@angular/core';
+import { NgModel } from '@angular/forms';
+import {FormsModule} from '@angular/forms';
 import { Router } from '@angular/router';
-import { NgForm } from '@angular/forms';
-import {TabsetComponent} from 'ngx-bootstrap/tabs/public_api';
+import { FormBuilder, FormGroup, NgForm, Validators } from '@angular/forms';
+import { TabsetComponent } from 'ngx-bootstrap/tabs/public_api';
 import { IPropertyBase } from 'src/app/model/ipropertybase';
 
 @Component({
   selector: 'app-add-property',
   templateUrl: './add-property.component.html',
-  styleUrls: ['./add-property.component.css'],
+  styleUrls: ['./add-property.component.css']
 })
-
 export class AddPropertyComponent implements OnInit {
+ 
+  @ViewChild('formTabs') formTabs: TabsetComponent;
+  addPropertyForm: FormGroup;
 
-  @ViewChild('Form') addPropertyForm: NgForm;
-  @ViewChild('formTabs') formTabs?: TabsetComponent;
+  // Will come from masters
+  propertyTypes: Array<string> = ['House', 'Apartment', 'Duplex']
+  furnishTypes: Array<string> = ['Fully', 'Semi', 'Unfurnished']
 
-  propertyTypes: Array<string> = ['Home', "Apartment", "Duplix"];
-  furnishTypes: Array<string> = ['Fully', "Semi", "Unfirnished"];
-
-  //the errors below is not important as we need null for default numbers
   propertyView: IPropertyBase = {
-    Id: null,
+    Id: null as any,
     Name: '',
-    Price: null,
-    SellRent: null,
-    PType: null,
-    FType: null,
-    BHK: null,
-    BuiltArea: null,
-    City:null,
-    RTM:null
+    Price: null as any,
+    SellRent: null as any,
+    PType: null as any,
+    FType: null as any,
+    BHK: null as any,
+    BuiltArea: null as any,
+    City: null as any,
+    RTM: null as any
   };
 
 
-  constructor(private router: Router) { }
+  constructor(private fb: FormBuilder, private router: Router) { }
 
   ngOnInit() {
+    this.CreateAddPropertyForm();
   }
 
-  onBack(){
-    this.router.navigate(['/'])
+  CreateAddPropertyForm(){
+    this.addPropertyForm = this.fb.group({
+      SellRent: [null, Validators.required],
+      PType: [null, Validators.required],
+      Name: [null, Validators.required],
+      Price: [null, Validators.required],
+      BuiltArea: [null, Validators.required],
+    })
   }
 
-  onSubmit(){
+  onBack() {
+    this.router.navigate(['/']);
+  }
+
+  onSubmit() {
+    console.log('Congrats, form Submitted');
+    console.log('SellRent=' + this.addPropertyForm.value.SellRent);
     console.log(this.addPropertyForm);
   }
 
   selectTab(tabId: number) {
-    if (this.formTabs?.tabs[tabId]) {
-      this.formTabs.tabs[tabId].active = true;
-    }
+    this.formTabs.tabs[tabId].active = true;
   }
 
 }

@@ -103,7 +103,7 @@
 
                 <div class="form-group col-12">
                     <button type="button"
-                    class="btn btn-primary btn-block"
+                    class="btn btn-primary col-12"
                     (click)="selectTab(1, BasicInfo.valid)">Next</button>
                 </div>
               </tab>
@@ -159,10 +159,10 @@
                   </div>
 
                   <div class="form-group col-12">
-                    <button type="button" class="btn btn-primary btn-block"
+                    <button type="button" class="btn btn-primary col-12"
                     (click)="selectTab(2, PriceInfo.valid)">Next</button>
 
-                    <button type="button" class="btn btn-primary btn-block"
+                    <button type="button" class="btn btn-primary col-12"
                     (click)="selectTab(0, PriceInfo.valid)">Back</button>
                   </div>
               </tab>
@@ -202,10 +202,10 @@
                 </div>
 
                 <div class="form-group col-12">
-                  <button type="button" class="btn btn-primary btn-block"
+                  <button type="button" class="btn btn-primary col-12"
                   (click)="selectTab(3, AddressInfo.valid)">Next</button>
 
-                  <button type="button" class="btn btn-primary btn-block"
+                  <button type="button" class="btn btn-primary col-12"
                   (click)="selectTab(1, AddressInfo.valid)">Back</button>
                 </div>
               </tab>
@@ -238,7 +238,8 @@
                   formControlName="PossessionOn"
                   bsDatepicker
                   [bsConfig]="{containerClass: 'theme-dark-blue',
-                  dateInputFormat: 'DD-MM-YYYY'}">
+                  dateInputFormat: 'DD-MM-YYYY', showTodayButton: true,
+                  customTodayClass: 'custom-today-class' }">
                 </div>
 
                 <div
@@ -286,10 +287,10 @@
                 </div>
 
                 <div class="form-group col-12">
-                    <button type="button" class="btn btn-primary btn-block"
+                    <button type="button" class="btn btn-primary col-12"
                     (click)="selectTab(4, OtherInfo.valid)">Next</button>
 
-                    <button type="button" class="btn btn-primary btn-block"
+                    <button type="button" class="btn btn-primary col-12"
                     (click)="selectTab(2, OtherInfo.valid)">Back</button>
                 </div>
               </tab>
@@ -302,10 +303,10 @@
                   </div>
                 </div>
                 <div class="form-group col-12">
-                  <button type="button" class="btn btn-primary btn-block"
+                  <button type="button" class="btn btn-primary col-12"
                   (click)="selectTab(3, true)">Back</button>
-                  <button type="submit" class="btn btn-primary btn-block">Save</button>
-                  <button type="reset" class="btn btn-primary btn-block">Cancel</button>
+                  <button type="submit" class="btn btn-primary col-12">Save</button>
+                  <button type="reset" class="btn btn-primary col-12">Cancel</button>
                 </div>
               </tab>
             </tabset>

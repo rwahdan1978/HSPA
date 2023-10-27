@@ -6,6 +6,7 @@ import { TabsetComponent } from 'ngx-bootstrap/tabs/public_api';
 import { IPropertyBase } from 'src/app/model/ipropertybase';
 import { HousingService } from 'src/app/services/housing.service';
 import { AlertifyService } from 'src/app/services/alertify.service';
+import { BsDatepickerConfig } from 'ngx-bootstrap/datepicker';
 
 @Component({
   selector: 'app-add-property',
@@ -13,10 +14,11 @@ import { AlertifyService } from 'src/app/services/alertify.service';
   styleUrls: ['./add-property.component.css']
 })
 export class AddPropertyComponent implements OnInit {
-  // @ViewChild('Form') addPropertyForm: NgForm;
   @ViewChild('formTabs') formTabs: TabsetComponent;
+  datePickerConfig: Partial<BsDatepickerConfig>;
   addPropertyForm: FormGroup;
   nextClicked: boolean;
+  myDateValue: Date;
   property = new Property();
 
   // Will come from masters
@@ -40,9 +42,16 @@ export class AddPropertyComponent implements OnInit {
     private fb: FormBuilder,
     private router: Router,
     private housingService: HousingService,
-    private alertify: AlertifyService) { }
+    private alertify: AlertifyService) 
+    {
+      this.datePickerConfig = Object.assign({},{customTodayClass: 'custom-today-class',
+      containerClass: 'theme-dark-blue', dateInputFormat: 'DD-MM-YYYY', showWeekNumbers:false
+    });
+
+    }
 
   ngOnInit() {
+    this.myDateValue = new Date();
     this.CreateAddPropertyForm();
   }
 

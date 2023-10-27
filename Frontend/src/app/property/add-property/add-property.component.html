@@ -228,18 +228,16 @@
                   </div>
                 </div>
 
-
                 <div
                 *ngIf="RTM.value==2"
                 class="form-group col-6">
                   <label>Possession/Avaialble From</label>
                   <input type="text"
                   class="form-control"
-                  formControlName="PossessionOn"
-                  bsDatepicker
-                  [bsConfig]="{containerClass: 'theme-dark-blue',
-                  dateInputFormat: 'DD-MM-YYYY', showTodayButton: true,
-                  customTodayClass: 'custom-today-class' }">
+                  #dp="bsDatepicker"
+                  [bsConfig] = datePickerConfig
+                  bsDatepicker [(bsValue)]="myDateValue">
+                  
                 </div>
 
                 <div

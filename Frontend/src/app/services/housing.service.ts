@@ -2,7 +2,6 @@ import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { map } from 'rxjs/operators';
 import { Observable } from 'rxjs';
-import { IPropertyBase } from '../model/ipropertybase';
 import { Property } from '../model/property';
 
 @Injectable({
@@ -15,16 +14,17 @@ export class HousingService {
   getProperty(id: number){
     return this.getAllProperties().pipe(
       map(propertiesArray => {
-        return propertiesArray.find(p => p.Id === id) as Property;;
+        //throw new Error("some error");
+        return propertiesArray.find(p => p.Id === id) as Property;
       })
     );
   }
 
-  getAllProperties(SellRent?: number): Observable<IPropertyBase[]>{
-    return this.http.get<IPropertyBase[]>('data/properties.json').pipe(
+  getAllProperties(SellRent?: number): Observable<Property[]>{
+    return this.http.get<Property[]>('data/properties.json').pipe(
       map(data => {
-        const propertiesArray: Array<IPropertyBase>=[];
-        const localProperties = JSON.parse(localStorage.getItem('newProp'));
+        const propertiesArray: Array<Property>=[];
+        const localProperties = JSON.parse(localStorage.getItem('newProp')as any);
 
         if (localProperties)
         {
@@ -58,13 +58,14 @@ export class HousingService {
         return propertiesArray;
       })
       );
+      return this.http.get<Property[]>('data/properties.json');
     }
     addProperty(property: Property) {
       let newProp = [property];
 
       if (localStorage.getItem('newProp')){
         newProp = [property, 
-                  ...JSON.parse(localStorage.getItem('newProp'))];
+                  ...JSON.parse(localStorage.getItem('newProp')as any)];
       }
 
       localStorage.setItem('newProp', JSON.stringify(newProp));
@@ -74,7 +75,7 @@ export class HousingService {
       if (localStorage.getItem('PID'))
       {
         localStorage.setItem('PID', String(+localStorage.getItem('PID') + 1));
-        return +localStorage.getItem('PID');
+        return +localStorage.getItem('PID') as any;
       }
       else
       {

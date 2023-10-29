@@ -37,7 +37,7 @@ export class AddPropertyComponent implements OnInit {
     City: null as any,
     RTM: null as any
   };
-
+  
   constructor(
     private fb: FormBuilder,
     private router: Router,
@@ -45,7 +45,8 @@ export class AddPropertyComponent implements OnInit {
     private alertify: AlertifyService) 
     {
       this.datePickerConfig = Object.assign({},{customTodayClass: 'custom-today-class',
-      containerClass: 'theme-dark-blue', dateInputFormat: 'DD-MM-YYYY', showWeekNumbers:false
+      containerClass: 'theme-dark-blue', dateInputFormat: 'DD-MM-YYYY', 
+      showWeekNumbers:false,showTodayButton: true
     });
 
     }
@@ -82,9 +83,10 @@ export class AddPropertyComponent implements OnInit {
       }),
 
       OtherInfo: this.fb.group({
-        RTM: [null, Validators.required],
+        RTM: [null],
         PossessionOn: [null],
-        AOP: [null],
+        AOP: [null, Validators.required],
+        PA: [null,  Validators.required],
         Gated: [null],
         MainEntrance: [null],
         Description: [null]
@@ -184,6 +186,10 @@ export class AddPropertyComponent implements OnInit {
         return this.OtherInfo.controls['AOP'] as FormControl;
       }
 
+      get PA() {
+        return this.OtherInfo.controls['PA'] as FormControl;
+      }
+
       get Gated() {
         return this.OtherInfo.controls['Gated'] as FormControl;
       }
@@ -241,6 +247,7 @@ export class AddPropertyComponent implements OnInit {
     this.property.Address2 = this.LandMark.value;
     this.property.RTM = this.RTM.value;
     this.property.AOP = this.AOP.value;
+    this.property.PA = this.PA.value;
     this.property.Gated = this.Gated.value;
     this.property.MainEntrance = this.MainEntrance.value;
     this.property.Possession = this.PossessionOn.value;

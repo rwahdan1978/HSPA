@@ -15,7 +15,7 @@ export class HousingService {
     return this.getAllProperties().pipe(
       map(propertiesArray => {
         //throw new Error("some error");
-        return propertiesArray.find(p => p.Id === id) as Property;
+        return propertiesArray.find(p => p.Id === id);
       })
     );
   }
@@ -65,7 +65,7 @@ export class HousingService {
 
       if (localStorage.getItem('newProp')){
         newProp = [property, 
-                  ...JSON.parse(localStorage.getItem('newProp')as any)];
+                  ...JSON.parse(localStorage.getItem('newProp'))];
       }
 
       localStorage.setItem('newProp', JSON.stringify(newProp));
@@ -75,7 +75,7 @@ export class HousingService {
       if (localStorage.getItem('PID'))
       {
         localStorage.setItem('PID', String(+localStorage.getItem('PID') + 1));
-        return +localStorage.getItem('PID') as any;
+        return +localStorage.getItem('PID');
       }
       else
       {

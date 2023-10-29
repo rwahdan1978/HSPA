@@ -6,10 +6,13 @@
         <img *ngIf="!property.Image" class="card-img-top" src="assets/images/default_house.png">
       </div>
       <div class="card-body">
-        <h1 class="card-title">{{property.Name}}</h1>
+        
+        <h1 *ngIf="property.SellRent == 1">{{property.Name}} - For Sale</h1>
+        <h1 *ngIf="property.SellRent == 2">{{property.Name}} - For Rent</h1>
         <div>
-            <strong>{{property.BHK}} BHK {{property.PType}} @ ${{property.Price}}</strong>
-        </div>
+            <strong *ngIf="property.SellRent == 1">{{property.BHK}} BHK {{property.PType}} @ AED{{property.Price}}</strong>
+            <strong *ngIf="property.SellRent == 2">{{property.BHK}} BHK {{property.PType}} @ AED{{property.Price}}/Month</strong>
+          </div>
         <div>
            <strong>in {{property.City}}</strong>
         </div> <hr>
@@ -26,6 +29,10 @@
             <strong>Furnishing Type: </strong>
             {{property.FType}}
         </div>
+        <div>
+          <strong>Posted on: </strong>
+          {{property.PostedOn | date: 'mediumDate' }}
+      </div>
       </div>
       <div class="card-footer">
         <div class="btn-group d-flex">
@@ -53,13 +60,18 @@
                   </div>
 
                   <div class="heading">
+                    <strong>Total Number of Floors</strong>
+                    <p>{{property.TotalFloor}} floors</p>
+                </div>
+
+                  <div class="heading">
                       <strong>Age of Property</strong>
-                      <p>{{property.AOP}}</p>
+                      <p>{{property.AOP}} yaers</p>
                   </div>
 
                   <div class="heading">
-                      <strong>Posession</strong>
-                      <p>{{property.Possession}}</p>
+                      <strong>Available moving date</strong>
+                      <p style="color: red;  font-size: 1.5rem">{{property.PA | date: 'mediumDate' }}</p>
                   </div>
               </div>
 

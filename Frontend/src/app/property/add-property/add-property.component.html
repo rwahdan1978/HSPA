@@ -211,42 +211,34 @@
               </tab>
 
               <tab heading="Other Details" formGroupName="OtherInfo">
-                <div class="form-group col-12">
-                  <p>Ready to Move</p>
-                  <div class="btn-group" btnRadioGroup
-                  formControlName="RTM">
-                    <label class="btn btn-outline-primary mr-2"
-                      btnRadio=1 tabindex="0" role="button"
-                      name="RTM">Yes
-                    </label>
-                    <label class="btn btn-outline-primary"
-                      btnRadio=2  tabindex="0" role="button" name="RTM">No
-                    </label>
-                  </div>
-                  <div class="error-block" *ngIf="RTM.invalid && nextClicked">
-                    Please select ready to move
+
+                <div
+                class="form-group col-3">
+                  <label>Age of Property</label>
+                  <input type="text"
+                  formControlName="AOP"
+                  class="form-control">
+                  <div class="error-block"
+                  *ngIf="AOP.invalid && (nextClicked || AOP.touched)">
+                    Please enter age of property!
                   </div>
                 </div>
 
                 <div
-                *ngIf="RTM.value==2"
                 class="form-group col-6">
                   <label>Possession/Avaialble From</label>
                   <input type="text"
                   class="form-control"
                   #dp="bsDatepicker"
                   [bsConfig] = datePickerConfig
-                  bsDatepicker [(bsValue)]="myDateValue">
-                  
-                </div>
+                  bsDatepicker [(bsValue)]="myDateValue"
+                  formControlName="PA">
 
-                <div
-                *ngIf="RTM.value==1"
-                class="form-group col-3">
-                  <label>Age of Property</label>
-                  <input type="text"
-                  formControlName="AOP"
-                  class="form-control">
+                  <div class="error-block"
+                  *ngIf="PA.invalid && (nextClicked || PA.touched)">
+                    Please enter availabe date!!
+                  </div>
+                  
                 </div>
 
                 <div class="form-group col-12">
@@ -255,9 +247,9 @@
                   btnRadioGroup
                   formControlName="Gated">
                     <label class="btn btn-outline-primary mr-2"
-                    btnRadio=1 tabindex="0" role="button" name="Gated">Yes</label>
+                    btnRadio="Yes" tabindex="0" role="button" name="Gated">Yes</label>
                     <label class="btn btn-outline-primary"
-                    btnRadio=2  tabindex="0" role="button" name="Gated">No</label>
+                    btnRadio="No"  tabindex="0" role="button" name="Gated">No</label>
                   </div>
                 </div>
 
@@ -266,13 +258,13 @@
                   <div class="btn-group" btnRadioGroup
                   formControlName="MainEntrance">
                     <label class="btn btn-outline-primary mr-2"
-                    btnRadio=1 tabindex="0" role="button" name="Entrance">East</label>
+                    btnRadio="East" tabindex="0" role="button" name="Entrance">East</label>
                     <label class="btn btn-outline-primary"
-                    btnRadio=2  tabindex="0" role="button" name="Entrance">West</label>
+                    btnRadio="West"  tabindex="0" role="button" name="Entrance">West</label>
                     <label class="btn btn-outline-primary"
-                    btnRadio=3  tabindex="0" role="button" name="Entrance">South</label>
+                    btnRadio="South"  tabindex="0" role="button" name="Entrance">South</label>
                     <label class="btn btn-outline-primary"
-                    btnRadio=4  tabindex="0" role="button" name="Entrance">North</label>
+                    btnRadio="North"  tabindex="0" role="button" name="Entrance">North</label>
                   </div>
                 </div>
 

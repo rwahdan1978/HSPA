@@ -7,8 +7,8 @@
       </div>
       <div class="card-body">
         
-        <h1 *ngIf="property.SellRent == 1">{{property.Name}} - For Sale</h1>
-        <h1 *ngIf="property.SellRent == 2">{{property.Name}} - For Rent</h1>
+        <h2 class="card-title" *ngIf="property.SellRent == 1">{{property.Name}} - For Sale</h2>
+        <h2 class="card-title" *ngIf="property.SellRent == 2">{{property.Name}} - For Rent</h2>
         <div>
             <strong *ngIf="property.SellRent == 1">{{property.BHK}} BHK {{property.PType}} @ AED{{property.Price}}</strong>
             <strong *ngIf="property.SellRent == 2">{{property.BHK}} BHK {{property.PType}} @ AED{{property.Price}}/Month</strong>

@@ -3,8 +3,9 @@ import { ActivatedRoute, Router } from '@angular/router';
 import { HousingService } from 'src/app/services/housing.service';
 import { Property } from 'src/app/model/property';
 
+
 @Component({
-  selector: 'app-property-detail',
+  selector: 'app-property-detail, appdemo',
   templateUrl: './property-detail.component.html',
   styleUrls: ['./property-detail.component.css']
 })
@@ -16,6 +17,8 @@ property = new Property();
   constructor(private route: ActivatedRoute,
               private router: Router,
               private housingService: HousingService) { }
+
+  
 
   ngOnInit() {
     this.propertyId = +this.route.snapshot.params['id'];

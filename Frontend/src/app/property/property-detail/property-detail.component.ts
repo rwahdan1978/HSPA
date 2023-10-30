@@ -8,6 +8,7 @@ import { Property } from 'src/app/model/property';
   templateUrl: './property-detail.component.html',
   styleUrls: ['./property-detail.component.css']
 })
+
 export class PropertyDetailComponent implements OnInit {
 public propertyId: number;
 property = new Property();

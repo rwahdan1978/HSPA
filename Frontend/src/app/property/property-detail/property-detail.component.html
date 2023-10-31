@@ -119,7 +119,7 @@
 
         <tab heading="Photos">
 
-          <section class="gallery">
+          <!-- <section class="gallery">
             <div class="container shadow">
               <div class="img-container">
                 <img id="mypreview" src="assets/images/1.png">
@@ -139,7 +139,41 @@
                 </div>
               </div>
             </div>
-          </section>
+          </section> -->
+
+          
+          <style>
+            .container img {
+              width: 270px;
+              height: 250px;
+              padding-top: 5px;
+              padding-right: 2px;
+              cursor: pointer;
+            }
+
+          </style>
+
+          <div class="container">
+            <ngx-slick-carousel class="carousel" 
+                          #slickModal="slick-carousel" 
+                          [config]="slideConfig">
+                <div ngxSlickItem *ngFor="let slide1 of slides1" class="slide">
+                  <img id="theimg" src="{{ slide1.img }}" (click)="clicked(slide1.img)">
+                </div>
+            </ngx-slick-carousel>
+          </div>
+          
+          <div class="container">
+            <ngx-slick-carousel class="carousel" 
+                          #slickModal="slick-carousel" 
+                          [config]="slideConfig">
+                <div ngxSlickItem *ngFor="let slide2 of slides2" class="slide">
+                  <img id="theimg" src="{{ slide2.img }}" (click)="clicked(slide2.img)">
+                </div>
+            </ngx-slick-carousel>
+            
+          </div>  
+        
 
         </tab>
 

@@ -90,7 +90,16 @@ export class AddPropertyComponent implements OnInit {
         Gated: [null],
         MainEntrance: [null],
         Description: [null]
+      }),
+
+      PhotoInfo: this.fb.group({
+        Image1: [null, Validators.required],
+        Image2: [null],
+        Image3: [null],
+        Image4: [null],
+        Image5: [null]
       })
+
       });
   }
 
@@ -110,6 +119,10 @@ export class AddPropertyComponent implements OnInit {
 
       get OtherInfo() {
         return this.addPropertyForm.controls['OtherInfo'] as FormGroup;
+      }
+
+      get PhotoInfo() {
+        return this.addPropertyForm.controls['PhotoInfo'] as FormGroup;
       }
   // #endregion
 
@@ -202,6 +215,26 @@ export class AddPropertyComponent implements OnInit {
         return this.OtherInfo.controls['Description'] as FormControl;
       }
 
+      get Image1() {
+        return this.OtherInfo.controls['Image1'] as FormControl;
+      }
+
+      get Image2() {
+        return this.OtherInfo.controls['Image2'] as FormControl;
+      }
+
+      get Image3() {
+        return this.OtherInfo.controls['Image3'] as FormControl;
+      }
+
+      get Image4() {
+        return this.OtherInfo.controls['Image4'] as FormControl;
+      }
+
+      get Image5() {
+        return this.OtherInfo.controls['Image5'] as FormControl;
+      }
+
   //#endregion
 //#endregion
 
@@ -253,6 +286,11 @@ export class AddPropertyComponent implements OnInit {
     this.property.Possession = this.PossessionOn.value;
     this.property.Description = this.Description.value;
     this.property.PostedOn = new Date().toString();
+    this.property.Image1 = this.Image1.value;
+    this.property.Image2 = this.Image2.value;
+    this.property.Image3 = this.Image3.value;
+    this.property.Image4 = this.Image4.value;
+    this.property.Image5 = this.Image5.value;
   }
 
   allTabsValid(): boolean {
@@ -275,6 +313,12 @@ export class AddPropertyComponent implements OnInit {
       this.formTabs.tabs[3].active = true;
       return false;
     }
+
+    if (this.PhotoInfo.invalid) {
+      this.formTabs.tabs[4].active = true;
+      return false;
+    }
+
     return true;
   }
 

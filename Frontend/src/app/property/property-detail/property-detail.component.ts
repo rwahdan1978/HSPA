@@ -13,6 +13,7 @@ export class PropertyDetailComponent implements OnInit {
 public imagepath: string;
 public propertyId: number;
 property = new Property();
+
   http: any;
 
   constructor(private route: ActivatedRoute) { }
@@ -32,13 +33,6 @@ property = new Property();
                 "dots": true, 'centerMode':true, "pauseOnFocus":false,
                 "slidesToShow": 1, "slidesToScroll": 1};
 
-  clicked(img:any){
-
-    this.imagepath = img;
-    window.open(this.imagepath, "_blank");
-    return this.http.get(this.imagepath);
-  }
-
   slides1 = [
     {img: "assets/images/1.png"},
     {img: "assets/images/2.png"},
@@ -48,5 +42,11 @@ property = new Property();
     {img: "assets/images/6.png"},
     {img: "assets/images/7.png"}
   ];
+
+  clicked(img:any){
+    this.imagepath = img;
+    window.open(this.imagepath, "_blank");
+    return this.http.get(this.imagepath);
+  }
     
 }

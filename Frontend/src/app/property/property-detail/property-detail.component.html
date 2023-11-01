@@ -118,71 +118,31 @@
         </tab>
 
         <tab heading="Photos">
-
-          <!-- <section class="gallery">
-            <div class="container shadow">
-              <div class="img-container">
-                <img id="mypreview" src="assets/images/1.png">
-                <div class="img-prev text-center">
-                  <div class="img-slide activate">
-                    <img src="assets/images/1.png" appDemo>
+          <h1>Photo Section</h1>
+          <div class="row">
+            <div class="container">
+              <ngx-slick-carousel class="carousel" 
+                            #slickModal="slick-carousel" 
+                            [config]="slideConfig">
+                  <div class="centered" ngxSlickItem *ngFor="let slide1 of slides1">
+                    <img style="cursor: pointer; width: 850px; height: 470px;" src="{{ slide1.img }}" (click)="clicked(slide1.img)"/>
                   </div>
-                  <div class="img-slide">
-                    <img src="assets/images/2.png" appDemo>
-                  </div>
-                  <div class="img-slide">
-                    <img src="assets/images/3.png" appDemo>
-                  </div>
-                  <div class="img-slide">
-                    <img src="assets/images/4.png" appDemo>
-                  </div>
-                </div>
-              </div>
+              </ngx-slick-carousel>
             </div>
-          </section> -->
-
-          
-          <style>
-            .container img {
-              width: 270px;
-              height: 250px;
-              padding-top: 5px;
-              padding-right: 2px;
-              cursor: pointer;
-            }
-
-          </style>
-
-          <div class="container">
-            <ngx-slick-carousel class="carousel" 
-                          #slickModal="slick-carousel" 
-                          [config]="slideConfig">
-                <div ngxSlickItem *ngFor="let slide1 of slides1" class="slide">
-                  <img id="theimg" src="{{ slide1.img }}" (click)="clicked(slide1.img)">
-                </div>
-            </ngx-slick-carousel>
           </div>
           
-          <div class="container">
-            <ngx-slick-carousel class="carousel" 
-                          #slickModal="slick-carousel" 
-                          [config]="slideConfig">
-                <div ngxSlickItem *ngFor="let slide2 of slides2" class="slide">
-                  <img id="theimg" src="{{ slide2.img }}" (click)="clicked(slide2.img)">
-                </div>
-            </ngx-slick-carousel>
-            
-          </div>  
-        
-
         </tab>
 
         <tab heading="Contact">
           <h1>Contact Detail</h1>
-          This should be restricted area and only registered user should be able to see seller contact details
-        </tab>
+          <p>
+            This should be restricted area and only registered user should be able to see seller contact details
+          </p>
+          </tab>
         
       </tabset>
     </div>
   </div>
 </div>
+
+

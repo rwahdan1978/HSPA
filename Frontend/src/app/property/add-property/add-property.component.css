@@ -1,9 +1,10 @@
 .photo-control{
-    min-height: 300px;
+    min-height: 50px;
     vertical-align: middle;
     text-align: center;
     border: 1px dashed blue;
     margin: 5px;
+    padding-bottom: 40px;
 }
 
 .custom-today-class{ background-color:blue; }

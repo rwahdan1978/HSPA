@@ -287,33 +287,37 @@
 
               <tab heading="Photos">
 
+                  <strong style="color: red;">Upload the main image (Required)</strong>
                   <div class="form-group col-12 photo-control">
-                      <button class="mt-5" type="submit">Upload Image1</button>
+                      <button class="mt-5" type="submit"><strong>Upload Main Image</strong></button><br/>
                     <div class="error-block"
                       *ngIf="PA.invalid && (nextClicked || PA.touched)">
                         <strong> upload the main image as minimum requirment!</strong>
                     </div>
+                  </div>   
+
+                  <strong style="color: green;">Upload secondary images (Optional)</strong>
+                  <div class="form-group col-12 photo-control">
+                    <button class="mt-5" type="submit"><strong>Upload Image1</strong></button><br/>
+                  </div>
+                  <div class="form-group col-12 photo-control">
+                    <button class="mt-5" type="submit"><strong>Upload Image2</strong></button><br/>
+                  </div>
+                  <div class="form-group col-12 photo-control">
+                    <button class="mt-5" type="submit"><strong>Upload Image3</strong></button><br/>
+                  </div>
+                  <div class="form-group col-12 photo-control">
+                    <button class="mt-5" type="submit"><strong>Upload Image4</strong></button><br/>
                   </div>
 
-                  <div class="photo-control">
-                    <button class="mt-5" type="submit">Upload Image2</button>
-                  </div>
-                  <div class="photo-control">
-                    <button class="mt-5" type="submit">Upload Image3</button>
-                  </div>
-                  <div class="photo-control">
-                    <button class="mt-5" type="submit">Upload Image4</button>
-                  </div>
-                  <div class="photo-control">
-                    <button class="mt-5" type="submit">Upload Image5</button>
-                  </div>
+                  <br/>
 
-                <div class="form-group col-12">
-                  <button type="button" class="btn btn-primary col-12"
-                  (click)="selectTab(3, true)">Back</button>
-                  <button type="submit" class="btn btn-primary col-12">Save</button>
-                  <button type="reset" class="btn btn-primary col-12">Cancel</button>
-                </div>
+                  <div class="form-group col-12">
+                    <button type="button" class="btn btn-primary col-12"
+                    (click)="selectTab(3, true)">Back</button>
+                    <button type="submit" class="btn btn-primary col-12">Save</button>
+                    <button type="reset" class="btn btn-danger col-12">Cancel</button>
+                  </div>
 
               </tab>
             </tabset>

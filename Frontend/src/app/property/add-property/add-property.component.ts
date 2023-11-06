@@ -95,6 +95,15 @@ export class AddPropertyComponent implements OnInit {
         Description: [null]
       }),
 
+      PhotoInfo: this.fb.group({
+        Image1: [null],
+        Image2: [null],
+        Image3: [null],
+        Image4: [null],
+        Image5: [null]
+      }),
+      
+
       });
   }
 
@@ -281,11 +290,11 @@ export class AddPropertyComponent implements OnInit {
     this.property.Possession = this.PossessionOn.value;
     this.property.Description = this.Description.value;
     this.property.PostedOn = new Date().toString();
-    this.property.Image1 = this.getVariable.theFileName;
-    // this.property.Image2 = this.Image2.value;
-    // this.property.Image3 = this.Image3.value;
-    // this.property.Image4 = this.Image4.value;
-    // this.property.Image5 = this.Image5.value;
+    this.property.Image1 = this.getVariable.theFileName1;
+    this.property.Image2 = this.getVariable.theFileName2;
+    this.property.Image3 = this.getVariable.theFileName3;
+    this.property.Image4 = this.getVariable.theFileName4;
+    this.property.Image5 = this.getVariable.theFileName5;
   }
 
   allTabsValid(): boolean {
@@ -306,6 +315,11 @@ export class AddPropertyComponent implements OnInit {
 
     if (this.OtherInfo.invalid) {
       this.formTabs.tabs[3].active = true;
+      return false;
+    }
+
+    if (this.PhotoInfo.invalid) {
+      this.formTabs.tabs[4].active = true;
       return false;
     }
 

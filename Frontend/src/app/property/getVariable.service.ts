@@ -5,7 +5,11 @@ import { Injectable } from '@angular/core';
 })
 export class GetVariableService {
 
-  public theFileName: string = '';
+  public theFileName1: string = '';
+  public theFileName2: string = '';
+  public theFileName3: string = '';
+  public theFileName4: string = '';
+  public theFileName5: string = '';
 
 constructor() { }
 

@@ -1,9 +1,10 @@
+import { CommonModule } from '@angular/common';
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { Property } from 'src/app/model/property';
 
 @Component({
-  selector: 'app-property-detail, appdemo',
+  selector: 'app-property-detail',
   templateUrl: './property-detail.component.html',
   styleUrls: ['./property-detail.component.css']
 })
@@ -28,11 +29,6 @@ property = new Property();
     );
   }
 
-  slideConfig = {"initialSlide": 6,"autoplay": true, "autoplaySpeed": 3000, "arrows":true,
-                "draggable": false,"infinite":true ,"pauseOnHover": false, 
-                "dots": true, 'centerMode':true, "pauseOnFocus":false,
-                "slidesToShow": 1, "slidesToScroll": 1};
-
   slides1 = [
     {img: "assets/images/1.png"},
     {img: "assets/images/2.png"},
@@ -42,11 +38,5 @@ property = new Property();
     {img: "assets/images/6.png"},
     {img: "assets/images/7.png"}
   ];
-
-  clicked(img:any){
-    this.imagepath = img;
-    window.open(this.imagepath, "_blank");
-    return this.http.get(this.imagepath);
-  }
     
 }

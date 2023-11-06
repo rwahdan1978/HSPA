@@ -5,7 +5,7 @@
         <h3>List your Property</h3>
       </div>
       <div class="card-body">
-        <form (ngSubmit)='onSubmit()' [formGroup]="addPropertyForm">
+        <form (ngSubmit)='onSubmit()' [formGroup]="addPropertyForm" enctype="multipart/form-data">
           <div class="tab-panel">
             <tabset class="member-tabset" #formTabs>
               <tab heading="Basic Info" formGroupName="BasicInfo" >
@@ -285,32 +285,13 @@
                 </div>
               </tab>
 
-              <tab heading="Photos">
+              <tab heading="Photos" formGroupName="PhotoInfo">
 
-                  <strong style="color: red;">Upload the main image (Required)</strong>
-                  <div class="form-group col-12 photo-control">
-                      <button class="mt-5" type="submit"><strong>Upload Main Image</strong></button><br/>
-                    <div class="error-block"
-                      *ngIf="PA.invalid && (nextClicked || PA.touched)">
-                        <strong> upload the main image as minimum requirment!</strong>
-                    </div>
-                  </div>   
-
-                  <strong style="color: green;">Upload secondary images (Optional)</strong>
-                  <div class="form-group col-12 photo-control">
-                    <button class="mt-5" type="submit"><strong>Upload Image1</strong></button><br/>
-                  </div>
-                  <div class="form-group col-12 photo-control">
-                    <button class="mt-5" type="submit"><strong>Upload Image2</strong></button><br/>
-                  </div>
-                  <div class="form-group col-12 photo-control">
-                    <button class="mt-5" type="submit"><strong>Upload Image3</strong></button><br/>
-                  </div>
-                  <div class="form-group col-12 photo-control">
-                    <button class="mt-5" type="submit"><strong>Upload Image4</strong></button><br/>
-                  </div>
-
-                  <br/>
+                   <h2>Upload Images</h2>
+                   
+                   <app-upload></app-upload>
+                   
+                   <br/><br/>
 
                   <div class="form-group col-12">
                     <button type="button" class="btn btn-primary col-12"

@@ -1,102 +1,26 @@
 body { 
-        font-family: Arial; font-size: 10pt; 
-     }
+    font-family: Arial; font-size: 10pt;
+ }
 
-     body {
-      padding: 0.2rem;
-    }
-    
-    h1 {
-      margin: 0 0 1rem;
-      font-size: 1.2rem;
-    }
-    
-    p {
-      margin: 0 0 2rem;
-    }
-    
-    .slider {
-      width: 40rem;
-    }
-    
-    .slide {
-      
-      img {
-        display: block;
-        width: 100%;
-        height: auto;
-      }
-      
-    }
-    
-.slider { 
-  margin: 30px auto; width: 700px; 
-}
-        
-.slick-prev, .slick-next { 
-  background-color: #0069d9 !important; 
-  height: 25px !important;
-  width: 25px !important;
-  opacity: 1;
-}
-
-.slick-dots {
-	display: flex;
-	justify-content: center;
-  background-color: #0069d9 !important; 
-	
-	margin: 1px;
-	padding: 5px 2px;
-	
-	list-style-type: none;
-	
-		li {
-			margin: 0 0.25rem;
-		}
-	
-		button {
-			display: block;
-			width: 5rem;
-			height: 5rem;
-			padding: 0;
-			
-			border: none;
-			border-radius: 100%;
-			background-color: blue;
-			
-			text-indent: -9999px;
-		}
-	
-		li.slick-active button {
-			background-color: red;
-		}
-	
-}
-
-.ng-invalid.ng-touched {
-    border-color: red;
+ .ng-invalid.ng-touched {
+  border-color: red;
   }
   
   .error-block {
-    color: red;
+  color: red;
   }
-  
-  .btn-group > label[ng-reflect-btn-radio] {
-    border-radius: 44px;
-    padding: 0 15px;
-    line-height: 30px;
-  }
+ 
   
   .card-header > h1, .card-header > h2, .card-header > h3 {
-    color: white;
+  color: white;
   }
   
   .card-header {
-    height: 42px;
-    padding: 4px 10px !important;
-    background-color: #007bff !important;
+  height: 42px;
+  padding: 4px 10px !important;
+  background-color: #007bff !important;
   }
   
   .card-title {
-    color: #0069d9;
+  color: #0069d9;
   }

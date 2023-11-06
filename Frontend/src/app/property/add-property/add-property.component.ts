@@ -7,6 +7,7 @@ import { IPropertyBase } from 'src/app/model/ipropertybase';
 import { HousingService } from 'src/app/services/housing.service';
 import { AlertifyService } from 'src/app/services/alertify.service';
 import { BsDatepickerConfig } from 'ngx-bootstrap/datepicker';
+import { HttpClient } from '@angular/common/http';
 
 @Component({
   selector: 'app-add-property',
@@ -14,6 +15,7 @@ import { BsDatepickerConfig } from 'ngx-bootstrap/datepicker';
   styleUrls: ['./add-property.component.css']
 })
 export class AddPropertyComponent implements OnInit {
+
   @ViewChild('formTabs') formTabs: TabsetComponent;
   datePickerConfig: Partial<BsDatepickerConfig>;
   addPropertyForm: FormGroup;
@@ -42,7 +44,7 @@ export class AddPropertyComponent implements OnInit {
     private fb: FormBuilder,
     private router: Router,
     private housingService: HousingService,
-    private alertify: AlertifyService) 
+    private alertify: AlertifyService, private http: HttpClient) 
     {
       this.datePickerConfig = Object.assign({},{customTodayClass: 'custom-today-class',
       containerClass: 'theme-dark-blue', dateInputFormat: 'DD-MM-YYYY', 

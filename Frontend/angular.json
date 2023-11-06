@@ -101,12 +101,11 @@
               "src/assets"
             ],
             "styles": [
-              "src/styles.css",
-              "node_modules/slick-carousel/slick/slick-theme.css",
-              "node_modules/slick-carousel/slick/slick.css"
+              "src/styles.css"
             ],
+
             "scripts": [
-              "../node_modules/jquery/dist/jquery.min.js"
+              "assets/bootstrap.bundle.min.js"
             ]
           }
         }

@@ -8,3 +8,10 @@
 }
 
 .custom-today-class{ background-color:blue; }
+
+.upload{
+    font-weight: bold;
+    color: green;
+    margin-left: 15px;
+    line-height: 36px;
+}

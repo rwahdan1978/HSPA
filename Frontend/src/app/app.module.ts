@@ -24,6 +24,7 @@ import { AlertifyService } from './services/alertify.service';
 import { AuthService } from './services/auth.service';
 import { PropertyDetailResolverService } from './property/property-detail/property-detail-resolver.service';
 import { DemoDirective } from './demo.directive';
+import { UploadComponent } from './upload/upload.component';
 
 const appRoutes: Routes = [
   {path: '', component: PropertyListComponent},
@@ -45,7 +46,8 @@ const appRoutes: Routes = [
       PropertyDetailComponent,
       UserRegisterComponent,
       UserLoginComponent,
-      DemoDirective
+      DemoDirective,
+      UploadComponent
    ],
   imports: [
     BrowserModule,

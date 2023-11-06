@@ -118,18 +118,86 @@
         </tab>
 
         <tab heading="Photos">
-          <h1>Photo Section</h1>
-          <div class="row">
-            <div class="container">
-              <ngx-slick-carousel class="carousel" 
-                            #slickModal="slick-carousel" 
-                            [config]="slideConfig">
-                  <div class="centered" ngxSlickItem *ngFor="let slide1 of slides1">
-                    <img style="cursor: pointer; width: 850px; height: 470px;" src="{{ slide1.img }}" (click)="clicked(slide1.img)"/>
+
+          <h1>Photo Gallery</h1>
+
+          <section class="home">
+
+            <div id="carousel" class="carousel slide" data-ride="carousel" loading="lazy">
+              <div class="carousel-controls">
+
+                <ol class="carousel-indicators">
+                  <li data-target="#carousel" data-slide-to="0" class="active" 
+                      style="background-image:url('assets/images/{{property.Image1}}.png')"></li>
+
+                  <li data-target="#carousel" data-slide-to="1" style="background-image:url('assets/images/{{property.Image2}}.png')"></li>
+                  <li data-target="#carousel" data-slide-to="2" style="background-image:url('assets/images/{{property.Image3}}.png')"></li>
+                  <li data-target="#carousel" data-slide-to="3" style="background-image:url('assets/images/{{property.Image4}}.png')"></li>
+                  <li data-target="#carousel" data-slide-to="4" style="background-image:url('assets/images/{{property.Image5}}.png')"></li>
+            
+                </ol>
+
+                <a class="carousel-control-prev" href="#carousel" role="button" data-slide="prev">
+                  <img src="assets/images/left-arrow.svg" alt="Prev"> 
+                </a>
+                <a class="carousel-control-next" href="#carousel" role="button" data-slide="next">
+                  <img src="assets/images/right-arrow.svg" alt="Next">
+                </a>
+
+              </div>
+            
+              <div class="carousel-inner">
+
+                <div class="carousel-item active"
+                style="background-image:url('assets/images/{{property.Image1}}.png')">
+                  <div class="container">
+                  <h2>{{property.Name}}</h2>
+                  <p *ngIf="property.SellRent ==1">For Sale / Price:{{property.Price}}AED</p>
+                  <p *ngIf="property.SellRent ==2">For Rent / Price:{{property.Price}}AED</p>
                   </div>
-              </ngx-slick-carousel>
+                </div>
+
+                <div class="carousel-item "
+                style="background-image:url('assets/images/{{property.Image2}}.png')">
+                  <div class="container">
+                  <h2>{{property.Name}}</h2>
+                  <p *ngIf="property.SellRent ==1">For Sale / Price:{{property.Price}}AED</p>
+                  <p *ngIf="property.SellRent ==2">For Rent / Price:{{property.Price}}AED</p>
+                  </div>
+                </div>
+
+                <div class="carousel-item "
+                style="background-image:url('assets/images/{{property.Image3}}.png')">
+                  <div class="container">
+                  <h2>{{property.Name}}</h2>
+                  <p *ngIf="property.SellRent ==1">For Sale / Price:{{property.Price}}AED</p>
+                  <p *ngIf="property.SellRent ==2">For Rent / Price:{{property.Price}}AED</p>
+                  </div>
+                </div>
+
+                <div class="carousel-item "
+                style="background-image:url('assets/images/{{property.Image4}}.png')">
+                  <div class="container">
+                  <h2>{{property.Name}}</h2>
+                  <p *ngIf="property.SellRent ==1">For Sale / Price:{{property.Price}}AED</p>
+                  <p *ngIf="property.SellRent ==2">For Rent / Price:{{property.Price}}AED</p>
+                  </div>
+                </div>
+
+                <div class="carousel-item "
+                style="background-image:url('assets/images/{{property.Image5}}.png')">
+                  <div class="container">
+                  <h2>{{property.Name}}</h2>
+                  <p *ngIf="property.SellRent ==1">For Sale / Price:{{property.Price}}AED</p>
+                  <p *ngIf="property.SellRent ==2">For Rent / Price:{{property.Price}}AED</p>
+                  </div>
+                </div>
+                
+              </div>
+
             </div>
-          </div>
+
+          </section>
           
         </tab>
 
@@ -140,7 +208,7 @@
           </p>
           </tab>
         
-      </tabset>
+        </tabset>
     </div>
   </div>
 </div>

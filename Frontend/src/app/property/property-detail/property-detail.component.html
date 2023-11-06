@@ -2,7 +2,7 @@
   <div class="col-sm-4 p-0">
     <div class="card">
       <div class="card-img-wrapper">
-        <img *ngIf="property.Image1" class="card-img-top" src="assets/images/{{property.Image1}}.png">
+        <img *ngIf="property.Image1" class="card-img-top" src="assets/images/{{property.Image1}}">
         <img *ngIf="!property.Image1" class="card-img-top" src="assets/images/default_house.png">
       </div>
       <div class="card-body">
@@ -128,7 +128,7 @@
 
                 <ol class="carousel-indicators">
                   <li data-target="#carousel" data-slide-to="0" class="active" 
-                      style="background-image:url('assets/images/{{property.Image1}}.png')"></li>
+                      style="background-image:url('assets/images/{{property.Image1}}')"></li>
 
                   <li data-target="#carousel" data-slide-to="1" style="background-image:url('assets/images/{{property.Image2}}.png')"></li>
                   <li data-target="#carousel" data-slide-to="2" style="background-image:url('assets/images/{{property.Image3}}.png')"></li>
@@ -149,7 +149,7 @@
               <div class="carousel-inner">
 
                 <div class="carousel-item active"
-                style="background-image:url('assets/images/{{property.Image1}}.png')">
+                style="background-image:url('assets/images/{{property.Image1}}')">
                   <div class="container">
                   <h2>{{property.Name}}</h2>
                   <p *ngIf="property.SellRent ==1">For Sale / Price:{{property.Price}}AED</p>

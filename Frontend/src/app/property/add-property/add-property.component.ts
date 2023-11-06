@@ -8,6 +8,7 @@ import { HousingService } from 'src/app/services/housing.service';
 import { AlertifyService } from 'src/app/services/alertify.service';
 import { BsDatepickerConfig } from 'ngx-bootstrap/datepicker';
 import { HttpClient } from '@angular/common/http';
+import {GetVariableService} from '../getVariable.service';
 
 @Component({
   selector: 'app-add-property',
@@ -42,7 +43,7 @@ export class AddPropertyComponent implements OnInit {
   
   constructor(
     private fb: FormBuilder,
-    private router: Router,
+    private router: Router, private getVariable: GetVariableService,
     private housingService: HousingService,
     private alertify: AlertifyService, private http: HttpClient) 
     {
@@ -93,14 +94,6 @@ export class AddPropertyComponent implements OnInit {
         MainEntrance: [null],
         Description: [null]
       }),
-
-      PhotoInfo: this.fb.group({
-        Image1: [null, Validators.required],
-        Image2: [null],
-        Image3: [null],
-        Image4: [null],
-        Image5: [null]
-      })
 
       });
   }
@@ -288,11 +281,11 @@ export class AddPropertyComponent implements OnInit {
     this.property.Possession = this.PossessionOn.value;
     this.property.Description = this.Description.value;
     this.property.PostedOn = new Date().toString();
-    this.property.Image1 = this.Image1.value;
-    this.property.Image2 = this.Image2.value;
-    this.property.Image3 = this.Image3.value;
-    this.property.Image4 = this.Image4.value;
-    this.property.Image5 = this.Image5.value;
+    this.property.Image1 = this.getVariable.theFileName;
+    // this.property.Image2 = this.Image2.value;
+    // this.property.Image3 = this.Image3.value;
+    // this.property.Image4 = this.Image4.value;
+    // this.property.Image5 = this.Image5.value;
   }
 
   allTabsValid(): boolean {
@@ -313,11 +306,6 @@ export class AddPropertyComponent implements OnInit {
 
     if (this.OtherInfo.invalid) {
       this.formTabs.tabs[3].active = true;
-      return false;
-    }
-
-    if (this.PhotoInfo.invalid) {
-      this.formTabs.tabs[4].active = true;
       return false;
     }
 

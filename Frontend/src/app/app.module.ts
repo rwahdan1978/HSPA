@@ -25,6 +25,7 @@ import { AuthService } from './services/auth.service';
 import { PropertyDetailResolverService } from './property/property-detail/property-detail-resolver.service';
 import { DemoDirective } from './demo.directive';
 import { UploadComponent } from './upload/upload.component';
+import {GetVariableService} from '../app/property/getVariable.service';
 
 const appRoutes: Routes = [
   {path: '', component: PropertyListComponent},
@@ -67,7 +68,8 @@ const appRoutes: Routes = [
     UserServiceService,
     AlertifyService,
     AuthService,
-    PropertyDetailResolverService
+    PropertyDetailResolverService,
+    GetVariableService
   ],
   bootstrap: [AppComponent]
 })

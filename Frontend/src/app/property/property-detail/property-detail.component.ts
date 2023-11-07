@@ -13,7 +13,7 @@ export class PropertyDetailComponent implements OnInit {
 
 public imagepath: string;
 public propertyId: number;
-property = new Property();
+property: any = new Property();
 
   http: any;
 

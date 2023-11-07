@@ -1,6 +1,7 @@
 import { HttpClient, HttpEventType } from '@angular/common/http';
 import { Component, EventEmitter, Output } from '@angular/core';
 import {GetVariableService} from '../property/getVariable.service';
+import { NgxFileDropEntry, FileSystemFileEntry, FileSystemDirectoryEntry } from 'ngx-file-drop';
 
 @Component({
   selector: 'app-upload',
@@ -9,24 +10,14 @@ import {GetVariableService} from '../property/getVariable.service';
 })
 export class UploadComponent {
 
-  public message1: string;
-  public progress1: number;
-  public message2: string;
-  public progress2: number;
-  public message3: string;
-  public progress3: number;
-  public message4: string;
-  public progress4: number;
-  public message5: string;
-  public progress5: number;
-
-  @Output() public onUploadFinished = new EventEmitter();
-
   constructor(private http: HttpClient, private getVariable: GetVariableService) {}
 
-  ngOnInit(){
-
-  }
+  theFileName1: any;
+  theFileName2: any;
+  theFileName3: any;
+  theFileName4: any;
+  theFileName5: any;
+  allfiles: Array<string> = [];
 
   setText1(theFileName1: string) {
     this.getVariable.theFileName1 = theFileName1;
@@ -48,119 +39,41 @@ export class UploadComponent {
     this.getVariable.theFileName5 = theFileName5;
   }
 
-  public uploadFile1 = (files:any) => {
-    if (files.length === 0)
-      return;
+  public files: NgxFileDropEntry[] = [];
 
-    let fileToUpload = <File>files[0];
-    const formData = new FormData();
-    formData.append('file', fileToUpload, fileToUpload.name);
-    this.getVariable.theFileName1 = fileToUpload.name;
-    this.http.post('https://localhost:5001/api/upload', 
-                        formData, {reportProgress:true, observe: 'events'})
-                        .subscribe(event =>
-                          {
-                            if (event.type === HttpEventType.UploadProgress){
-                              this.progress1 = Math.round(100 * event.loaded / event.total);
-                            }
-                            else if (event.type === HttpEventType.Response){
-                              this.message1 = "Upload is success";
-                              this.onUploadFinished.emit(event.body);
-                            }
-                          });
+  public dropped(files: NgxFileDropEntry[]) {
+    this.files = files;
+    for (const droppedFile of files) {
 
+      // Is it a file?
+      if (droppedFile.fileEntry.isFile) {
+        const fileEntry = droppedFile.fileEntry as FileSystemFileEntry;
+        fileEntry.file((file: File) => {
+
+          this.allfiles.push(droppedFile.relativePath);
+
+        });
+      } else {
+        // It was a directory (empty directories are added, otherwise only files)
+        const fileEntry = droppedFile.fileEntry as FileSystemDirectoryEntry;
+        console.log(droppedFile.relativePath, fileEntry);
+      }
+
+      this.getVariable.theFileName1 = this.allfiles[0];
+      this.getVariable.theFileName2 = this.allfiles[1];
+      this.getVariable.theFileName3 = this.allfiles[2];
+      this.getVariable.theFileName4 = this.allfiles[3];
+      this.getVariable.theFileName5 = this.allfiles[4];
+
+
+    }
   }
 
-  public uploadFile2 = (files:any) => {
-    if (files.length === 0)
-      return;
-
-    let fileToUpload = <File>files[0];
-    const formData = new FormData();
-    formData.append('file', fileToUpload, fileToUpload.name);
-    this.getVariable.theFileName2 = fileToUpload.name;
-    this.http.post('https://localhost:5001/api/upload', 
-                        formData, {reportProgress:true, observe: 'events'})
-                        .subscribe(event =>
-                          {
-                            if (event.type === HttpEventType.UploadProgress){
-                              this.progress2 = Math.round(100 * event.loaded / event.total);
-                            }
-                            else if (event.type === HttpEventType.Response){
-                              this.message2 = "Upload is success";
-                              this.onUploadFinished.emit(event.body);
-                            }
-                          });
-
+  public fileOver(event:any){
+    console.log(event);
   }
 
-  public uploadFile3 = (files:any) => {
-    if (files.length === 0)
-      return;
-
-    let fileToUpload = <File>files[0];
-    const formData = new FormData();
-    formData.append('file', fileToUpload, fileToUpload.name);
-    this.getVariable.theFileName3 = fileToUpload.name;
-    this.http.post('https://localhost:5001/api/upload', 
-                        formData, {reportProgress:true, observe: 'events'})
-                        .subscribe(event =>
-                          {
-                            if (event.type === HttpEventType.UploadProgress){
-                              this.progress3 = Math.round(100 * event.loaded / event.total);
-                            }
-                            else if (event.type === HttpEventType.Response){
-                              this.message3 = "Upload is success";
-                              this.onUploadFinished.emit(event.body);
-                            }
-                          });
-
+  public fileLeave(event:any){
+    console.log(event);
   }
-
-  public uploadFile4 = (files:any) => {
-    if (files.length === 0)
-      return;
-
-    let fileToUpload = <File>files[0];
-    const formData = new FormData();
-    formData.append('file', fileToUpload, fileToUpload.name);
-    this.getVariable.theFileName4 = fileToUpload.name;
-    this.http.post('https://localhost:5001/api/upload', 
-                        formData, {reportProgress:true, observe: 'events'})
-                        .subscribe(event =>
-                          {
-                            if (event.type === HttpEventType.UploadProgress){
-                              this.progress4 = Math.round(100 * event.loaded / event.total);
-                            }
-                            else if (event.type === HttpEventType.Response){
-                              this.message4 = "Upload is success";
-                              this.onUploadFinished.emit(event.body);
-                            }
-                          });
-
-  }
-
-  public uploadFile5 = (files:any) => {
-    if (files.length === 0)
-      return;
-
-    let fileToUpload = <File>files[0];
-    const formData = new FormData();
-    formData.append('file', fileToUpload, fileToUpload.name);
-    this.getVariable.theFileName5 = fileToUpload.name;
-    this.http.post('https://localhost:5001/api/upload', 
-                        formData, {reportProgress:true, observe: 'events'})
-                        .subscribe(event =>
-                          {
-                            if (event.type === HttpEventType.UploadProgress){
-                              this.progress5 = Math.round(100 * event.loaded / event.total);
-                            }
-                            else if (event.type === HttpEventType.Response){
-                              this.message5 = "Upload is success";
-                              this.onUploadFinished.emit(event.body);
-                            }
-                          });
-
-  }
-
 }

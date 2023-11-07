@@ -9,6 +9,7 @@ import { TabsModule } from 'ngx-bootstrap/tabs';
 import { ButtonsModule } from 'ngx-bootstrap/buttons';
 import { BsDatepickerModule } from 'ngx-bootstrap/datepicker';
 import { SlickCarouselModule } from 'ngx-slick-carousel';
+import { NgxFileDropModule } from 'ngx-file-drop';
 
 import { AppComponent } from './app.component';
 import { PropertycardComponent } from './property/property-card/property-card..component';
@@ -51,6 +52,7 @@ const appRoutes: Routes = [
       UploadComponent
    ],
   imports: [
+    NgxFileDropModule,
     BrowserModule,
     SlickCarouselModule,
     HttpClientModule,

@@ -69,14 +69,15 @@ export class UploadComponent {
         const fileEntry = droppedFile.fileEntry as FileSystemDirectoryEntry;
         console.log(droppedFile.relativePath, fileEntry);
       }
-
+    }
+    
       this.getVariable.theFileName1 = this.allfiles[0];
       this.getVariable.theFileName2 = this.allfiles[1];
       this.getVariable.theFileName3 = this.allfiles[2];
       this.getVariable.theFileName4 = this.allfiles[3];
       this.getVariable.theFileName5 = this.allfiles[4];
-      
-    }
+
+      console.log(this.allfiles)
   }
 
   public fileOver(event:any){

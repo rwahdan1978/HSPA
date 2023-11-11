@@ -10,9 +10,9 @@
         <h2 class="card-title" *ngIf="property.SellRent == 1">{{property.Name}} - For Sale</h2>
         <h2 class="card-title" *ngIf="property.SellRent == 2">{{property.Name}} - For Rent</h2>
         <div>
-            <h6 *ngIf="property.SellRent == 1">@ AED{{property.Price}} / 3-6 year Plans Available</h6>
+            <h6 *ngIf="property.SellRent == 1"> AED{{property.Price}} / 3-6 year Plans Available</h6>
             <h6 *ngIf="property.SellRent == 1">{{property.BHK}} bedroom {{property.PType}}</h6>
-            <h6 *ngIf="property.SellRent == 2">@ AED{{property.Price}} / 4 cheques payments</h6>
+            <h6 *ngIf="property.SellRent == 2"> AED{{property.Price}} / 4 cheques payments</h6>
             <h6 *ngIf="property.SellRent == 2">{{property.BHK}} bedroom {{property.PType}}</h6> 
           </div>
         <div>

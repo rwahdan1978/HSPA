@@ -1,23 +1,17 @@
-<div class="center">
-    <ngx-file-drop dropZoneLabel="Upload up to 5 images" (onFileDrop)="dropped($event)" 
-    (onFileOver)="fileOver($event)" (onFileLeave)="fileLeave($event)" (directory)="true">
-        <ng-template ngx-file-drop-content-tmp let-openFileSelector="openFileSelector">
-          Optional custom content that replaces the the entire default content.
-          <button type="button" (click)="openFileSelector()">Browse Files</button>
-        </ng-template>
-    </ngx-file-drop>
-    <div class="upload-table">
-        <table class="table">
-            <thead>
-                <tr>
-                    <th>Name</th>
-                </tr>
-            </thead>
-            <tbody class="upload-name-style">
-                <tr *ngFor="let item of files; let i=index">
-                    <td><strong>{{ item.relativePath }}</strong></td>
-                </tr>
-            </tbody>
-        </table>
+<div class="jumbotron text-centrt">
+    Upload Property Images
+</div>
+
+<div class="container mt-5">
+    
+    <div class="text-center">
+        <input type="file" (change)="onChange($event)" class="form-group">
+        <button (click)="onUpload()" class="btn btn-success">Upload File!</button>
     </div>
+
+    <div *ngIf="shortLink" class="container text-center">
+        <h1>Save file to image folder</h1>
+        <a href="{{shortLink}}">{{shortLink}}</a>
+    </div>
+    
 </div>

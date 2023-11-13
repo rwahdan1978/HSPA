@@ -18,10 +18,31 @@ export class UploadComponent {
   loading: boolean = false;
   file!:File;
   theFileName1: any;
+  theFileName2: any;
+  theFileName3: any;
+  theFileName4: any;
+  theFileName5: any;
+
   files: Array<any> = [];
 
   setText1(theFileName1: string) {
-    this.getVariable.theFileName1 = theFileName1;
+    this.getVariable.theFileName1 = this.theFileName1;
+  }
+
+  setText2(theFileName2: string) {
+    this.getVariable.theFileName2 = this.theFileName2;
+  }
+
+  setText3(theFileName3: string) {
+    this.getVariable.theFileName3 = this.theFileName3;
+  }
+
+  setText4(theFileName4: string) {
+    this.getVariable.theFileName4 = this.theFileName4;
+  }
+
+  setText5(theFileName5: string) {
+    this.getVariable.theFileName5 = this.theFileName5;
   }
   
   constructor(private fileService: UploadService,

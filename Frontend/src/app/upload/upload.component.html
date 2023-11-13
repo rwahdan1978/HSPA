@@ -1,17 +1,26 @@
-<div class="jumbotron text-centrt">
-    Upload Property Images
-</div>
-
-<div class="container mt-5">
-    
     <div class="text-center">
-        <input type="file" (change)="onChange($event)" class="form-group">
-        <button (click)="onUpload()" class="btn btn-success">Upload File!</button>
-    </div>
-
-    <div *ngIf="shortLink" class="container text-center">
-        <h1>Save file to image folder</h1>
-        <a href="{{shortLink}}">{{shortLink}}</a>
+        <input id="image1" type="file" (change)="onChange1($event)" class="form-group">
+        <button id="button1" type="button" (click)="onUploadImage1()" class="btn btn-success">Upload Images1</button><br/><br>
+        
+        <input id="image2" disabled type="file" (change)="onChange2($event)" class="form-group">
+        <button id="button2" disabled type="button" (click)="onUploadImage2()" class="btn btn-success">Upload Images2</button><br/><br>
+        
+        <input id="image3" disabled type="file" (change)="onChange3($event)" class="form-group">
+        <button id="button3" disabled type="button" (click)="onUploadImage3()" class="btn btn-success">Upload Images3</button><br/><br>
+        
+        <input id="image4" disabled type="file" (change)="onChange4($event)" class="form-group">
+        <button id="button4" disabled type="button" (click)="onUploadImage4()" class="btn btn-success">Upload Images4</button><br/><br>
+        
+        <input id="image5" disabled type="file" (change)="onChange5($event)" class="form-group">
+        <button id="button5" disabled type="button" (click)="onUploadImage5()" class="btn btn-success">Upload Images5</button><br/>
+        <br>
+        <div *ngIf="shortLink && files.length > 4" class="container text-center">
+            <h3>Save file to image folder</h3>
+                <a href="{{files[0]}}" target="_blank">{{files[0]}}</a><br>
+                <a href="{{files[1]}}" target="_blank">{{files[1]}}</a><br>
+                <a href="{{files[2]}}" target="_blank">{{files[2]}}</a><br>
+                <a href="{{files[3]}}" target="_blank">{{files[3]}}</a><br>
+                <a href="{{files[4]}}" target="_blank">{{files[4]}}</a>
+        </div>
     </div>
     
-</div>

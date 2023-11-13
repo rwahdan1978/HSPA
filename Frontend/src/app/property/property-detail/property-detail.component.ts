@@ -28,15 +28,5 @@ property: any = new Property();
       }
     );
   }
-
-  slides1 = [
-    {img: "assets/images/1.png"},
-    {img: "assets/images/2.png"},
-    {img: "assets/images/3.png"},
-    {img: "assets/images/4.png"},
-    {img: "assets/images/5.png"},
-    {img: "assets/images/6.png"},
-    {img: "assets/images/7.png"}
-  ];
     
 }

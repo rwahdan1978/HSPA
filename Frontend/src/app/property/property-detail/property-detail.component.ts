@@ -11,7 +11,6 @@ import { Property } from 'src/app/model/property';
 
 export class PropertyDetailComponent implements OnInit {
 
-public imagepath: string;
 public propertyId: number;
 property: any = new Property();
 
@@ -27,6 +26,51 @@ property: any = new Property();
         this.property = data['prp'];
       }
     );
+  }
+
+  showImage(image:any){
+    
+    let myImage1 = <HTMLElement> document.getElementById("image1"),
+    style = myImage1?.style || window.getComputedStyle(myImage1, "false"),
+    bi = style.backgroundImage.slice(4, -1).replace(/"/g, "");
+    //console.log(bi);
+    window.open(bi,"_blank");
+  }
+
+  showImage2(image:any){
+    
+    let myImage1 = <HTMLElement> document.getElementById("image2"),
+    style = myImage1?.style || window.getComputedStyle(myImage1, "false"),
+    bi = style.backgroundImage.slice(4, -1).replace(/"/g, "");
+    //console.log(bi);
+    window.open(bi,"_blank");
+  }
+
+  showImage3(image:any){
+    
+    let myImage1 = <HTMLElement> document.getElementById("image3"),
+    style = myImage1?.style || window.getComputedStyle(myImage1, "false"),
+    bi = style.backgroundImage.slice(4, -1).replace(/"/g, "");
+    //console.log(bi);
+    window.open(bi,"_blank");
+  }
+
+  showImage4(image:any){
+    
+    let myImage1 = <HTMLElement> document.getElementById("image4"),
+    style = myImage1?.style || window.getComputedStyle(myImage1, "false"),
+    bi = style.backgroundImage.slice(4, -1).replace(/"/g, "");
+    //console.log(bi);
+    window.open(bi,"_blank");
+  }
+
+  showImage5(image:any){
+    
+    let myImage1 = <HTMLElement> document.getElementById("image5"),
+    style = myImage1?.style || window.getComputedStyle(myImage1, "false"),
+    bi = style.backgroundImage.slice(4, -1).replace(/"/g, "");
+    //console.log(bi);
+    window.open(bi,"_blank");
   }
     
 }

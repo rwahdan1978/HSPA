@@ -146,8 +146,9 @@
             
               <div class="carousel-inner">
 
-                <div class="carousel-item active"
-                style="background-image:url('assets/images/{{property.Name}}/{{property.Image1}}')">
+                <!-- here we need to make to show original photo-->
+                <div id="image1" class="carousel-item active" (click)="showImage(property.Image1)"
+                   style="background-image:url('assets/images/{{property.Name}}/{{property.Image1}}')">
                   <div class="container">
                   <h2>{{property.Name}}</h2>
                   <p *ngIf="property.SellRent ==1">For Sale / Price:{{property.Price}}AED</p>
@@ -155,7 +156,7 @@
                   </div>
                 </div>
 
-                <div class="carousel-item"
+                <div id="image2" class="carousel-item" (click)="showImage2(property.Image2)"
                 style="background-image:url('assets/images/{{property.Name}}/{{property.Image2}}')">
                   <div class="container">
                   <h2>{{property.Name}}</h2>
@@ -164,7 +165,7 @@
                   </div>
                 </div>
 
-                <div class="carousel-item"
+                <div id="image3" class="carousel-item" (click)="showImage3(property.Image3)"
                 style="background-image:url('assets/images/{{property.Name}}/{{property.Image3}}')">
                   <div class="container">
                   <h2>{{property.Name}}</h2>
@@ -173,7 +174,7 @@
                   </div>
                 </div>
 
-                <div class="carousel-item "
+                <div id="image4" class="carousel-item " (click)="showImage4(property.Image4)"
                 style="background-image:url('assets/images/{{property.Name}}/{{property.Image4}}')">
                   <div class="container">
                   <h2>{{property.Name}}</h2>
@@ -182,7 +183,7 @@
                   </div>
                 </div>
 
-                <div class="carousel-item "
+                <div id="image5" class="carousel-item " (click)="showImage5(property.Image5)"
                 style="background-image:url('assets/images/{{property.Name}}/{{property.Image5}}')">
                   <div class="container">
                   <h2>{{property.Name}}</h2>

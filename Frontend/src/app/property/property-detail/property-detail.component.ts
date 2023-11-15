@@ -28,49 +28,44 @@ property: any = new Property();
     );
   }
 
-  showImage(image:any){
+  showImage(image:String){
     
     let myImage1 = <HTMLElement> document.getElementById("image1"),
-    style = myImage1?.style || window.getComputedStyle(myImage1, "false"),
-    bi = style.backgroundImage.slice(4, -1).replace(/"/g, "");
-    //console.log(bi);
-    window.open(bi,"_blank");
+    style1 = myImage1?.style || window.getComputedStyle(myImage1, "false"),
+    bi1 = style1.backgroundImage.slice(4, -1).replace(/"/g, "");
+    window.open(bi1,"_blank");
   }
 
-  showImage2(image:any){
+  showImage2(image:String){
     
-    let myImage1 = <HTMLElement> document.getElementById("image2"),
-    style = myImage1?.style || window.getComputedStyle(myImage1, "false"),
-    bi = style.backgroundImage.slice(4, -1).replace(/"/g, "");
-    //console.log(bi);
-    window.open(bi,"_blank");
+    let myImage2 = <HTMLElement> document.getElementById("image2"),
+    style = myImage2?.style || window.getComputedStyle(myImage2, "false"),
+    bi2 = style.backgroundImage.slice(4, -1).replace(/"/g, "");
+    window.open(bi2,"_blank");
   }
 
-  showImage3(image:any){
+  showImage3(image:String){
     
-    let myImage1 = <HTMLElement> document.getElementById("image3"),
-    style = myImage1?.style || window.getComputedStyle(myImage1, "false"),
-    bi = style.backgroundImage.slice(4, -1).replace(/"/g, "");
-    //console.log(bi);
-    window.open(bi,"_blank");
+    let myImage3 = <HTMLElement> document.getElementById("image3"),
+    style = myImage3?.style || window.getComputedStyle(myImage3, "false"),
+    bi3 = style.backgroundImage.slice(4, -1).replace(/"/g, "");
+    window.open(bi3,"_blank");
   }
 
-  showImage4(image:any){
+  showImage4(image:String){
     
-    let myImage1 = <HTMLElement> document.getElementById("image4"),
-    style = myImage1?.style || window.getComputedStyle(myImage1, "false"),
-    bi = style.backgroundImage.slice(4, -1).replace(/"/g, "");
-    //console.log(bi);
-    window.open(bi,"_blank");
+    let myImage4 = <HTMLElement> document.getElementById("image4"),
+    style = myImage4?.style || window.getComputedStyle(myImage4, "false"),
+    bi4 = style.backgroundImage.slice(4, -1).replace(/"/g, "");
+    window.open(bi4,"_blank");
   }
 
-  showImage5(image:any){
+  showImage5(image:String){
     
-    let myImage1 = <HTMLElement> document.getElementById("image5"),
-    style = myImage1?.style || window.getComputedStyle(myImage1, "false"),
-    bi = style.backgroundImage.slice(4, -1).replace(/"/g, "");
-    //console.log(bi);
-    window.open(bi,"_blank");
+    let myImage5 = <HTMLElement> document.getElementById("image5"),
+    style = myImage5?.style || window.getComputedStyle(myImage5, "false"),
+    bi5 = style.backgroundImage.slice(4, -1).replace(/"/g, "");
+    window.open(bi5,"_blank");
   }
     
 }

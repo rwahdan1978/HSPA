@@ -121,7 +121,7 @@
 
           <section class="home">
 
-            <div id="carousel" class="carousel slide" data-ride="carousel" loading="lazy">
+            <div *ngIf="visable2" id="carousel" class="carousel slide" data-ride="carousel" loading="lazy">
               <div class="carousel-controls">
 
                 <ol class="carousel-indicators">
@@ -143,50 +143,50 @@
                 </a>
 
               </div>
-            
+
               <div class="carousel-inner">
 
                 <!-- here we need to make to show original photo-->
                 <div id="image1" class="carousel-item active" (click)="showImage(property.Image1)"
                    style="background-image:url('assets/images/{{property.Name}}/{{property.Image1}}')">
                   <div class="container">
-                  <h2>{{property.Name}}</h2>
+                  
                   <p *ngIf="property.SellRent ==1">For Sale / Price:{{property.Price}}AED</p>
                   <p *ngIf="property.SellRent ==2">For Rent / Price:{{property.Price}}AED</p>
                   </div>
                 </div>
 
-                <div id="image2" class="carousel-item" (click)="showImage2(property.Image2)"
+                <div id="image2" class="carousel-item" (click)="showImage(property.Image2)"
                 style="background-image:url('assets/images/{{property.Name}}/{{property.Image2}}')">
                   <div class="container">
-                  <h2>{{property.Name}}</h2>
+                  
                   <p *ngIf="property.SellRent ==1">For Sale / Price:{{property.Price}}AED</p>
                   <p *ngIf="property.SellRent ==2">For Rent / Price:{{property.Price}}AED</p>
                   </div>
                 </div>
 
-                <div id="image3" class="carousel-item" (click)="showImage3(property.Image3)"
+                <div id="image3" class="carousel-item" (click)="showImage(property.Image3)"
                 style="background-image:url('assets/images/{{property.Name}}/{{property.Image3}}')">
                   <div class="container">
-                  <h2>{{property.Name}}</h2>
+                  
                   <p *ngIf="property.SellRent ==1">For Sale / Price:{{property.Price}}AED</p>
                   <p *ngIf="property.SellRent ==2">For Rent / Price:{{property.Price}}AED</p>
                   </div>
                 </div>
 
-                <div id="image4" class="carousel-item " (click)="showImage4(property.Image4)"
+                <div id="image4" class="carousel-item " (click)="showImage(property.Image4)"
                 style="background-image:url('assets/images/{{property.Name}}/{{property.Image4}}')">
                   <div class="container">
-                  <h2>{{property.Name}}</h2>
+                  
                   <p *ngIf="property.SellRent ==1">For Sale / Price:{{property.Price}}AED</p>
                   <p *ngIf="property.SellRent ==2">For Rent / Price:{{property.Price}}AED</p>
                   </div>
                 </div>
 
-                <div id="image5" class="carousel-item " (click)="showImage5(property.Image5)"
+                <div id="image5" class="carousel-item " (click)="showImage(property.Image5)"
                 style="background-image:url('assets/images/{{property.Name}}/{{property.Image5}}')">
                   <div class="container">
-                  <h2>{{property.Name}}</h2>
+                  
                   <p *ngIf="property.SellRent ==1">For Sale / Price:{{property.Price}}AED</p>
                   <p *ngIf="property.SellRent ==2">For Rent / Price:{{property.Price}}AED</p>
                   </div>
@@ -197,6 +197,31 @@
             </div>
 
           </section>
+
+          <section *ngIf="visable1" class="slider_container">
+            <section class="slider">
+                <div class="slide one">
+                    <img (click)="hideImage()" src="assets/images/{{property.Name}}/{{property.Image1}}" alt="">
+                   
+                </div>
+                <div (click)="hideImage()" class="slide two">
+                    <img src="assets/images/{{property.Name}}/{{property.Image2}}" alt="">
+                    
+                </div>
+                <div (click)="hideImage()" class="slide three">
+                    <img src="assets/images/{{property.Name}}/{{property.Image3}}" alt="">
+                    
+                </div>
+                <div (click)="hideImage()" class="slide four">
+                    <img src="assets/images/{{property.Name}}/{{property.Image4}}" alt="">
+                    
+                </div>
+                <div (click)="hideImage()" class="slide four">
+                    <img src="assets/images/{{property.Name}}/{{property.Image5}}" alt="">
+                    
+                </div>
+            </section>
+        </section>
           
         </tab>
 
@@ -205,6 +230,8 @@
           <p>
             This should be restricted area and only registered user should be able to see seller contact details
           </p>
+
+         
 
           </tab>
         

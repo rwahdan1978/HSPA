@@ -66,4 +66,8 @@ propidStr: string;
     
   }
 
+  goContacts(){
+    this.currentTabId = 3
+  }
+
 }

@@ -95,6 +95,13 @@ export class AddPropertyComponent implements OnInit {
         Description: [null]
       }),
 
+      sellerInfo: this.fb.group({
+        contactName: [null],
+        contactNumber: [null],
+        contactNumber2: [null],
+        contactEmail: [null]
+      }),
+
       PhotoInfo: this.fb.group({
         Image1: [null],
         Image2: [null],
@@ -127,6 +134,9 @@ export class AddPropertyComponent implements OnInit {
 
       get PhotoInfo() {
         return this.addPropertyForm.controls['PhotoInfo'] as FormGroup;
+      }
+      get sellerInfo() {
+        return this.addPropertyForm.controls['sellerInfo'] as FormGroup;
       }
   // #endregion
 
@@ -239,6 +249,23 @@ export class AddPropertyComponent implements OnInit {
         return this.OtherInfo.controls['Image5'] as FormControl;
       }
 
+      get contactName() {
+        return this.sellerInfo.controls['contactName'] as FormControl;
+      }
+
+      get contactNumber() {
+        return this.sellerInfo.controls['contactNumber'] as FormControl;
+      }
+
+      get contactNumber2() {
+        return this.sellerInfo.controls['contactNumber2'] as FormControl;
+      }
+
+      get contactEmail() {
+        return this.sellerInfo.controls['contactEmail'] as FormControl;
+      }
+
+
   //#endregion
 //#endregion
 
@@ -295,6 +322,11 @@ export class AddPropertyComponent implements OnInit {
     this.property.Image3 = this.getVariable.theFileName3;
     this.property.Image4 = this.getVariable.theFileName4;
     this.property.Image5 = this.getVariable.theFileName5;
+    this.property.contactName = this.contactName.value;
+    this.property.contactNumber = this.contactNumber.value;
+    this.property.contactNumber2 = this.contactNumber2.value;
+    this.property.contactEmail = this.contactEmail.value;
+
   }
 
   allTabsValid(): boolean {

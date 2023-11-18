@@ -285,6 +285,42 @@
                 </div>
               </tab>
 
+              <tab heading="sellerInfo" formGroupName="sellerInfo">
+                
+                <div class="form-group col-12">
+                  <label>Contact Name</label>
+                  <input type="text" class="form-control"
+                  formControlName="contactName">
+                </div>
+
+                <div class="form-group col-12">
+                  <label>Contact Number</label>
+                  <input type="text" class="form-control"
+                  formControlName="contactNumber">
+                </div>
+
+                <div class="form-group col-12">
+                  <label>Contact WhatsApp Number</label>
+                  <input type="text" class="form-control"
+                  formControlName="contactNumber2">
+                </div>
+
+                <div class="form-group col-12">
+                  <label>Contact Email</label>
+                  <input type="text" class="form-control"
+                  formControlName="contactEmail">
+                </div>
+
+                <div class="form-group col-12">
+                  <button type="button" class="btn btn-primary col-12"
+                  (click)="selectTab(5, AddressInfo.valid)">Next</button>
+
+                  <button type="button" class="btn btn-primary col-12"
+                  (click)="selectTab(3, AddressInfo.valid)">Back</button>
+                </div>
+
+           </tab>
+
               <tab heading="Photos" formGroupName="PhotoInfo">
                 
                    <app-upload></app-upload>
@@ -292,7 +328,7 @@
 
                   <div class="form-group col-12">
                     <button type="button" class="btn btn-primary col-12"
-                    (click)="selectTab(3, true)">Back</button>
+                    (click)="selectTab(4, true)">Back</button>
                     <button type="submit" class="btn btn-primary col-12">Save</button>
                     <button type="reset" class="btn btn-danger col-12">Cancel</button>
                   </div>

@@ -207,7 +207,10 @@
             This should be restricted area and only registered user should be able
             to see seller contact details.
           </strong>
-       
+          
+          <h3 style="padding-left: 275px; color: red;" *ngIf="token"> Commission: {{property.contactCommission}} AED</h3>
+          <br><br>
+          <p *ngIf="token"> Seller Name: {{property.contactCompany}}</p>
           <p *ngIf="token"> Seller Name: {{property.contactName}}</p>
           <p *ngIf="token"> Seller Contact: {{property.contactNumber}}</p>
           <p *ngIf="token"> Seller WhatsApp: {{property.contactNumber2}}</p>

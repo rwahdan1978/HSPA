@@ -35,4 +35,6 @@ export class Property implements IPropertyBase {
   contactNumber: string;
   contactNumber2: string;
   contactEmail: string;
+  contactCompany: string;
+  contactCommission: string;
 }

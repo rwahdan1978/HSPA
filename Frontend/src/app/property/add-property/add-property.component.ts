@@ -96,10 +96,12 @@ export class AddPropertyComponent implements OnInit {
       }),
 
       sellerInfo: this.fb.group({
+        contactCompany: [null],
         contactName: [null],
         contactNumber: [null],
         contactNumber2: [null],
-        contactEmail: [null]
+        contactEmail: [null],
+        contactCommission: [null]
       }),
 
       PhotoInfo: this.fb.group({
@@ -249,6 +251,10 @@ export class AddPropertyComponent implements OnInit {
         return this.OtherInfo.controls['Image5'] as FormControl;
       }
 
+      get contactCompany() {
+        return this.sellerInfo.controls['contactCompany'] as FormControl;
+      }
+
       get contactName() {
         return this.sellerInfo.controls['contactName'] as FormControl;
       }
@@ -263,6 +269,10 @@ export class AddPropertyComponent implements OnInit {
 
       get contactEmail() {
         return this.sellerInfo.controls['contactEmail'] as FormControl;
+      }
+
+      get contactCommission() {
+        return this.sellerInfo.controls['contactCommission'] as FormControl;
       }
 
 
@@ -322,6 +332,8 @@ export class AddPropertyComponent implements OnInit {
     this.property.Image3 = this.getVariable.theFileName3;
     this.property.Image4 = this.getVariable.theFileName4;
     this.property.Image5 = this.getVariable.theFileName5;
+    this.property.contactCommission = this.contactCommission.value;
+    this.property.contactCompany = this.contactCompany.value;
     this.property.contactName = this.contactName.value;
     this.property.contactNumber = this.contactNumber.value;
     this.property.contactNumber2 = this.contactNumber2.value;

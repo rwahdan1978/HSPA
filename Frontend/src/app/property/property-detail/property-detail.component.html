@@ -202,7 +202,7 @@
 
         <tab heading="Contact" [active]="currentTabId === 3">
           <h1>Contact Detail</h1>
-          <p>
+          <p *ngIf="token">
             This should be restricted area and only registered user should be able to see seller contact details
           </p>
 

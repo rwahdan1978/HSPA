@@ -23,11 +23,13 @@ propidStr: string;
   visable1: boolean = false;
   visable2: boolean = true;
   currentTabId = 0;
+  token: any;
 
   constructor(private route: ActivatedRoute) { }
 
   ngOnInit() {
 
+    this.token = localStorage.getItem('token');
     this.propertyId = +this.route.snapshot.params['id'];
     this.route.data.subscribe(
       (data: any) => {

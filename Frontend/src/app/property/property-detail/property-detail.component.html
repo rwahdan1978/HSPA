@@ -201,11 +201,9 @@
         </tab>
 
         <tab heading="Contact" [active]="currentTabId === 3">
-          <h1>Contact Detail</h1>
-          <br>
+          
           <strong *ngIf="!token">
-            This should be restricted area and only registered user should be able
-            to see seller contact details.
+            Only registered user should be able to see seller contact details.
           </strong>
           
           <h3 style="padding-left: 275px; color: red;" *ngIf="token"> Commission: {{property.contactCommission}} AED</h3>
@@ -215,6 +213,8 @@
           <p *ngIf="token"> Seller Contact: {{property.contactNumber}}</p>
           <p *ngIf="token"> Seller WhatsApp: {{property.contactNumber2}}</p>
           <p *ngIf="token"> Seller Contact: {{property.contactEmail}}</p>
+          <br>
+          <strong *ngIf="token">Or fill out this form</strong>
          
           </tab>
         

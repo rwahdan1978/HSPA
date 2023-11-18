@@ -15,6 +15,8 @@ public propertyId: number;
 property: any = new Property();
 theArray: Array<any> = [];
 likes: number;
+propid: number;
+propidStr: string;
 
   http: any;
 
@@ -25,9 +27,6 @@ likes: number;
   constructor(private route: ActivatedRoute) { }
 
   ngOnInit() {
-    
-    let data2:any = localStorage.getItem('numLikes');
-    this.likes = JSON.parse(data2);
 
     this.propertyId = +this.route.snapshot.params['id'];
     this.route.data.subscribe(
@@ -35,6 +34,14 @@ likes: number;
         this.property = data['prp'];
       }
     )
+
+    this.propid = this.propertyId;
+    this.propidStr = "nums" + this.propid.toString()
+
+    
+       let data2:any = localStorage.getItem(this.propidStr);
+       this.likes = JSON.parse(data2);
+     
   }
 
   showImage(){
@@ -50,10 +57,13 @@ likes: number;
 
   addLike(element:any){
 
-    this.likes += 1;
-    let data = element.textContent = this.likes;
-    localStorage.setItem('numLikes',JSON.stringify(data));
-    location.reload();
+    this.propidStr = "nums" + this.propid.toString()
+    
+      this.likes += 1;
+      let data = element.textContent = this.likes;
+      localStorage.setItem(this.propidStr,JSON.stringify(data));
+      location.reload();
+    
   }
 
 }

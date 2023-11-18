@@ -30,6 +30,7 @@
     "Maintenance":300,
     "Posession":"Ready to move",
     "PostedOn":"01-Nov-2023"
+    
   },
 
   {
@@ -63,6 +64,7 @@
     "Maintenance":300,
     "Posession":"Ready to move",
     "PostedOn":"3-Nov-2023"
+    
   },
   {
     "Id":3,
@@ -95,6 +97,7 @@
     "Maintenance":300,
     "Posession":"Ready to move",
     "PostedOn":"1-Nov-2023"
+    
   },
 
   {
@@ -128,6 +131,7 @@
     "Maintenance":300,
     "Posession":"Ready to move",
     "PostedOn":"01-Nov-2023"
+    
   },
   {
     "Id":5,
@@ -160,6 +164,7 @@
     "Maintenance":300,
     "Posession":"Ready to move",
     "PostedOn":"01-Jan-2024"
+    
   },
 
   {
@@ -193,6 +198,7 @@
     "Maintenance":300,
     "Posession":"Ready to move",
     "PostedOn":"01-Oct-2023"
+    
   },
 
   {
@@ -226,5 +232,6 @@
     "Maintenance":300,
     "Posession":"Ready to move",
     "PostedOn":"01-Oct-2023"
+    
   }
 ]

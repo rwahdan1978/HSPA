@@ -202,9 +202,19 @@
 
         <tab heading="Contact" [active]="currentTabId === 3">
           <h1>Contact Detail</h1>
-          <p *ngIf="token">
-            This should be restricted area and only registered user should be able to see seller contact details
-          </p>
+          <strong *ngIf="!token">
+            This should be restricted area and only registered user should be able
+            to see seller contact details.
+          </strong>
+          <br><br>
+          <h3 *ngIf="!token">
+            We need to add the seller infor in the json file and add property
+          </h3>
+
+          <p *ngIf="token"> sensitive information about seller1</p>
+          <p *ngIf="token"> sensitive information about seller2</p>
+          <p *ngIf="token"> sensitive information about seller3</p>
+          <p *ngIf="token"> sensitive information about seller4</p>
 
           </tab>
         

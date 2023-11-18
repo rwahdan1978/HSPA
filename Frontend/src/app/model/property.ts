@@ -31,4 +31,8 @@ export class Property implements IPropertyBase {
   Description?: string;
   PostedOn: string;
   PostedBy: number;
+  contactName: string;
+  contactNumber: string;
+  contactNumber2: string;
+  contactEmail: string;
 }

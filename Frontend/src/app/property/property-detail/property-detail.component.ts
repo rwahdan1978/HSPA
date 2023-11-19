@@ -32,6 +32,7 @@ export class PropertyDetailComponent implements OnInit {
 
     http: any;
     clicked = false;
+    theButton: any;
 
     visable1: boolean = false;
     visable2: boolean = true;
@@ -89,11 +90,8 @@ export class PropertyDetailComponent implements OnInit {
 
   async send(){
 
-    setTimeout(()=>
-    {
-      this.clicked = true;
-      
-    }, 100);
+    this.theButton = document.getElementById("clickit");
+    this.theButton.setAttribute("hidden",true);
 
     emailjs.init("IclaYU2yrPjG2MHfm");
     let response = await emailjs.send("service_ytxrv42","template_6j13ark",{
@@ -105,7 +103,14 @@ export class PropertyDetailComponent implements OnInit {
       });
 
       this.alert.success("email sent");
-      window.location.reload();
+
+      setTimeout(()=>
+      {
+        window.location.reload();     
+      }, 2000);
+
+      
+
       
   }
 

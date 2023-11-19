@@ -39,7 +39,7 @@ body {
     flex-direction: row;
     align-items: center;
     justify-content: space-between;
-    animation: 20s cubic-bezier(1, 0.95, 0.565, 1) sliding infinite;
+    animation: 30s cubic-bezier(0.165, 0.84, 0.44, 1.2) sliding infinite;
 }
 .slide{
     position: relative;
@@ -78,30 +78,40 @@ body {
 .slide.five{
     background: rgb(173, 11, 188);
 }
+
 @keyframes sliding {
     0% { 
         transform: translateX(0%);
     }
-    20%{
+    15%{
         transform: translateX(0%);
     }
     25%{
         transform: translateX(-100%);
     }
-    45%{
+    35%{
         transform: translateX(-100%);
+    }
+    40%{
+        transform: translateX(-200%);
     }
     50%{
         transform: translateX(-200%);
     }
+    55%{
+        transform: translateX(-300%);
+    }
+    65%{
+        transform: translateX(-300%);
+    }
     70%{
-        transform: translateX(-200%);
-    }
-    75%{
         transform: translateX(-300%);
     }
-    95%{
-        transform: translateX(-300%);
+    80%{
+        transform: translateX(-400%);
+    }
+    90%{
+        transform: translateX(-400%);
     }
     100%{
         transform: translateX(-400%);

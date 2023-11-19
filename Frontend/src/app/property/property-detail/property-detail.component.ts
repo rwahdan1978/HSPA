@@ -2,6 +2,9 @@ import { CommonModule } from '@angular/common';
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { Property } from 'src/app/model/property';
+import emailjs from '@emailjs/browser';
+import { FormBuilder, FormGroup } from '@angular/forms';
+import { AlertifyService } from 'src/app/services/alertify.service';
 
 @Component({
   selector: 'app-property-detail',
@@ -11,24 +14,36 @@ import { Property } from 'src/app/model/property';
 
 export class PropertyDetailComponent implements OnInit {
 
-public propertyId: number;
-property: any = new Property();
-theArray: Array<any> = [];
-likes: number;
-propid: number;
-propidStr: string;
+  form: FormGroup = this.fb.group({
+    from_name: '',
+    to_name: 'Admin',
+    from_email: '',
+    subject: '',
+    message: '',
+  });
 
-  http: any;
+  public propertyId: number;
+  property: any = new Property();
+  theArray: Array<any> = [];
+  likes: number;
+  propid: number;
+  propidStr: string;
+  submitted: any;
 
-  visable1: boolean = false;
-  visable2: boolean = true;
-  currentTabId = 0;
-  token: any;
+    http: any;
+    clicked = false;
 
-  constructor(private route: ActivatedRoute) { }
+    visable1: boolean = false;
+    visable2: boolean = true;
+    currentTabId = 0;
+    token: any;
+
+  constructor(private route: ActivatedRoute, private alert: AlertifyService,
+                            private fb: FormBuilder) {}
 
   ngOnInit() {
 
+    this.form.controls['subject'].disable();
     this.token = localStorage.getItem('token');
     this.propertyId = +this.route.snapshot.params['id'];
     this.route.data.subscribe(
@@ -70,6 +85,28 @@ propidStr: string;
 
   goContacts(){
     this.currentTabId = 3
+  }
+
+  async send(){
+
+    setTimeout(()=>
+    {
+      this.clicked = true;
+      
+    }, 100);
+
+    emailjs.init("IclaYU2yrPjG2MHfm");
+    let response = await emailjs.send("service_ytxrv42","template_6j13ark",{
+      to_name: "Admin",
+      from_name: this.form.value.from_name,
+      from_email: this.form.value.from_email,
+      subject: this.property.Name,
+      message: this.form.value.message,
+      });
+
+      this.alert.success("email sent");
+      window.location.reload();
+      
   }
 
 }

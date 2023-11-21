@@ -39,7 +39,7 @@
       <div class="card-footer">
         <div class="btn-group d-flex">
           <button class="btn btn-primary" (click)="addLike($event.target)">{{likes}} Likes</button>
-          <button class="btn btn-success" (click)="goContacts()">Message</button>
+          <button class="btn btn-success" (click)="goContacts(currentTabId)">Message</button>
         </div>
       </div>
     </div>
@@ -47,8 +47,9 @@
 
   <div class="col-sm-8 p-0">
     <div class="tab-panel">
-      <tabset *ngIf="visable2" class="member-tabset">
-        <tab heading="Overview" [active]="currentTabId === 0">
+      <tabset (click)="imageClick()" *ngIf="visable2" class="member-tabset">
+
+        <tab  heading="Overview" [active]="currentTabId === 0">
           <h1>Overview</h1>
           <div class="row">
               <div class="col-sm-6">
@@ -101,7 +102,9 @@
               <div class="col-sm-12">
                   <div class="heading">
                       <strong>building amenities include:</strong><br>
-                      <pre>{{property.Description}}</pre>
+                    
+                        <pre style="width: 700px; white-space: pre-wrap;">{{property.Description}}</pre>
+                      
                   </div>
               </div>
             </div>
@@ -118,7 +121,7 @@
           </div>
         </tab>
 
-        <tab id="photosTab" heading="Photos" [active]="currentTabId === 2"> 
+        <tab  id="photosTab" heading="Photos" [active]="currentTabId === 2"> 
 
           <section class="home">
 
@@ -201,7 +204,7 @@
           
         </tab>
 
-        <tab heading="Contact" [active]="currentTabId === 3">
+        <tab  heading="Contact" tabindex="3" [active]="currentTabId === 3">
           
           <h3>You need to login to see seller information!</h3>
 
@@ -220,12 +223,12 @@
           </div>
 
           <br><br>
-
+          <strong style="padding-left: 250px;">You you fill out the form otherwise</strong>
           <div>
             <form [formGroup]="form" action="javascript:void(0)" (submit)="send()" method="POST">
               <input formControlName="from_name" name="from_name" type="text"  placeholder="Full Name"/>
               <input formControlName="from_email" name="from_email" type="text"  placeholder="Email Address"/>
-              <input formControlName="subject" name="subject" type="text" placeholder="{{property.Name}}"/>
+              <input formControlName="subject" name="subject" type="text" placeholder="{{this.property.Name}} in {{this.property.City}}"/>
               <textarea formControlName="message" name="message" type="text" placeholder="Enter your message"></textarea>
               <button id="clickit" class="button1" type="submit">Submit</button>
             </form>

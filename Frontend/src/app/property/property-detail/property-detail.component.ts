@@ -3,7 +3,7 @@ import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { Property } from 'src/app/model/property';
 import emailjs from '@emailjs/browser';
-import { FormBuilder, FormGroup } from '@angular/forms';
+import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
 import { AlertifyService } from 'src/app/services/alertify.service';
 
 @Component({
@@ -15,11 +15,11 @@ import { AlertifyService } from 'src/app/services/alertify.service';
 export class PropertyDetailComponent implements OnInit {
 
   form: FormGroup = this.fb.group({
-    from_name: '',
-    to_name: 'Admin',
-    from_email: '',
-    subject: '',
-    message: '',
+    from_name: [null, Validators.required],
+    to_name: ['Admin', Validators.required],
+    from_email: [null, Validators.required],
+    subject: [null, Validators.required],
+    message: [null, Validators.required],
   });
 
   public propertyId: number;
@@ -29,9 +29,9 @@ export class PropertyDetailComponent implements OnInit {
   propid: number;
   propidStr: string;
   submitted: any;
+  thetab: any;
 
     http: any;
-    clicked = false;
     theButton: any;
 
     visable1: boolean = false;
@@ -84,34 +84,47 @@ export class PropertyDetailComponent implements OnInit {
     
   }
 
-  goContacts(){
-    this.currentTabId = 3
+  goContacts(currentTabId:number){
+    
+      this.visable1 = false;
+      this.visable2 = true;
+      this.currentTabId = 3;
+      // this.thetab = document.getElementById("tab3");
+      // this.thetab.setAttribute("Active",true);
+
+  }
+
+  imageClick(){
+      this.currentTabId = -1;
   }
 
   async send(){
 
-    this.theButton = document.getElementById("clickit");
-    this.theButton.setAttribute("hidden",true);
+    if (this.form.valid)
+    {
+      this.theButton = document.getElementById("clickit");
+      this.theButton.setAttribute("hidden",true);
 
-    emailjs.init("IclaYU2yrPjG2MHfm");
-    let response = await emailjs.send("service_ytxrv42","template_6j13ark",{
-      to_name: "Admin",
-      from_name: this.form.value.from_name,
-      from_email: this.form.value.from_email,
-      subject: this.property.Name,
-      message: this.form.value.message,
-      });
+      emailjs.init("IclaYU2yrPjG2MHfm");
+      let response = await emailjs.send("service_ytxrv42","template_6j13ark",{
+        to_name: "Admin",
+        from_name: this.form.value.from_name,
+        from_email: this.form.value.from_email,
+        subject: this.property.Name + ' located in ' + this.property.City,
+        message: this.form.value.message,
+        });
 
-      this.alert.success("email sent");
+        this.alert.success("email sent");
 
-      setTimeout(()=>
+        setTimeout(()=>
+        {
+          location.reload();     
+        }, 1000);
+      }    
+      else
       {
-        window.location.reload();     
-      }, 2000);
-
-      
-
-      
+        this.alert.error("Please fill all fields!")
+      }  
   }
 
 }

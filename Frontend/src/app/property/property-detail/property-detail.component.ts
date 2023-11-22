@@ -86,16 +86,17 @@ export class PropertyDetailComponent implements OnInit {
 
   goContacts(currentTabId:number){
     
-      this.visable1 = false;
-      this.visable2 = true;
-      this.currentTabId = 3;
-      // this.thetab = document.getElementById("tab3");
-      // this.thetab.setAttribute("Active",true);
-
+       this.visable1 = false;
+       this.visable2 = true;
+       this.currentTabId = 3;
+       
   }
 
   imageClick(){
+    if (this.currentTabId != 2)
+    {
       this.currentTabId = -1;
+    }
   }
 
   async send(){

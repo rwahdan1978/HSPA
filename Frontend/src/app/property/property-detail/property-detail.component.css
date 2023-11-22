@@ -39,7 +39,7 @@ body {
     flex-direction: row;
     align-items: center;
     justify-content: space-between;
-    animation: 30s cubic-bezier(0.165, 0.84, 0.44, 1.2) sliding infinite;
+    animation: 20s cubic-bezier(0.39, 0.775, 0.775, 1) sliding infinite;
 }
 .slide{
     position: relative;

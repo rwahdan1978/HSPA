@@ -2,8 +2,12 @@ body {
   padding: 15rem;
 }
 
-.card {
+.card{
     min-height: 600px;
+  }
+
+.card h2{
+    color: blue;
   }
   
   .card img {

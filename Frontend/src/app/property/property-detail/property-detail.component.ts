@@ -6,7 +6,7 @@ import emailjs from '@emailjs/browser';
 import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
 import { AlertifyService } from 'src/app/services/alertify.service';
 
-declare function getMessage(): any;
+//declare function getMessage(): any;
 
 @Component({
   selector: 'app-property-detail',
@@ -71,7 +71,7 @@ export class PropertyDetailComponent implements OnInit {
   }
 
   hideImage(){
-    getMessage();
+    //getMessage();
     this.visable1 = false;
     this.visable2 = true;
     this.currentTabId = 2;
@@ -86,21 +86,6 @@ export class PropertyDetailComponent implements OnInit {
       localStorage.setItem(this.propidStr,JSON.stringify(data));
       location.reload();
     
-  }
-
-  goContacts(currentTabId:number){
-
-       this.visable1 = false;
-       this.visable2 = true;
-       this.currentTabId = 3;
-       
-  }
-
-  imageClick(){
-    if (this.currentTabId != 2)
-    {
-      this.currentTabId = -1;
-    }
   }
 
   async send(){

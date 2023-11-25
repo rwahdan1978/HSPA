@@ -39,7 +39,6 @@
       <div class="card-footer">
         <div class="btn-group d-flex">
           <button class="btn btn-primary" (click)="addLike($event.target)">{{likes}} Likes</button>
-          <button class="btn btn-success" (click)="goContacts(currentTabId)">Message</button>
         </div>
       </div>
     </div>
@@ -47,9 +46,9 @@
 
   <div class="col-sm-8 p-0">
     <div class="tab-panel">
-      <tabset (click)="imageClick()" *ngIf="visable2" class="member-tabset">
+      <tabset *ngIf="visable2" class="member-tabset">
 
-        <tab  heading="Overview" [active]="currentTabId === 0">
+        <tab heading="Overview" [active]="currentTabId === 0">
           <h1>Overview</h1>
           <div class="row">
               <div class="col-sm-6">

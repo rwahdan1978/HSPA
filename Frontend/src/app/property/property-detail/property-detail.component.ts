@@ -6,6 +6,8 @@ import emailjs from '@emailjs/browser';
 import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
 import { AlertifyService } from 'src/app/services/alertify.service';
 
+declare function getMessage(): any;
+
 @Component({
   selector: 'app-property-detail',
   templateUrl: './property-detail.component.html',
@@ -65,9 +67,11 @@ export class PropertyDetailComponent implements OnInit {
   showImage(){
     this.visable1 = true;
     this.visable2 = false;
+    this.currentTabId = 2;
   }
 
   hideImage(){
+    getMessage();
     this.visable1 = false;
     this.visable2 = true;
     this.currentTabId = 2;
@@ -85,7 +89,7 @@ export class PropertyDetailComponent implements OnInit {
   }
 
   goContacts(currentTabId:number){
-    
+
        this.visable1 = false;
        this.visable2 = true;
        this.currentTabId = 3;
@@ -124,6 +128,7 @@ export class PropertyDetailComponent implements OnInit {
       }    
       else
       {
+        this.currentTabId = 3;
         this.alert.error("Please fill all fields!")
       }  
   }

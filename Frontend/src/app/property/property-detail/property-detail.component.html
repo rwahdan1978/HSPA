@@ -110,14 +110,11 @@
         </tab>
 
         <tab heading="Address" [active]="currentTabId === 1">
-          <div class="col-sm-12">
-            <h1>Address</h1>
-            <div class="heading">
-                <strong>{{property.Address}}</strong><br/>
-                <strong>{{property.Address2}}</strong><br/>
-                <strong>{{property.City}}</strong>
-            </div>
-          </div>
+
+          <a href="{{property.mapLink}}" target="_blank">
+            <img src="assets/images/default_house.png" alt="Our Location" style="width:850px;height:530px;">
+          </a>
+          
         </tab>
 
         <tab  id="photosTab" heading="Photos" [active]="currentTabId === 2"> 

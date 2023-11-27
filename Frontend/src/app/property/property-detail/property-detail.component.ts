@@ -1,12 +1,10 @@
 import { CommonModule } from '@angular/common';
-import { Component, OnInit } from '@angular/core';
+import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { Property } from 'src/app/model/property';
 import emailjs from '@emailjs/browser';
 import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
 import { AlertifyService } from 'src/app/services/alertify.service';
-
-//declare function getMessage(): any;
 
 @Component({
   selector: 'app-property-detail',
@@ -15,6 +13,8 @@ import { AlertifyService } from 'src/app/services/alertify.service';
 })
 
 export class PropertyDetailComponent implements OnInit {
+
+  @ViewChild('iframe') iframe: ElementRef
 
   form: FormGroup = this.fb.group({
     from_name: [null, Validators.required],
@@ -41,8 +41,8 @@ export class PropertyDetailComponent implements OnInit {
     currentTabId = 0;
     token: any;
 
-  constructor(private route: ActivatedRoute, private alert: AlertifyService,
-                            private fb: FormBuilder) {}
+  constructor(private route: ActivatedRoute, private alert: AlertifyService, 
+                                                    private fb: FormBuilder) {}
 
   ngOnInit() {
 
@@ -58,7 +58,6 @@ export class PropertyDetailComponent implements OnInit {
     this.propid = this.propertyId;
     this.propidStr = "nums" + this.propid.toString()
 
-    
        let data2:any = localStorage.getItem(this.propidStr);
        this.likes = JSON.parse(data2);
      
@@ -71,7 +70,6 @@ export class PropertyDetailComponent implements OnInit {
   }
 
   hideImage(){
-    //getMessage();
     this.visable1 = false;
     this.visable2 = true;
     this.currentTabId = 2;

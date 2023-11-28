@@ -10,6 +10,7 @@ export class GetVariableService {
   public theFileName3: string = '';
   public theFileName4: string = '';
   public theFileName5: string = '';
+  public theFileName6: string = '';
 
 constructor() { }
 

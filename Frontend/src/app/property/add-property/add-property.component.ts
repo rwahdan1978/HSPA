@@ -101,7 +101,8 @@ export class AddPropertyComponent implements OnInit {
         contactNumber: [null],
         contactNumber2: [null],
         contactEmail: [null],
-        contactCommission: [null]
+        contactCommission: [null],
+        mapLink:[null]
       }),
 
       PhotoInfo: this.fb.group({
@@ -109,7 +110,8 @@ export class AddPropertyComponent implements OnInit {
         Image2: [null],
         Image3: [null],
         Image4: [null],
-        Image5: [null]
+        Image5: [null],
+        companyImage: [null]
       }),
       
 
@@ -275,6 +277,13 @@ export class AddPropertyComponent implements OnInit {
         return this.sellerInfo.controls['contactCommission'] as FormControl;
       }
 
+      get mapLink() {
+        return this.sellerInfo.controls['mapLink'] as FormControl;
+      }
+
+      get companyImage() {
+        return this.sellerInfo.controls['companyImage'] as FormControl;
+      }
 
   //#endregion
 //#endregion
@@ -338,6 +347,9 @@ export class AddPropertyComponent implements OnInit {
     this.property.contactNumber = this.contactNumber.value;
     this.property.contactNumber2 = this.contactNumber2.value;
     this.property.contactEmail = this.contactEmail.value;
+
+    this.property.mapLink = this.mapLink.value;
+    this.property.companyImage = this.getVariable.theFileName6;
 
   }
 

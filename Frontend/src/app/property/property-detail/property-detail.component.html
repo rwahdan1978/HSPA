@@ -111,9 +111,21 @@
 
         <tab heading="Address" [active]="currentTabId === 1">
 
-          <a href="{{property.mapLink}}" target="_blank">
+          <a *ngIf="property.companyImage" href="{{property.mapLink}}" target="_blank">
             <img src="assets/images/{{property.Name}}/{{property.companyImage}}" title="Our Location" style="width:850px;height:530px;">
           </a>
+          
+          <div *ngIf="!property.companyImage" class="card" style="width: 550px;">
+            <strong>Location Map not available, Updating Records...</strong><br>
+            <img class="card-img-top" src="assets/images/default_house.png">
+            <div class="card-body">
+              <h5 class="card-title">Commission {{property.contactCommission}} AED</h5><br><br>
+              <p class="card-text" *ngIf="!property.companyImage">Company Name: {{property.contactCompany}}</p>
+              <p class="card-text" *ngIf="!property.companyImage">Contact Name: {{property.contactName}}</p>
+              <p class="card-text" *ngIf="!property.companyImage">Company Email: {{property.contactEmail}}</p>
+              <p class="card-text" *ngIf="!property.companyImage">Company Number: {{property.contactNumber}}</p>
+            </div>
+          </div>
           
         </tab>
 
@@ -208,7 +220,7 @@
             <div class="card-header">
               <strong> Commission: {{property.contactCommission}} AED </strong>
             </div>
-            <img src="assets/images/RE-Services.png" class="card-img-top" style= "max-height: 20%;">
+            <img src="assets/images/{{property.Name}}/{{property.companyImage}}" class="card-img-top" style= "max-height: 20%;">
             <div class="card-body">
                 <p> Seller Name: {{property.contactCompany}}</p>
                 <p> Seller Name: {{property.contactName}}</p>

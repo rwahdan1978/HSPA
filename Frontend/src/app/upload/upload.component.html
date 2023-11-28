@@ -12,15 +12,19 @@
         <button id="button4" disabled type="button" (click)="onUploadImage4()" class="btn btn-success">Upload Images4</button><br/><br>
         
         <input id="image5" disabled type="file" (change)="onChange5($event)" class="form-group">
-        <button id="button5" disabled type="button" (click)="onUploadImage5()" class="btn btn-success">Upload Images5</button><br/>
+        <button id="button5" disabled type="button" (click)="onUploadImage5()" class="btn btn-success">Upload Images5</button><br/><br/>
+
+        <input id="image6" disabled type="file" (change)="onChange6($event)" class="form-group">
+        <button id="button6" disabled type="button" (click)="onUploadImage6()" class="btn btn-success">Upload Company Image</button><br/>
         <br>
-        <div *ngIf="shortLink && files.length > 4" class="container text-center">
+        <div *ngIf="shortLink && files.length > 5" class="container text-center">
             <h3>Save file to image folder</h3>
                 <a href="{{files[0]}}" target="_blank">{{files[0]}}</a><br>
                 <a href="{{files[1]}}" target="_blank">{{files[1]}}</a><br>
                 <a href="{{files[2]}}" target="_blank">{{files[2]}}</a><br>
                 <a href="{{files[3]}}" target="_blank">{{files[3]}}</a><br>
-                <a href="{{files[4]}}" target="_blank">{{files[4]}}</a>
+                <a href="{{files[4]}}" target="_blank">{{files[4]}}</a><br>
+                <a href="{{files[5]}}" target="_blank">{{files[5]}}</a><br>
         </div>
     </div>
     

@@ -22,6 +22,7 @@ export class UploadComponent {
   theFileName3: any;
   theFileName4: any;
   theFileName5: any;
+  theFileName6: any;
 
   files: Array<any> = [];
 
@@ -43,6 +44,10 @@ export class UploadComponent {
 
   setText5(theFileName5: string) {
     this.getVariable.theFileName5 = this.theFileName5;
+  }
+
+  setText6(theFileName6: string) {
+    this.getVariable.theFileName6 = this.theFileName6;
   }
   
   constructor(private fileService: UploadService,
@@ -71,6 +76,11 @@ export class UploadComponent {
   onChange5(event:any){
     this.file = event.target.files[0];
     this.getVariable.theFileName5 = event.target.files[0].name;
+  }
+
+  onChange6(event:any){
+    this.file = event.target.files[0];
+    this.getVariable.theFileName6 = event.target.files[0].name;
   }
 
   onUploadImage1(){
@@ -178,6 +188,28 @@ export class UploadComponent {
       myInput5_1.setAttribute("disabled","disabled");
       let myButton5_1 = <HTMLElement>document.getElementById("button5");
       myButton5_1.setAttribute("disabled","disabled");
+
+      let myInput6 = <HTMLElement>document.getElementById("image6");
+      myInput6.removeAttribute("disabled");
+      let myButton6 = <HTMLElement>document.getElementById("button6");
+      myButton6.removeAttribute("disabled");
+    });
+    console.log(this.files)
+  }
+
+  onUploadImage6(){
+    this.loading = !this.loading;
+
+    this.fileService.upload(this.file).subscribe((event:any)=>{
+      if (typeof (event) === "object"){
+        this.shortLink = event.link;
+        this.loading = false;
+        this.files.push(event.link);
+      }     
+      let myInput6_1 = <HTMLElement>document.getElementById("image6");
+      myInput6_1.setAttribute("disabled","disabled");
+      let myButton6_1 = <HTMLElement>document.getElementById("button6");
+      myButton6_1.setAttribute("disabled","disabled");
     });
     console.log(this.files)
   }

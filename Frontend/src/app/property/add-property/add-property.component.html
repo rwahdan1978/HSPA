@@ -94,7 +94,7 @@
                   <input type="text"
                   class="form-control"
                   formControlName="City"
-                  [(ngModel)]="propertyView.City">
+                  [(ngModel)]="propertyView.City"><br>
                   <div class="error-block"
                   *ngIf="City.invalid && (nextClicked || City.touched)">
                     <strong> select city </strong>
@@ -156,7 +156,7 @@
                     <input type="text"
                     formControlName="CarpetArea"
                     class="form-control">
-                  </div>
+                  </div><br>
 
                   <div class="form-group col-12">
                     <button type="button" class="btn btn-primary col-12"
@@ -199,7 +199,7 @@
                   <input type="text"
                   formControlName="LandMark"
                   class="form-control">
-                </div>
+                </div><br>
 
                 <div class="form-group col-12">
                   <button type="button" class="btn btn-primary col-12"
@@ -274,7 +274,7 @@
                   class="form-control"
                   formControlName="Description"
                   rows="6"></textarea>
-                </div>
+                </div><br>
 
                 <div class="form-group col-12">
                     <button type="button" class="btn btn-primary col-12"
@@ -318,10 +318,17 @@
                 </div>
 
                 <div class="form-group col-12">
-                  <label>Commsion</label>
+                  <label>Commission</label>
                   <input type="text" class="form-control"
                   formControlName="contactCommission">
                 </div>
+                
+                <div class="form-group col-12">
+                  <label>Map Link</label>
+                  <input type="text" class="form-control"
+                  formControlName="mapLink">
+                </div>
+                <br>
 
                 <div class="form-group col-12">
                   <button type="button" class="btn btn-primary col-12"

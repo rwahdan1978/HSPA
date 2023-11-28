@@ -38,4 +38,5 @@ export class Property implements IPropertyBase {
   contactCompany: string;
   contactCommission: string;
   mapLink: string;
+  companyImage:string;
 }

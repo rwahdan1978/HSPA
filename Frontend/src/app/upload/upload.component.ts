@@ -26,6 +26,8 @@ export class UploadComponent {
 
   files: Array<any> = [];
 
+  // put below equals this.files[0 or 1 or ...]
+
   setText1(theFileName1: string) {
     this.getVariable.theFileName1 = this.theFileName1;
   }

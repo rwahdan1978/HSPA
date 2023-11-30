@@ -17,6 +17,8 @@
         <input id="image6" disabled type="file" (change)="onChange6($event)" class="form-group">
         <button id="button6" disabled type="button" (click)="onUploadImage6()" class="btn btn-success">Upload Company Image</button><br/>
         <br>
+
+        <!-- remove below when getting plan to download unlimited from file.io -->
         <div *ngIf="shortLink && files.length > 5" class="container text-center">
             <h3>Save file to image folder</h3>
                 <a href="{{files[0]}}" target="_blank">{{files[0]}}</a><br>

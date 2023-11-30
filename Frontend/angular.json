@@ -33,8 +33,7 @@
             ],
             "scripts": [
               "node_modules/jquery/dist/jquery.min.js",
-              "node_modules/slick-carousel/slick/slick.min.js",
-              "src/assets/message.js"
+              "node_modules/slick-carousel/slick/slick.min.js"
             ]
           },
           "configurations": {

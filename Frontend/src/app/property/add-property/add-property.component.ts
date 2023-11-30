@@ -10,12 +10,16 @@ import { BsDatepickerConfig } from 'ngx-bootstrap/datepicker';
 import { HttpClient } from '@angular/common/http';
 import {GetVariableService} from '../getVariable.service';
 
+//declare function test():any;
+
 @Component({
   selector: 'app-add-property',
   templateUrl: './add-property.component.html',
   styleUrls: ['./add-property.component.css']
 })
 export class AddPropertyComponent implements OnInit {
+
+  // myScriptElement: HTMLScriptElement;
 
   @ViewChild('formTabs') formTabs: TabsetComponent;
   datePickerConfig: Partial<BsDatepickerConfig>;
@@ -52,6 +56,10 @@ export class AddPropertyComponent implements OnInit {
       showWeekNumbers:false,showTodayButton: true
     });
 
+    // this.myScriptElement = document.createElement("script");
+    // this.myScriptElement.src = "src/assets/test.js";
+    // document.body.appendChild(this.myScriptElement);
+
     }
 
   ngOnInit() {
@@ -60,6 +68,7 @@ export class AddPropertyComponent implements OnInit {
   }
 
   CreateAddPropertyForm() {
+    
     this.addPropertyForm = this.fb.group({
       BasicInfo: this.fb.group({
         SellRent: ['1' , Validators.required],
@@ -113,9 +122,9 @@ export class AddPropertyComponent implements OnInit {
         Image5: [null],
         companyImage: [null]
       }),
-      
 
       });
+      
   }
 
 //#region <Getter Methods>

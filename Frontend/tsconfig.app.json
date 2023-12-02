@@ -8,6 +8,9 @@
   "files": [
     "src/main.ts"
   ],
+  "paths": {
+    "fs": ["./node_modules/fs-web"]
+  },
   "include": [
     "src/**/*.d.ts"
   ]

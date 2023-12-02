@@ -6,8 +6,6 @@ import { UploadService } from './upload.service';
 import {GetVariableService} from '../property/getVariable.service';
 import AWSS3UploadAshClient from 'aws-s3-upload-ash';
 import { UploadResponse } from 'aws-s3-upload-ash/dist/types';
-import * as fs from 'node_modules/fs-web';
-//import * as util from 'util';
 
 declare function test(): any;
 

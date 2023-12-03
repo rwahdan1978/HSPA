@@ -4,8 +4,6 @@ import { NgxFileDropEntry, FileSystemFileEntry, FileSystemDirectoryEntry } from 
 import { Observable, Observer } from 'rxjs';
 import { UploadService } from './upload.service';
 import {GetVariableService} from '../property/getVariable.service';
-import AWSS3UploadAshClient from 'aws-s3-upload-ash';
-import { UploadResponse } from 'aws-s3-upload-ash/dist/types';
 
 declare function test(): any;
 

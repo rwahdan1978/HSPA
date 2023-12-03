@@ -45,5 +45,23 @@ export class UploadComponent {
 //       .then((data: UploadResponse) => console.log(data))
 //       .catch((err: any) => console.error(err))
 //   }
+
+imageObj: File;
+   imageUrl: string;
+
+   constructor(private imageUploadService: UploadService) {}
+
+   onImagePicked(event: Event): void {
+    const FILE = (event.target as HTMLInputElement).files[0];
+    this.imageObj = FILE;
+   }
+
+   onImageUpload() {
+    const imageForm = new FormData();
+    imageForm.append('image', this.imageObj);
+    this.imageUploadService.imageUpload(imageForm).subscribe(res => {
+      this.imageUrl = res['image'];
+    });
+   }
   
 }

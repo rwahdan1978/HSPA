@@ -46,8 +46,8 @@ export class UploadComponent {
 //       .catch((err: any) => console.error(err))
 //   }
 
-imageObj: File;
-   imageUrl: string;
+  imageObj: File;
+  imageUrl: string;
 
    constructor(private imageUploadService: UploadService) {}
 
@@ -59,9 +59,8 @@ imageObj: File;
    onImageUpload() {
     const imageForm = new FormData();
     imageForm.append('image', this.imageObj);
-    this.imageUploadService.imageUpload(imageForm).subscribe(res => {
+    this.imageUploadService.imageUpload(imageForm).subscribe((res:any) =>  {
       this.imageUrl = res['image'];
     });
    }
-  
 }

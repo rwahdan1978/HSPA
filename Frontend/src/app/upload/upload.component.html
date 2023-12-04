@@ -6,10 +6,10 @@
 </div> -->
 
 <input (change)="onImagePicked($event)" placeholder="Upload Image" type="file" />
-   <button (click)="onImageUpload()">Upload Image</button>
+   <button type="button" (click)="onImageUpload()">Upload Image</button>
 
     <div *ngIf="imageUrl">
      Preview Image from AWS
      <br />
-     <img width="200px" src="https://cfe2.ap-south-1.linodeobjects.com/{{ imageUrl }}"/>
+     <img width="200px" src="https://angular-upload-files.s3.amazonaws.com/{{ imageUrl }}" >
     </div>

@@ -302,6 +302,7 @@ export class AddPropertyComponent implements OnInit {
   }
 
   onSubmit() {
+    // add a way to create a folder
     this.nextClicked = true;
     if (this.allTabsValid()) {
       this.mapProperty();
@@ -350,15 +351,14 @@ export class AddPropertyComponent implements OnInit {
     this.property.Image3 = this.getVariable.theFileName3;
     this.property.Image4 = this.getVariable.theFileName4;
     this.property.Image5 = this.getVariable.theFileName5;
+    this.property.companyImage = this.getVariable.theFileName6;
     this.property.contactCommission = this.contactCommission.value;
     this.property.contactCompany = this.contactCompany.value;
     this.property.contactName = this.contactName.value;
     this.property.contactNumber = this.contactNumber.value;
     this.property.contactNumber2 = this.contactNumber2.value;
     this.property.contactEmail = this.contactEmail.value;
-
     this.property.mapLink = this.mapLink.value;
-    this.property.companyImage = this.getVariable.theFileName6;
 
   }
 

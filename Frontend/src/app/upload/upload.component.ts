@@ -1,11 +1,6 @@
-import { HttpClient, HttpEventType, HttpHeaders } from '@angular/common/http';
-import { Component, EventEmitter, OnInit, Output } from '@angular/core';
-import { NgxFileDropEntry, FileSystemFileEntry, FileSystemDirectoryEntry } from 'ngx-file-drop';
-import { Observable, Observer } from 'rxjs';
+import { Component } from '@angular/core';
 import { UploadService } from './upload.service';
 import {GetVariableService} from '../property/getVariable.service';
-
-declare function test(): any;
 
 @Component({
   selector: 'app-upload',
@@ -15,52 +10,176 @@ declare function test(): any;
 
 export class UploadComponent {
 
-//   fileSelected: any = null;
-//   config = {
-//     bucketName: 'cfe2',
-//    // dirName: 'test', /* optional - when use: e.g BUCKET_ROOT/dirName/fileName.extesion */
-//     region: 'ap-south-1',
-//     accessKeyId: "PPZKY8RRD9KGPILJ3EMJ",
-//     secretAccessKey: "1MingwheBUoF8CWhrW3eNAizNTmrxiPdB0kzXglc",
-//     s3Url: 'https://cfe2.ap-south-1.linodeobjects.com/'
-//   }
-//   S3CustomClient: AWSS3UploadAshClient = new AWSS3UploadAshClient(this.config);
-
-// constructor() { }
-
-  //  ngOnInit() {
-  //   test();
-  //  }
-
-//   onChangeFile(event: any) {
-//     console.log(event.target.files[0])
-//     this.fileSelected = event.target.files[0]
-//   }
-
-//   async handleSendFile() {
-//     console.log("handleSendFile")
-//     await this.S3CustomClient
-//       .uploadFile(this.fileSelected, this.fileSelected.type, undefined,
-//         this.fileSelected.name, "public-read")
-//       .then((data: UploadResponse) => console.log(data))
-//       .catch((err: any) => console.error(err))
-//   }
-
-  imageObj: File;
+  imageObj: any;
   imageUrl: string;
+  theFlag: boolean = false;
 
-   constructor(private imageUploadService: UploadService) {}
+   constructor(private imageUploadService: UploadService, private variable:GetVariableService) {}
 
-   onImagePicked(event: Event): void {
+   onImagePicked1(event: Event): void {
     const FILE = (event.target as HTMLInputElement).files[0];
     this.imageObj = FILE;
+
+    this.variable.theFileName1 = this.imageObj;
+    console.log(this.variable.theFileName1);
+
    }
 
-   onImageUpload() {
+   onImagePicked2(event: Event): void {
+    const FILE = (event.target as HTMLInputElement).files[0];
+    this.imageObj = FILE;
+
+    this.variable.theFileName2 = this.imageObj;
+    console.log(this.variable.theFileName2);
+
+   }
+
+   onImagePicked3(event: Event): void {
+    const FILE = (event.target as HTMLInputElement).files[0];
+    this.imageObj = FILE;
+
+    this.variable.theFileName3 = this.imageObj;
+
+   }
+
+   onImagePicked4(event: Event): void {
+    const FILE = (event.target as HTMLInputElement).files[0];
+    this.imageObj = FILE;
+
+    this.variable.theFileName4 = this.imageObj;
+
+   }
+
+   onImagePicked5(event: Event): void {
+    const FILE = (event.target as HTMLInputElement).files[0];
+    this.imageObj = FILE;
+
+    this.variable.theFileName5 = this.imageObj;
+
+   }
+
+   onImagePicked6(event: Event): void {
+    const FILE = (event.target as HTMLInputElement).files[0];
+    this.imageObj = FILE;
+
+    this.variable.theFileName6 = this.imageObj;
+
+   }
+
+   onImageUpload1() {
+
     const imageForm = new FormData();
     imageForm.append('image', this.imageObj);
-    this.imageUploadService.imageUpload(imageForm).subscribe((res:any) =>  {
+    this.imageUploadService.imageUpload(imageForm).subscribe((res:any) => {
       this.imageUrl = res['image'];
     });
+
+    let theinput1 = document.getElementById("input1");
+    theinput1?.setAttribute("disabled","true");
+    let thebutton1 = document.getElementById("button1");
+    thebutton1?.setAttribute("disabled","true");
+
+    let theinput2 = document.getElementById("input2");
+    theinput2?.removeAttribute("disabled");
+    let thebutton2 = document.getElementById("button2");
+    thebutton2?.removeAttribute("disabled");
+
+   }
+
+   onImageUpload2() {
+
+    const imageForm = new FormData();
+    imageForm.append('image', this.imageObj);
+    this.imageUploadService.imageUpload(imageForm).subscribe((res:any) => {
+      this.imageUrl = res['image'];
+    });
+
+    let theinput2_2 = document.getElementById("input2");
+    theinput2_2?.setAttribute("disabled","true");
+    let thebutton2_2 = document.getElementById("button2");
+    thebutton2_2?.setAttribute("disabled","true");
+
+    let theinput3 = document.getElementById("input3");
+    theinput3?.removeAttribute("disabled");
+    let thebutton3 = document.getElementById("button3");
+    thebutton3?.removeAttribute("disabled");
+
+   }
+
+   onImageUpload3() {
+
+    const imageForm = new FormData();
+    imageForm.append('image', this.imageObj);
+    this.imageUploadService.imageUpload(imageForm).subscribe((res:any) => {
+      this.imageUrl = res['image'];
+    });
+
+    let theinput3_3 = document.getElementById("input3");
+    theinput3_3?.setAttribute("disabled","true");
+    let thebutton3_3 = document.getElementById("button3");
+    thebutton3_3?.setAttribute("disabled","true");
+
+    let theinput4 = document.getElementById("input4");
+    theinput4?.removeAttribute("disabled");
+    let thebutton4 = document.getElementById("button4");
+    thebutton4?.removeAttribute("disabled");
+
+   }
+
+   onImageUpload4() {
+
+    const imageForm = new FormData();
+    imageForm.append('image', this.imageObj);
+    this.imageUploadService.imageUpload(imageForm).subscribe((res:any) => {
+      this.imageUrl = res['image'];
+    });
+
+    let theinput4_4 = document.getElementById("input4");
+    theinput4_4?.setAttribute("disabled","true");
+    let thebutton4_4 = document.getElementById("button4");
+    thebutton4_4?.setAttribute("disabled","true");
+
+    let theinput5 = document.getElementById("input5");
+    theinput5?.removeAttribute("disabled");
+    let thebutton5 = document.getElementById("button5");
+    thebutton5?.removeAttribute("disabled");
+
+   }
+
+   onImageUpload5() {
+
+    const imageForm = new FormData();
+    imageForm.append('image', this.imageObj);
+    this.imageUploadService.imageUpload(imageForm).subscribe((res:any) => {
+      this.imageUrl = res['image'];
+    });
+
+    let theinput5_5 = document.getElementById("input5");
+    theinput5_5?.setAttribute("disabled","true");
+    let thebutton5_5 = document.getElementById("button5");
+    thebutton5_5?.setAttribute("disabled","true");
+
+    let theinput6 = document.getElementById("input6");
+    theinput6?.removeAttribute("disabled");
+    let thebutton6 = document.getElementById("button6");
+    thebutton6?.removeAttribute("disabled");
+
+   }
+
+   onImageUpload6() {
+
+    const imageForm = new FormData();
+    imageForm.append('image', this.imageObj);
+    this.imageUploadService.imageUpload(imageForm).subscribe((res:any) => {
+      this.imageUrl = res['image'];
+    });
+
+    let theinput6_6 = document.getElementById("input6");
+    theinput6_6?.setAttribute("disabled","true");
+    let thebutton6_6 = document.getElementById("button6");
+    thebutton6_6?.setAttribute("disabled","true");
+
+    this.theFlag = true;
+
    }
 }

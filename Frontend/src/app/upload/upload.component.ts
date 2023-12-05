@@ -20,8 +20,7 @@ export class UploadComponent {
     const FILE = (event.target as HTMLInputElement).files[0];
     this.imageObj = FILE;
 
-    this.variable.theFileName1 = this.imageObj;
-    console.log(this.variable.theFileName1);
+    this.variable.theFileName1 = this.imageObj["name"];
 
    }
 
@@ -29,8 +28,7 @@ export class UploadComponent {
     const FILE = (event.target as HTMLInputElement).files[0];
     this.imageObj = FILE;
 
-    this.variable.theFileName2 = this.imageObj;
-    console.log(this.variable.theFileName2);
+    this.variable.theFileName2 = this.imageObj["name"];;
 
    }
 
@@ -38,7 +36,7 @@ export class UploadComponent {
     const FILE = (event.target as HTMLInputElement).files[0];
     this.imageObj = FILE;
 
-    this.variable.theFileName3 = this.imageObj;
+    this.variable.theFileName3 = this.imageObj["name"];;
 
    }
 
@@ -46,7 +44,7 @@ export class UploadComponent {
     const FILE = (event.target as HTMLInputElement).files[0];
     this.imageObj = FILE;
 
-    this.variable.theFileName4 = this.imageObj;
+    this.variable.theFileName4 = this.imageObj["name"];;
 
    }
 
@@ -54,7 +52,7 @@ export class UploadComponent {
     const FILE = (event.target as HTMLInputElement).files[0];
     this.imageObj = FILE;
 
-    this.variable.theFileName5 = this.imageObj;
+    this.variable.theFileName5 = this.imageObj["name"];;
 
    }
 
@@ -62,7 +60,7 @@ export class UploadComponent {
     const FILE = (event.target as HTMLInputElement).files[0];
     this.imageObj = FILE;
 
-    this.variable.theFileName6 = this.imageObj;
+    this.variable.theFileName6 = this.imageObj["name"];;
 
    }
 

@@ -56,10 +56,6 @@ export class AddPropertyComponent implements OnInit {
       showWeekNumbers:false,showTodayButton: true
     });
 
-    // this.myScriptElement = document.createElement("script");
-    // this.myScriptElement.src = "src/assets/test.js";
-    // document.body.appendChild(this.myScriptElement);
-
     }
 
   ngOnInit() {

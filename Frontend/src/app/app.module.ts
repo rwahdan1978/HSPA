@@ -64,6 +64,7 @@ const appRoutes: Routes = [
     TabsModule.forRoot(),
     ButtonsModule.forRoot(),
     BsDatepickerModule.forRoot()
+    
   ],
   providers: [
     HousingService,

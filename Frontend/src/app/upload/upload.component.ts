@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { UploadService } from './upload.service';
 import {GetVariableService} from '../property/getVariable.service';
+import { HttpClient, HttpParams } from '@angular/common/http';
 
 @Component({
   selector: 'app-upload',
@@ -12,15 +13,19 @@ export class UploadComponent {
 
   imageObj: any;
   imageUrl: string;
+  thedata: string;
   theFlag: boolean = false;
 
-   constructor(private imageUploadService: UploadService, private variable:GetVariableService) {}
+   constructor(private imageUploadService: UploadService, 
+               private variable:GetVariableService,
+               private http: HttpClient) {}
 
    onImagePicked1(event: Event): void {
     const FILE = (event.target as HTMLInputElement).files[0];
     this.imageObj = FILE;
 
     this.variable.theFileName1 = this.imageObj["name"];
+    // this.http.post("http://localhost:3000/api/v1/upload/",this.data).subscribe();
 
    }
 
@@ -28,7 +33,7 @@ export class UploadComponent {
     const FILE = (event.target as HTMLInputElement).files[0];
     this.imageObj = FILE;
 
-    this.variable.theFileName2 = this.imageObj["name"];;
+    this.variable.theFileName2 = this.imageObj["name"];
 
    }
 
@@ -36,7 +41,7 @@ export class UploadComponent {
     const FILE = (event.target as HTMLInputElement).files[0];
     this.imageObj = FILE;
 
-    this.variable.theFileName3 = this.imageObj["name"];;
+    this.variable.theFileName3 = this.imageObj["name"];
 
    }
 
@@ -44,7 +49,7 @@ export class UploadComponent {
     const FILE = (event.target as HTMLInputElement).files[0];
     this.imageObj = FILE;
 
-    this.variable.theFileName4 = this.imageObj["name"];;
+    this.variable.theFileName4 = this.imageObj["name"];
 
    }
 
@@ -52,18 +57,18 @@ export class UploadComponent {
     const FILE = (event.target as HTMLInputElement).files[0];
     this.imageObj = FILE;
 
-    this.variable.theFileName5 = this.imageObj["name"];;
+    this.variable.theFileName5 = this.imageObj["name"];
 
    }
 
    onImagePicked6(event: Event): void {
     const FILE = (event.target as HTMLInputElement).files[0];
     this.imageObj = FILE;
-
-    this.variable.theFileName6 = this.imageObj["name"];;
+    this.variable.theFileName6 = this.imageObj["name"];
 
    }
 
+   
    onImageUpload1() {
 
     const imageForm = new FormData();

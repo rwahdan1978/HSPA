@@ -28,7 +28,7 @@ export class Property implements IPropertyBase {
   Image3?: string;
   Image4?: string;
   Image5?: string;
-  Description?: string;
+  Description?: string; //put here what places are around the property
   PostedOn: string;
   PostedBy: number;
   contactName: string;
@@ -39,4 +39,11 @@ export class Property implements IPropertyBase {
   contactCommission: string;
   mapLink: string;
   companyImage:string;
+  bathroom: number;
+  parking: number;
+  swimmingPool: number;
+  mall: boolean;
+  zoo: boolean;
+  fastFood: boolean;
+  beach: boolean;
 }

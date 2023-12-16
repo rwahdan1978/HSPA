@@ -37,8 +37,14 @@
     "contactEmail": "ramiwahdan1978@gmail.com",
     "contactCommission": "0",
     "mapLink": "https://maps.app.goo.gl/Bhqn4uDXZEGfeYNq7",
-    "companyImage": "companyImage1.png"
-    
+    "companyImage": "companyImage1.png",
+    "bathroom": 2,
+    "parking": 4,
+    "swimmingPool": 1,
+    "mall": "True",
+    "zoo": "True",
+    "fastFood": "True",
+    "beach": "True"
   },
 
   {
@@ -52,7 +58,7 @@
     "BuiltArea":1200,
     "CarpetArea":900,
     "Image1":"2.png",
-    "Image2":"2.png",
+    "Image2":"1.png",
     "Image3":"3.png",
     "Image4":"4.png",
     "Image5":"5.png",
@@ -79,7 +85,14 @@
     "contactEmail": "ramiwahdan1978@gmail.com",
     "contactCommission": "3000",
     "mapLink": "https://maps.app.goo.gl/JsGZvMNB3zbEEb1EA",
-    "companyImage": "companyImage1.png"
+    "companyImage": "companyImage1.png",
+    "bathroom": 3,
+    "parking": 6,
+    "swimmingPool": 2,
+    "mall": "True",
+    "zoo": "False",
+    "fastFood": "True",
+    "beach": "False"
     
   },
   {
@@ -94,7 +107,7 @@
     "CarpetArea":900,
     "Image1":"3.png",
     "Image2":"2.png",
-    "Image3":"3.png",
+    "Image3":"6.png",
     "Image4":"4.png",
     "Image5":"5.png",
     "Address":"5 Street",
@@ -120,7 +133,14 @@
     "contactEmail": "ramiwahdan1978@gmail.com",
     "contactCommission": "0",
     "mapLink": "https://maps.app.goo.gl/uFeuZVVgPciWJAMu5",
-    "companyImage": "companyImage1.png"
+    "companyImage": "companyImage1.png",
+    "bathroom": 3,
+    "parking": 5,
+    "swimmingPool": 1,
+    "mall": "False",
+    "zoo": "True",
+    "fastFood": "True",
+    "beach": "False"
     
   },
 
@@ -137,7 +157,7 @@
     "Image1":"4.png",
     "Image2":"2.png",
     "Image3":"3.png",
-    "Image4":"4.png",
+    "Image4":"1.png",
     "Image5":"5.png",
     "Address":"15 Street",
     "Address2":"Golf Course Road",
@@ -162,8 +182,14 @@
     "contactEmail": "ramiwahdan1978@gmail.com",
     "contactCommission": "1000",
     "mapLink": "https://maps.app.goo.gl/ypcXsebERPbcEji18",
-    "companyImage": "companyImage1.png"
-    
+    "companyImage": "companyImage1.png",
+    "bathroom": 5,
+    "parking": 10,
+    "swimmingPool": 2,
+    "mall": "False",
+    "zoo": "False",
+    "fastFood": "True",
+    "beach": "False"
   },
   {
     "Id":5,
@@ -179,7 +205,7 @@
     "Image2":"2.png",
     "Image3":"3.png",
     "Image4":"4.png",
-    "Image5":"5.png",
+    "Image5":"7.png",
     "Address":"18 Street",
     "Address2":"Golf Course Road",
     "Address3":"Near Bank of America",
@@ -203,8 +229,14 @@
     "contactEmail": "ramiwahdan1978@gmail.com",
     "contactCommission": "500",
     "mapLink": "https://maps.app.goo.gl/3866FXWczXcfwfAW9",
-    "companyImage": "companyImage1.png"
-    
+    "companyImage": "companyImage1.png",
+    "bathroom": 2,
+    "parking": 3,
+    "swimmingPool": 0,
+    "mall": "True",
+    "zoo": "False",
+    "fastFood": "True",
+    "beach": "True"
   },
 
   {
@@ -245,8 +277,14 @@
     "contactEmail": "ramiwahdan1978@gmail.com",
     "contactCommission": "200",
     "mapLink": "https://maps.app.goo.gl/sPQpnCrmm65C5omeA",
-    "companyImage": "companyImage1.png"
-    
+    "companyImage": "companyImage1.png",
+    "bathroom": 2,
+    "parking": 2,
+    "swimmingPool": 0,
+    "mall": "True",
+    "zoo": "False",
+    "fastFood": "True",
+    "beach": "True"
   },
 
   {
@@ -287,7 +325,13 @@
     "contactEmail": "ramiwahdan1978@gmail.com",
     "contactCommission": "300",
     "mapLink": "https://maps.app.goo.gl/V7nPSYr6sGz722h3A",
-    "companyImage": "companyImage1.png"
-    
+    "companyImage": "companyImage1.png",
+    "bathroom": 3,
+    "parking": 4,
+    "swimmingPool": 1,
+    "mall": "True",
+    "zoo": "False",
+    "fastFood": "True",
+    "beach": "False"   
   }
 ]

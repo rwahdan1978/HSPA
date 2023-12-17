@@ -100,23 +100,75 @@
               </div>
               <div class="col-sm-12">
                   <div class="heading">
+
                       <strong>Building amenities include:</strong><br><br>
-                        <!-- you can change below to add bathroom count and parking count -->
-                        <i class="fas fa-chart-area"aria-hidden="true" style="font-size: 30px;" title="Total Area"></i>&nbsp; &nbsp;<strong>{{property.BuiltArea}} Sqft</strong>&nbsp; &nbsp;
-                        <i class="fas fa-bed" aria-hidden="true" style="font-size: 30px;" title="number of rooms"></i> &nbsp; &nbsp;  <strong>{{property.BHK}} Beds</strong>&nbsp; &nbsp; 
-                        <i class="fa fa-bath" aria-hidden="true" style="font-size: 30px;" title="number of bathrooms"></i>&nbsp; &nbsp;  <strong>{{property.bathroom}} Baths</strong><br> 
-                        <i class="fa-solid fa-square-parking" style="font-size: 30px;" title="number of parking spaces"></i> &nbsp; &nbsp; <strong>{{property.parking}} Parking</strong>&nbsp; &nbsp; 
-                        <i class="fas fa-swimming-pool" style="font-size: 30px;" title="number of swimming pools"></i> &nbsp; &nbsp; <strong>{{property.swimmingPool}} Swimming Pool</strong>&nbsp; &nbsp;
-                        <!-- <pre style="width: 700px; white-space: pre-wrap;">{{property.Description}}</pre> -->
+                        
+                        <i class="fas fa-chart-area"aria-hidden="true" 
+                          style="font-size: 30px;" >
+                        </i>
+                        &nbsp; &nbsp;
+                        <strong>{{property.BuiltArea}} Sqft</strong>&nbsp; &nbsp;
+
+                        <i class="fas fa-bed" aria-hidden="true" 
+                          style="font-size: 30px;" >
+                        </i> 
+                        &nbsp; &nbsp;  
+                        <strong>{{property.BHK}} Beds</strong>&nbsp; &nbsp; 
+                        
+                        <i class="fa fa-bath" aria-hidden="true" 
+                          style="font-size: 30px;" >
+                        </i>
+                        &nbsp; &nbsp;  
+                        <strong>{{property.bathroom}} Baths</strong><br> 
+                        
+                        <i class="fa-solid fa-square-parking" 
+                          style="font-size: 30px;" >
+                        </i> 
+                        &nbsp; &nbsp; 
+                        <strong>{{property.parking}} Parking</strong>&nbsp; &nbsp; 
+                        
+                        <i class="fas fa-swimming-pool" 
+                          style="font-size: 30px;" >
+                        </i> 
+                        &nbsp; &nbsp; 
+                        <strong>{{property.swimmingPool}} Swimming Pool</strong>
+                        &nbsp; &nbsp;
+                        
                         <br><br>
-                        <strong>Places to visit around:</strong><br><br>
-                        <!-- you can change below to add bathroom count and parking count -->
-                        <i *ngIf="property.mall=='True'" class="fa-solid fa-store" aria-hidden="true" style="font-size: 30px; padding-left: 15px;" title="Shopping Mall - 5 minute walk"></i>&nbsp; &nbsp;<strong *ngIf="property.mall=='True'">Shopping Mall</strong>  
-                        <i *ngIf="property.zoo=='True'" class="fa-solid fa-hippo" aria-hidden="true" style="font-size: 30px; padding-left: 15px;" title="Zoo 10 minute drive - tikets from 25AED"></i>&nbsp; &nbsp;<strong *ngIf="property.zoo=='True'">Zoo</strong>
-                        <i *ngIf="property.fastFood=='True'" class="fas fa-hotdog" style="font-size: 30px; padding-left: 15px;" title="4 fastfood places"></i> &nbsp; &nbsp;<strong *ngIf="property.fastFood=='True'">Fast Food</strong>
-                        <i *ngIf="property.beach=='True'" class="fa-solid fa-umbrella-beach" style="font-size: 30px; padding-left: 15px;" title="10 minute walk to the beach"></i>&nbsp; &nbsp;<strong *ngIf="property.beach=='True'">Beach</strong><br><br>
-                        <!-- <pre style="width: 700px; white-space: pre-wrap;">{{property.Description}}</pre> -->
-                      
+                        <strong>Places to visit around:</strong><br>
+
+                        <i *ngIf="property.mall=='True'" class="fa-solid fa-store" aria-hidden="true" 
+                            style="font-size: 30px; padding-bottom: 15px;">
+                        </i>
+                        &nbsp; &nbsp;
+                        <strong *ngIf="property.mall=='True'">Shopping Mall</strong>  
+                        &nbsp; &nbsp; &nbsp; &nbsp;
+                        <strong *ngIf="property.mall=='True'"> 5 minutes walk</strong> <br>
+
+                        <i *ngIf="property.zoo=='True'" class="fa-solid fa-hippo" aria-hidden="true" 
+                            style="font-size: 30px; padding-bottom: 15px;" >
+                        </i>
+                        &nbsp; &nbsp;
+                        <strong *ngIf="property.zoo=='True'">Zoo</strong> 
+                        &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+                        <strong *ngIf="property.zoo=='True'"> 15 minutes walk</strong> <br>
+                        
+                        <i *ngIf="property.fastFood=='True'" class="fas fa-hotdog" 
+                            style="font-size: 30px; padding-bottom: 15px;" >
+                        </i> 
+                        &nbsp; &nbsp;
+                        <strong *ngIf="property.fastFood=='True'">Fast Food</strong>
+                        &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+                        <strong *ngIf="property.fastFood=='True'"> 5-15 minutes walk</strong> <br>
+                        
+                        <i *ngIf="property.beach=='True'" class="fa-solid fa-umbrella-beach" 
+                            style="font-size: 30px; " >
+                        </i>
+                        &nbsp; &nbsp;
+                        <strong *ngIf="property.beach=='True'">Beach</strong>
+                        &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+                        <strong *ngIf="property.beach=='True'"> 15 minutes drive</strong> <br>
+                        
                   </div>
               </div>
             </div>

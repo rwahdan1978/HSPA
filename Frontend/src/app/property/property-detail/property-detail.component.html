@@ -176,16 +176,22 @@
 
         <tab heading="Address" [active]="currentTabId === 1">
 
-          <h3 *ngIf="property.companyImage">For directions please click the image below</h3><br>
-
-          <a *ngIf="property.companyImage" href="{{property.mapLink}}" target="_blank">
-            <img src="https://angular-upload-files-2023.s3.ap-south-1.amazonaws.com/properties2023/{{property.companyImage}}" 
-            title="Our Location" style="width:850px;height:400px;">
-          </a>
+          <h3 *ngIf="property.theaddress != null" style="color: red;">To get directions, click on directions</h3><br>
+          <div>
+            <iframe *ngIf="property.theaddress != null"
+              allowfullscreen
+              height="450"
+              loading="lazy"
+              [src]= getMapUrl()
+              style="border:0"
+              width="720">
+            </iframe>
+          </div>
           
-          <div *ngIf="!property.companyImage" class="card" style="width: 550px;">
+          <div *ngIf="property.theaddress == null" class="card" style="width: 850px;">
             <strong>Location Map not available, Updating Records...</strong><br>
-            <img class="card-img-top" src="https://angular-upload-files-2023.s3.ap-south-1.amazonaws.com/default_house.png">
+            <img class="card-img-top" src="https://angular-upload-files-2023.s3.ap-south-1.amazonaws.com/default_house.png"
+            style="width: 850px;">
             <div class="card-body">
               <h5 class="card-title">Commission {{property.contactCommission}} AED</h5><br><br>
               <p class="card-text" *ngIf="!property.companyImage">Company Name: {{property.contactCompany}}</p>
@@ -194,8 +200,6 @@
               <p class="card-text" *ngIf="!property.companyImage">Company Number: {{property.contactNumber}}</p>
             </div>
           </div>
-
-
           
         </tab>
 
@@ -301,7 +305,7 @@
           </div>
 
           <br><br>
-          <strong style="padding-left: 250px;">You you fill out the form otherwise</strong>
+          <strong style="padding-left: 250px;">or you can fill out the form otherwise</strong>
           <div>
             <form [formGroup]="form" action="javascript:void(0)" (submit)="send()" method="POST">
               <input formControlName="from_name" name="from_name" type="text"  placeholder="Full Name"/>

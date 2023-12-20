@@ -1,6 +1,7 @@
 import { IPropertyBase } from './ipropertybase';
 
 export class Property implements IPropertyBase {
+  
   Id: number;
   SellRent: number;
   Name: string;
@@ -37,7 +38,6 @@ export class Property implements IPropertyBase {
   contactEmail: string;
   contactCompany: string;
   contactCommission: string;
-  mapLink: string;
   companyImage:string;
   bathroom: number;
   parking: number;
@@ -46,4 +46,5 @@ export class Property implements IPropertyBase {
   zoo: boolean;
   fastFood: boolean;
   beach: boolean;
+  theaddress: string;
 }

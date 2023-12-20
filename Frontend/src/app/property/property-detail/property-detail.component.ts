@@ -5,6 +5,7 @@ import { Property } from 'src/app/model/property';
 import emailjs from '@emailjs/browser';
 import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
 import { AlertifyService } from 'src/app/services/alertify.service';
+import { DomSanitizer, SafeResourceUrl, SafeUrl} from '@angular/platform-browser';
 
 @Component({
   selector: 'app-property-detail',
@@ -13,6 +14,8 @@ import { AlertifyService } from 'src/app/services/alertify.service';
 })
 
 export class PropertyDetailComponent implements OnInit {
+
+  public pdfSrc: any;
 
   @ViewChild('iframe') iframe: ElementRef
 
@@ -40,9 +43,11 @@ export class PropertyDetailComponent implements OnInit {
     visable2: boolean = true;
     currentTabId = 0;
     token: any;
+    dangerousUrl:any;
+  
 
   constructor(private route: ActivatedRoute, private alert: AlertifyService, 
-                                                    private fb: FormBuilder) {}
+              private fb: FormBuilder, private sanitizer: DomSanitizer) {}
 
   ngOnInit() {
 
@@ -55,12 +60,22 @@ export class PropertyDetailComponent implements OnInit {
       }
     )
 
+    
     this.propid = this.propertyId;
     this.propidStr = "nums" + this.propid.toString()
 
-       let data2:any = localStorage.getItem(this.propidStr);
-       this.likes = JSON.parse(data2);
+    let data2:any = localStorage.getItem(this.propidStr);
+    this.likes = JSON.parse(data2);
      
+  }
+
+  getMapUrl(): string {
+
+    this.dangerousUrl = this.property.theaddress;
+    this.pdfSrc =  this.sanitizer.bypassSecurityTrustResourceUrl(this.dangerousUrl);
+    
+    return this.pdfSrc;
+
   }
 
   showImage(){

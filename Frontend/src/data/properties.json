@@ -36,7 +36,6 @@
     "contactNumber2": "0507626410",
     "contactEmail": "ramiwahdan1978@gmail.com",
     "contactCommission": "0",
-    "mapLink": "https://maps.app.goo.gl/Bhqn4uDXZEGfeYNq7",
     "companyImage": "companyImage1.png",
     "bathroom": 2,
     "parking": 4,
@@ -44,7 +43,8 @@
     "mall": "True",
     "zoo": "True",
     "fastFood": "True",
-    "beach": "True"
+    "beach": "True",
+    "theaddress": "https://www.google.com/maps?q=TamouhTower&output=embed"
   },
 
   {
@@ -84,7 +84,6 @@
     "contactNumber2": "0507626410",
     "contactEmail": "ramiwahdan1978@gmail.com",
     "contactCommission": "3000",
-    "mapLink": "https://maps.app.goo.gl/JsGZvMNB3zbEEb1EA",
     "companyImage": "companyImage1.png",
     "bathroom": 3,
     "parking": 6,
@@ -92,9 +91,11 @@
     "mall": "True",
     "zoo": "False",
     "fastFood": "True",
-    "beach": "False"
+    "beach": "False",
+    "theaddress":"https://www.google.com/maps?q=EmiratesSchoolsEstablishment[ESE]-Dubai&output=embed"
     
   },
+
   {
     "Id":3,
     "SellRent":1,
@@ -132,7 +133,6 @@
     "contactNumber2": "0507626410",
     "contactEmail": "ramiwahdan1978@gmail.com",
     "contactCommission": "0",
-    "mapLink": "https://maps.app.goo.gl/uFeuZVVgPciWJAMu5",
     "companyImage": "companyImage1.png",
     "bathroom": 3,
     "parking": 5,
@@ -140,7 +140,8 @@
     "mall": "False",
     "zoo": "True",
     "fastFood": "True",
-    "beach": "False"
+    "beach": "False",
+    "theaddress":"https://www.google.com/maps?q=QHoldingPSC&output=embed"
     
   },
 
@@ -181,7 +182,6 @@
     "contactNumber2": "0507626410",
     "contactEmail": "ramiwahdan1978@gmail.com",
     "contactCommission": "1000",
-    "mapLink": "https://maps.app.goo.gl/ypcXsebERPbcEji18",
     "companyImage": "companyImage1.png",
     "bathroom": 5,
     "parking": 10,
@@ -189,7 +189,8 @@
     "mall": "False",
     "zoo": "False",
     "fastFood": "True",
-    "beach": "False"
+    "beach": "False",
+    "theaddress":"https://www.google.com/maps?q=PureHomeRealEstate&output=embed"
   },
   {
     "Id":5,
@@ -228,7 +229,6 @@
     "contactNumber2": "0507626410",
     "contactEmail": "ramiwahdan1978@gmail.com",
     "contactCommission": "500",
-    "mapLink": "https://maps.app.goo.gl/3866FXWczXcfwfAW9",
     "companyImage": "companyImage1.png",
     "bathroom": 2,
     "parking": 3,
@@ -236,7 +236,8 @@
     "mall": "True",
     "zoo": "False",
     "fastFood": "True",
-    "beach": "True"
+    "beach": "True",
+    "theaddress":"https://www.google.com/maps?q=PrestigeLuxuryRealEstate&output=embed"
   },
 
   {
@@ -276,7 +277,6 @@
     "contactNumber2": "0507626410",
     "contactEmail": "ramiwahdan1978@gmail.com",
     "contactCommission": "200",
-    "mapLink": "https://maps.app.goo.gl/sPQpnCrmm65C5omeA",
     "companyImage": "companyImage1.png",
     "bathroom": 2,
     "parking": 2,
@@ -284,7 +284,9 @@
     "mall": "True",
     "zoo": "False",
     "fastFood": "True",
-    "beach": "True"
+    "beach": "True",
+    "theaddress":"https://www.google.com/maps?q= ModelSchoolOmaribnal-Khattab&output=embed"
+   
   },
 
   {
@@ -324,7 +326,6 @@
     "contactNumber2": "0507626410",
     "contactEmail": "ramiwahdan1978@gmail.com",
     "contactCommission": "300",
-    "mapLink": "https://maps.app.goo.gl/V7nPSYr6sGz722h3A",
     "companyImage": "companyImage1.png",
     "bathroom": 3,
     "parking": 4,
@@ -332,6 +333,7 @@
     "mall": "True",
     "zoo": "False",
     "fastFood": "True",
-    "beach": "False"   
+    "beach": "False",
+    "theaddress":"https://www.google.com/maps?q= مدرسةشيخةبنتسعيدللتعليمالثانويللبنات&output=embed"   
   }
 ]

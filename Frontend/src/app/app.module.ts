@@ -10,6 +10,7 @@ import { ButtonsModule } from 'ngx-bootstrap/buttons';
 import { BsDatepickerModule } from 'ngx-bootstrap/datepicker';
 import { SlickCarouselModule } from 'ngx-slick-carousel';
 import { NgxFileDropModule } from 'ngx-file-drop';
+import { GoogleMapsModule } from '@angular/google-maps';
 
 import { AppComponent } from './app.component';
 import { PropertycardComponent } from './property/property-card/property-card..component';
@@ -63,7 +64,8 @@ const appRoutes: Routes = [
     BsDropdownModule.forRoot(),
     TabsModule.forRoot(),
     ButtonsModule.forRoot(),
-    BsDatepickerModule.forRoot()
+    BsDatepickerModule.forRoot(),
+    GoogleMapsModule
     
   ],
   providers: [

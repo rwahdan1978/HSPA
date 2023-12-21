@@ -44,7 +44,7 @@
     "zoo": "True",
     "fastFood": "True",
     "beach": "True",
-    "theaddress": "https://www.google.com/maps?q=TamouhTower&output=embed"
+    "theaddress": "Tamouh Tower"
   },
 
   {
@@ -92,7 +92,7 @@
     "zoo": "False",
     "fastFood": "True",
     "beach": "False",
-    "theaddress":"https://www.google.com/maps?q=EmiratesSchoolsEstablishment[ESE]-Dubai&output=embed"
+    "theaddress":"Emirates Schools Establishment Dubai"
     
   },
 
@@ -141,7 +141,7 @@
     "zoo": "True",
     "fastFood": "True",
     "beach": "False",
-    "theaddress":"https://www.google.com/maps?q=QHoldingPSC&output=embed"
+    "theaddress":"Q Holding PSC"
     
   },
 
@@ -190,7 +190,7 @@
     "zoo": "False",
     "fastFood": "True",
     "beach": "False",
-    "theaddress":"https://www.google.com/maps?q=PureHomeRealEstate&output=embed"
+    "theaddress":"Pure Home Real Estate"
   },
   {
     "Id":5,
@@ -237,7 +237,7 @@
     "zoo": "False",
     "fastFood": "True",
     "beach": "True",
-    "theaddress":"https://www.google.com/maps?q=PrestigeLuxuryRealEstate&output=embed"
+    "theaddress":"Prestige Luxury Real Estate"
   },
 
   {
@@ -285,7 +285,7 @@
     "zoo": "False",
     "fastFood": "True",
     "beach": "True",
-    "theaddress":"https://www.google.com/maps?q= ModelSchoolOmaribnal-Khattab&output=embed"
+    "theaddress":"Model School Omar ibn al-Khattab"
    
   },
 
@@ -334,6 +334,6 @@
     "zoo": "False",
     "fastFood": "True",
     "beach": "False",
-    "theaddress":"https://www.google.com/maps?q= مدرسةشيخةبنتسعيدللتعليمالثانويللبنات&output=embed"   
+    "theaddress":"Sheikha Bint Saeed Preparatory School"   
   }
 ]

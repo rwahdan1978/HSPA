@@ -71,7 +71,8 @@ export class PropertyDetailComponent implements OnInit {
 
   getMapUrl(): string {
 
-    this.dangerousUrl = this.property.theaddress;
+    this.dangerousUrl = "https://www.google.com/maps?q=" + this.property.theaddress + "&output=embed"
+    this.property.theaddress;
     this.pdfSrc =  this.sanitizer.bypassSecurityTrustResourceUrl(this.dangerousUrl);
     
     return this.pdfSrc;

@@ -106,8 +106,7 @@ export class AddPropertyComponent implements OnInit {
         contactNumber: [null],
         contactNumber2: [null],
         contactEmail: [null],
-        contactCommission: [null],
-        contactAddress:[null]
+        contactCommission: [null]
       }),
 
       PhotoInfo: this.fb.group({
@@ -282,10 +281,6 @@ export class AddPropertyComponent implements OnInit {
         return this.sellerInfo.controls['contactCommission'] as FormControl;
       }
 
-      get contactAddress() {
-        return this.sellerInfo.controls['contactAddress'] as FormControl;
-      }
-
       get companyImage() {
         return this.sellerInfo.controls['companyImage'] as FormControl;
       }
@@ -354,7 +349,7 @@ export class AddPropertyComponent implements OnInit {
     this.property.contactNumber = this.contactNumber.value;
     this.property.contactNumber2 = this.contactNumber2.value;
     this.property.contactEmail = this.contactEmail.value;
-    this.property.theaddress = this.contactAddress.value;
+    this.property.theaddress = this.contactCompany.value;
   }
 
   allTabsValid(): boolean {

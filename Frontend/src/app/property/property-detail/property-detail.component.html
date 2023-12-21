@@ -176,8 +176,9 @@
 
         <tab heading="Address" [active]="currentTabId === 1">
 
-          <h5 *ngIf="property.theaddress != null" style="color: red;">To get directions, click on directions <br>and 
-                                                              to get contact details, click on view large map</h5>
+          <h5 *ngIf="property.theaddress != null">
+                    For directions, click on <strong style="color: red;">Directions.</strong>
+                    For contact details, click on <strong style="color: red;">View large map</strong></h5><br>
           <div>
             <iframe *ngIf="property.theaddress != null"
               allowfullscreen

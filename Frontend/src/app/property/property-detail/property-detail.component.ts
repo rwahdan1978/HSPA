@@ -68,7 +68,7 @@ export class PropertyDetailComponent implements OnInit {
     this.likes = JSON.parse(data2);
      
   }
-
+  // for location
   getMapUrl(): string {
 
     this.dangerousUrl = "https://www.google.com/maps?q=" + this.property.theaddress + "&output=embed"

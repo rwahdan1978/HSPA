@@ -12,6 +12,8 @@ import { IPropertyBase } from 'src/app/model/ipropertybase';
 export class PropertyListComponent implements OnInit{
   SellRent = 1;
   properties: IPropertyBase[];
+  public today = Date.now();
+
 
   constructor(private route: ActivatedRoute, private housingService: HousingService) {}
 
@@ -26,5 +28,11 @@ export class PropertyListComponent implements OnInit{
         console.log(error);
       }
     );
+
+    setInterval(() => {
+      this.today = Date.now();
+    }, 100);
+    
   }
+
 }

@@ -1,3 +1,9 @@
+<h4 style="color: darkcyan;">Dubai: {{today| date: 'medium'|uppercase}} &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;   
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp; &nbsp; &nbsp;&nbsp; &nbsp; 
+Makkah: {{today| date: 'medium':'GMT+3'|uppercase}}
+</h4>
+
 <div class="row">
     <div *ngFor="let property of properties" class="shadow-lg col-sm-4 p-1" style="width: 18rem; margin-right: 1rem; margin-bottom: 1rem;">
         <app-property-card [property] = "property"></app-property-card>

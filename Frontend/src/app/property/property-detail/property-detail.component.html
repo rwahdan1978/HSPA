@@ -2,8 +2,8 @@
   <div class="col-sm-4 p-0">
     <div class="card">
       <div class="card-img-wrapper">
-        <img *ngIf="property.Image1" class="card-img-top" src="https://angular-upload-files-2023.s3.amazonaws.com/properties2023/{{property.Image1}}">
-        <img *ngIf="!property.Image1" class="card-img-top" src="https://angular-upload-files-2023.s3.ap-south-1.amazonaws.com/default_house.png">
+        <img *ngIf="property.Image1" class="card-img-top" src="https://angular-upload-files-2023-2024.s3.amazonaws.com/properties2023/{{property.Image1}}">
+        <img *ngIf="!property.Image1" class="card-img-top" src="https://angular-upload-files-2023-2024.s3.ap-south-1.amazonaws.com/default_house.png">
       </div>
       <div class="card-body">
         
@@ -192,7 +192,7 @@
           
           <div *ngIf="property.theaddress == null" class="card" style="width: 850px;">
             <strong>Location Map not available, Updating Records...</strong><br>
-            <img class="card-img-top" src="https://angular-upload-files-2023.s3.ap-south-1.amazonaws.com/default_house.png"
+            <img class="card-img-top" src="https://angular-upload-files-2023-2024.s3.ap-south-1.amazonaws.com/default_house.png"
             style="width: 850px;">
             <div class="card-body">
               <h5 class="card-title">Commission {{property.contactCommission}} AED</h5><br><br>
@@ -214,20 +214,20 @@
 
                 <ol class="carousel-indicators">
                   <li data-target="#carousel" data-slide-to="0" class="active" 
-                      style="background-image:url('https://angular-upload-files-2023.s3.ap-south-1.amazonaws.com/properties2023/{{property.Image1}}')"></li>
+                      style="background-image:url('https://angular-upload-files-2023-2024.s3.ap-south-1.amazonaws.com/properties2023/{{property.Image1}}')"></li>
 
-                  <li data-target="#carousel" data-slide-to="1" style="background-image:url('https://angular-upload-files-2023.s3.ap-south-1.amazonaws.com/properties2023/{{property.Image2}}')"></li>
-                  <li data-target="#carousel" data-slide-to="2" style="background-image:url('https://angular-upload-files-2023.s3.ap-south-1.amazonaws.com/properties2023/{{property.Image3}}')"></li>
-                  <li data-target="#carousel" data-slide-to="3" style="background-image:url('https://angular-upload-files-2023.s3.ap-south-1.amazonaws.com/properties2023/{{property.Image4}}')"></li>
-                  <li data-target="#carousel" data-slide-to="4" style="background-image:url('https://angular-upload-files-2023.s3.ap-south-1.amazonaws.com/properties2023/{{property.Image5}}')"></li>
+                  <li data-target="#carousel" data-slide-to="1" style="background-image:url('https://angular-upload-files-2023-2024.s3.ap-south-1.amazonaws.com/properties2023/{{property.Image2}}')"></li>
+                  <li data-target="#carousel" data-slide-to="2" style="background-image:url('https://angular-upload-files-2023-2024.s3.ap-south-1.amazonaws.com/properties2023/{{property.Image3}}')"></li>
+                  <li data-target="#carousel" data-slide-to="3" style="background-image:url('https://angular-upload-files-2023-2024.s3.ap-south-1.amazonaws.com/properties2023/{{property.Image4}}')"></li>
+                  <li data-target="#carousel" data-slide-to="4" style="background-image:url('https://angular-upload-files-2023-2024.s3.ap-south-1.amazonaws.com/properties2023/{{property.Image5}}')"></li>
             
                 </ol>
 
                 <a class="carousel-control-prev" href="#carousel" role="button" data-slide="prev">
-                  <img src="https://angular-upload-files-2023.s3.ap-south-1.amazonaws.com/properties2023/left-arrow.svg" alt="Prev"> 
+                  <img src="https://angular-upload-files-2023-2024.s3.ap-south-1.amazonaws.com/properties2023/left-arrow.svg" alt="Prev"> 
                 </a>
                 <a class="carousel-control-next" href="#carousel" role="button" data-slide="next">
-                  <img src="https://angular-upload-files-2023.s3.ap-south-1.amazonaws.com/properties2023/right-arrow.svg" alt="Next">
+                  <img src="https://angular-upload-files-2023-2024.s3.ap-south-1.amazonaws.com/properties2023/right-arrow.svg" alt="Next">
                 </a>
 
               </div>
@@ -236,7 +236,7 @@
 
                 <!-- here we need to make to show original photo-->
                 <div id="image1" class="carousel-item active" (click)="showImage()"
-                   style="background-image:url('https://angular-upload-files-2023.s3.ap-south-1.amazonaws.com/properties2023/{{property.Image1}}')">
+                   style="background-image:url('https://angular-upload-files-2023-2024.s3.ap-south-1.amazonaws.com/properties2023/{{property.Image1}}')">
                   <div class="container">
                   
                   <p *ngIf="property.SellRent ==1">For Sale / Price:{{property.Price}}AED</p>
@@ -245,7 +245,7 @@
                 </div>
 
                 <div id="image2" class="carousel-item" (click)="showImage()"
-                style="background-image:url('https://angular-upload-files-2023.s3.ap-south-1.amazonaws.com/properties2023/{{property.Image2}}')">
+                style="background-image:url('https://angular-upload-files-2023-2024.s3.ap-south-1.amazonaws.com/properties2023/{{property.Image2}}')">
                   <div class="container">
                   
                   <p *ngIf="property.SellRent ==1">For Sale / Price:{{property.Price}}AED</p>
@@ -254,7 +254,7 @@
                 </div>
 
                 <div id="image3" class="carousel-item" (click)="showImage()"
-                style="background-image:url('https://angular-upload-files-2023.s3.ap-south-1.amazonaws.com/properties2023/{{property.Image3}}')">
+                style="background-image:url('https://angular-upload-files-2023-2024.s3.ap-south-1.amazonaws.com/properties2023/{{property.Image3}}')">
                   <div class="container">
                   
                   <p *ngIf="property.SellRent ==1">For Sale / Price:{{property.Price}}AED</p>
@@ -263,7 +263,7 @@
                 </div>
 
                 <div id="image4" class="carousel-item " (click)="showImage()"
-                style="background-image:url('https://angular-upload-files-2023.s3.ap-south-1.amazonaws.com/properties2023/{{property.Image4}}')">
+                style="background-image:url('https://angular-upload-files-2023-2024.s3.ap-south-1.amazonaws.com/properties2023/{{property.Image4}}')">
                   <div class="container">
                   
                   <p *ngIf="property.SellRent ==1">For Sale / Price:{{property.Price}}AED</p>
@@ -272,7 +272,7 @@
                 </div>
 
                 <div id="image5" class="carousel-item " (click)="showImage()"
-                style="background-image:url('https://angular-upload-files-2023.s3.ap-south-1.amazonaws.com/properties2023/{{property.Image5}}')">
+                style="background-image:url('https://angular-upload-files-2023-2024.s3.ap-south-1.amazonaws.com/properties2023/{{property.Image5}}')">
                   <div class="container">
                   
                   <p *ngIf="property.SellRent ==1">For Sale / Price:{{property.Price}}AED</p>
@@ -296,7 +296,7 @@
             <div class="card-header">
               <strong> Commission: {{property.contactCommission}} AED </strong>
             </div>
-            <img src="https://angular-upload-files-2023.s3.ap-south-1.amazonaws.com/properties2023/{{property.companyImage}}" class="card-img-top" style= "max-height: 20%;">
+            <img src="https://angular-upload-files-2023-2024.s3.ap-south-1.amazonaws.com/properties2023/{{property.companyImage}}" class="card-img-top" style= "max-height: 20%;">
             <div class="card-body">
                 <p> Seller Name: {{property.contactCompany}}</p>
                 <p> Seller Name: {{property.contactName}}</p>
@@ -325,23 +325,23 @@
         <section *ngIf="visable1" class="slider_container">
           <section class="slider">
               <div class="slide one">
-                  <img (click)="hideImage()" src="https://angular-upload-files-2023.s3.ap-south-1.amazonaws.com/properties2023/{{property.Image1}}" alt="">
+                  <img (click)="hideImage()" src="https://angular-upload-files-2023-2024.s3.ap-south-1.amazonaws.com/properties2023/{{property.Image1}}" alt="">
                  
               </div>
               <div (click)="hideImage()" class="slide two">
-                  <img src="https://angular-upload-files-2023.s3.ap-south-1.amazonaws.com/properties2023/{{property.Image2}}" alt="">
+                  <img src="https://angular-upload-files-2023-2024.s3.ap-south-1.amazonaws.com/properties2023/{{property.Image2}}" alt="">
                   
               </div>
               <div (click)="hideImage()" class="slide three">
-                  <img src="https://angular-upload-files-2023.s3.ap-south-1.amazonaws.com/properties2023/{{property.Image3}}" alt="">
+                  <img src="https://angular-upload-files-2023-2024.s3.ap-south-1.amazonaws.com/properties2023/{{property.Image3}}" alt="">
                   
               </div>
               <div (click)="hideImage()" class="slide four">
-                  <img src="https://angular-upload-files-2023.s3.ap-south-1.amazonaws.com/properties2023/{{property.Image4}}" alt="">
+                  <img src="https://angular-upload-files-2023-2024.s3.ap-south-1.amazonaws.com/properties2023/{{property.Image4}}" alt="">
                   
               </div>
               <div (click)="hideImage()" class="slide five">
-                  <img src="https://angular-upload-files-2023.s3.ap-south-1.amazonaws.com/properties2023/{{property.Image5}}" alt="">
+                  <img src="https://angular-upload-files-2023-2024.s3.ap-south-1.amazonaws.com/properties2023/{{property.Image5}}" alt="">
                   
               </div>
           </section>

@@ -28,6 +28,8 @@ import { PropertyDetailResolverService } from './property/property-detail/proper
 import { DemoDirective } from './demo.directive';
 import { UploadComponent } from './upload/upload.component';
 import {GetVariableService} from '../app/property/getVariable.service';
+import { FilterPipe } from './Pipes/filter.pipe';
+import { SortPipe } from './Pipes/sort.pipe';
 
 const appRoutes: Routes = [
   {path: '', component: PropertyListComponent},
@@ -50,7 +52,9 @@ const appRoutes: Routes = [
       UserRegisterComponent,
       UserLoginComponent,
       DemoDirective,
-      UploadComponent
+      UploadComponent,
+      FilterPipe,
+      SortPipe
    ],
   imports: [
     NgxFileDropModule,

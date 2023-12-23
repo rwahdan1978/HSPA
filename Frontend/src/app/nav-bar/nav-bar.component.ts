@@ -9,11 +9,16 @@ import { Router } from '@angular/router';
 })
 export class NavBarComponent implements OnInit {
 
+  public today = Date.now();
   loggedinUser: string;
 
   constructor(private alertify: AlertifyService, private router: Router) { }
 
-  ngOnInit() {}
+  ngOnInit() {
+    setInterval(() => {
+      this.today = Date.now();
+    }, 100);
+  }
 
   loggedin()
   {

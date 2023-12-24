@@ -6,6 +6,7 @@ import emailjs from '@emailjs/browser';
 import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
 import { AlertifyService } from 'src/app/services/alertify.service';
 import { DomSanitizer, SafeResourceUrl, SafeUrl} from '@angular/platform-browser';
+import { timeout } from 'rxjs';
 
 @Component({
   selector: 'app-property-detail',
@@ -44,8 +45,8 @@ export class PropertyDetailComponent implements OnInit {
     currentTabId = 0;
     token: any;
     dangerousUrl:any;
+    public timeoutId: any;
   
-
   constructor(private route: ActivatedRoute, private alert: AlertifyService, 
               private fb: FormBuilder, private sanitizer: DomSanitizer) {}
 
@@ -60,22 +61,19 @@ export class PropertyDetailComponent implements OnInit {
       }
     )
 
-    
     this.propid = this.propertyId;
     this.propidStr = "nums" + this.propid.toString()
 
     let data2:any = localStorage.getItem(this.propidStr);
     this.likes = JSON.parse(data2);
-     
-  }
-  // for location
-  getMapUrl(): string {
 
-    this.dangerousUrl = "https://www.google.com/maps?q=" + this.property.theaddress + "&output=embed"
-    this.pdfSrc =  this.sanitizer.bypassSecurityTrustResourceUrl(this.dangerousUrl);
-    
+    setTimeout(() => {
+      this.dangerousUrl = "https://www.google.com/maps?q=" + this.property.theaddress + "&output=embed";
+      this.pdfSrc = this.sanitizer.bypassSecurityTrustResourceUrl(this.dangerousUrl);
+    }, 100);
+
     return this.pdfSrc;
-
+     
   }
 
   showImage(){

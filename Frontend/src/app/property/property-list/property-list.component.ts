@@ -21,7 +21,9 @@ export class PropertyListComponent implements OnInit{
 
   ngOnInit(): void{
 
-      if (this.route.snapshot.url.toString()){
+      if (this.route.snapshot.url.toString()==="buy-property"){
+        this.SellRent = 1;
+      }if (this.route.snapshot.url.toString()==="rent-property"){
         this.SellRent = 2;
       }
   

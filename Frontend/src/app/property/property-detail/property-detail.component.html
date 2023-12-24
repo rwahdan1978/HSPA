@@ -177,19 +177,20 @@
         <tab heading="Address" [active]="currentTabId === 1">
 
           <h5 *ngIf="property.theaddress != null">
-                    For directions, click on <strong style="color: red;">Directions.</strong>
-                    For contact details, click on <strong style="color: red;">View large map</strong></h5><br>
+                    For directions, click on <strong 
+                    style="color: red;">Directions.</strong>
+                    For contact details, click on <strong 
+                    style="color: red;">View large map</strong>
+          </h5><br>
+         
           <div>
-            <iframe *ngIf="property.theaddress != null"
-              allowfullscreen
-              height="450"
-              loading="lazy"
-              [src]= getMapUrl()
-              style="border:0"
-              width="720">
+            <iframe 
+              [src]= pdfSrc
+              width="800" height="450" style="border:0;" loading="lazy" 
+              referrerpolicy="no-referrer-when-downgrade">
             </iframe>
           </div>
-          
+
           <div *ngIf="property.theaddress == null" class="card" style="width: 850px;">
             <strong>Location Map not available, Updating Records...</strong><br>
             <img class="card-img-top" src="https://angular-upload-files-2023-2024.s3.ap-south-1.amazonaws.com/default_house.png"

@@ -16,7 +16,7 @@ import { timeout } from 'rxjs';
 
 export class PropertyDetailComponent implements OnInit {
 
-  public pdfSrc: any;
+  public urlPath: any;
 
   @ViewChild('iframe') iframe: ElementRef
 
@@ -45,7 +45,6 @@ export class PropertyDetailComponent implements OnInit {
     currentTabId = 0;
     token: any;
     dangerousUrl:any;
-    public timeoutId: any;
   
   constructor(private route: ActivatedRoute, private alert: AlertifyService, 
               private fb: FormBuilder, private sanitizer: DomSanitizer) {}
@@ -69,10 +68,10 @@ export class PropertyDetailComponent implements OnInit {
 
     setTimeout(() => {
       this.dangerousUrl = "https://www.google.com/maps?q=" + this.property.theaddress + "&output=embed";
-      this.pdfSrc = this.sanitizer.bypassSecurityTrustResourceUrl(this.dangerousUrl);
+      this.urlPath = this.sanitizer.bypassSecurityTrustResourceUrl(this.dangerousUrl);
     }, 100);
 
-    return this.pdfSrc;
+    return this.urlPath;
      
   }
 

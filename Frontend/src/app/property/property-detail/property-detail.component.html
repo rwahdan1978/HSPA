@@ -140,34 +140,66 @@
                         <i *ngIf="property.mall=='True'" class="fa-solid fa-store" aria-hidden="true" 
                             style="font-size: 30px; padding-top: 15px;">
                         </i>
-                        &nbsp; &nbsp;
+                        
                         <strong *ngIf="property.mall=='True'">Shopping Mall</strong>  
-                        &nbsp; &nbsp; &nbsp; &nbsp;
-                        <strong *ngIf="property.mall=='True'"> 5 minutes walk</strong> <br>
+                        &nbsp;&nbsp; &nbsp;
+                        <strong *ngIf="property.mall=='True'"> 5 minutes walk</strong> 
+
+                        <i *ngIf="property.mall=='False'" class="fa-solid fa-store" aria-hidden="true" 
+                        style="font-size: 30px; padding-top: 15px;">
+                        </i>
+                        
+                        <strong *ngIf="property.mall=='False'">Shopping Mall</strong>  
+                        &nbsp; &nbsp; &nbsp;
+                        <strong *ngIf="property.mall=='False'" style="color: red;"> Not Available </strong> &nbsp; &nbsp;
 
                         <i *ngIf="property.zoo=='True'" class="fa-solid fa-hippo" aria-hidden="true" 
                             style="font-size: 30px; padding-top: 15px;" >
                         </i>
                         &nbsp; &nbsp;
                         <strong *ngIf="property.zoo=='True'">Zoo</strong> 
-                        &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
-                        <strong *ngIf="property.zoo=='True'"> 25 minutes drive</strong> <br>
+                        &nbsp; &nbsp; &nbsp;
+                        <strong *ngIf="property.zoo=='True'"> 25 minutes drive</strong> 
+
+                        <i *ngIf="property.zoo=='False'" class="fa-solid fa-hippo" aria-hidden="true" 
+                            style="font-size: 30px; padding-top: 15px;" >
+                        </i>
+                        &nbsp; &nbsp;
+                        <strong *ngIf="property.zoo=='False'">Zoo</strong> 
+                        &nbsp; &nbsp; &nbsp;
+                        <strong *ngIf="property.zoo=='False'" style="color: red;"> Not Available </strong> <br>
                         
                         <i *ngIf="property.fastFood=='True'" class="fas fa-hotdog" 
                             style="font-size: 30px; padding-top: 15px;" >
                         </i> 
                         &nbsp; &nbsp;
                         <strong *ngIf="property.fastFood=='True'">Fast Food</strong>
-                        &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
-                        <strong *ngIf="property.fastFood=='True'"> 5-15 minutes walk</strong> <br>
+                        &nbsp; &nbsp; &nbsp;
+                        <strong *ngIf="property.fastFood=='True'"> 5-15 minutes walk</strong> 
+
+                        <i *ngIf="property.fastFood=='False'" class="fas fa-hotdog" 
+                            style="font-size: 30px; padding-top: 15px;" >
+                        </i> 
+                        &nbsp; &nbsp;
+                        <strong *ngIf="property.fastFood=='False'">Fast Food</strong>
+                        &nbsp; &nbsp; &nbsp;
+                        <strong *ngIf="property.fastFood=='False'" style="color: red;"> Not Available </strong> 
                         
                         <i *ngIf="property.beach=='True'" class="fa-solid fa-umbrella-beach" 
                             style="font-size: 30px; padding-top: 15px;" >
                         </i>
-                        &nbsp; &nbsp;
+                        
                         <strong *ngIf="property.beach=='True'">Beach</strong>
-                        &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
-                        <strong *ngIf="property.beach=='True'"> 10 minutes drive</strong> <br>
+                        &nbsp; &nbsp; &nbsp;
+                        <strong *ngIf="property.beach=='True'"> 10 minutes drive</strong> 
+
+                        <i *ngIf="property.beach=='False'" class="fa-solid fa-umbrella-beach" 
+                            style="font-size: 30px; padding-top: 15px;" >
+                        </i>
+                        &nbsp; &nbsp;
+                        <strong *ngIf="property.beach=='False'">Beach</strong>
+                        &nbsp; &nbsp; &nbsp;
+                        <strong *ngIf="property.beach=='False'" style="color: red;"> Not Available </strong> 
                         
                   </div>
               </div>
@@ -186,7 +218,7 @@
           <div>
             <iframe 
               [src]= urlPath
-              width="800" height="450" style="border:0;" loading="lazy" 
+              width="840" height="450" style="border:0;" loading="lazy" 
               referrerpolicy="no-referrer-when-downgrade">
             </iframe>
           </div>

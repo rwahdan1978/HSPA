@@ -12,7 +12,7 @@ export class Property implements IPropertyBase {
   BuiltArea: number;
   CarpetArea?: number;
   Address: string;
-  Address2?: string;
+  Address2?: string; // this is landmark in add property
   City: string;
   FloorNo?: string;
   TotalFloor?: string;

@@ -14,9 +14,9 @@ export class FilterPipe implements PipeTransform {
     }
 
     for (const item of value){
-      if (item[propName].toLocaleLowerCase() === filterString.toLocaleLowerCase()) {
+      if (item[propName].toLocaleLowerCase().indexOf(filterString.toLocaleLowerCase()) != -1) {     
         resultArray.push(item);
-  }
+      }
     }
 
     return resultArray;

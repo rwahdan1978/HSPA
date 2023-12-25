@@ -1,6 +1,3 @@
-
-<!-- add fileds for Places to visit around -->
-
 <br>
 <div class="row mb-5">
   <div class="col-8 shadow-lg p-0 bg-white">
@@ -82,26 +79,26 @@
                 </div>
 
                 <div class="form-group col-12">
-                  <label>in Building/Society/Project</label>
+                  <label>City</label>
                   <input type="text" class="form-control"
                   ngModel
                   formControlName="Name"
                   [(ngModel)]="propertyView.Name">
                   <div class="error-block"
                   *ngIf="Name.invalid && (nextClicked || Name.touched)">
-                    <strong> select building, society or project name </strong>
+                    <strong> select city name </strong>
                   </div>
                 </div>
 
                 <div class="form-group col-12">
-                  <label>City</label>
+                  <label>State/Country</label>
                   <input type="text"
                   class="form-control"
                   formControlName="City"
                   [(ngModel)]="propertyView.City"><br>
                   <div class="error-block"
                   *ngIf="City.invalid && (nextClicked || City.touched)">
-                    <strong> select city </strong>
+                    <strong> select state/country </strong>
                   </div>
                 </div>
 
@@ -288,6 +285,8 @@
                     (click)="selectTab(2, OtherInfo.valid)">Back</button>
                 </div>
               </tab>
+
+              <!-- add fileds for Places to visit around tab-->
 
               <tab heading="sellerInfo" formGroupName="sellerInfo">
                 

@@ -10,6 +10,19 @@
           <div class="tab-panel">
             <tabset class="member-tabset" #formTabs>
               <tab heading="Basic Info" formGroupName="BasicInfo" >
+                
+                <div class="form-group col-12">
+                  <label>Project Name</label>
+                  <input type="text" class="form-control"
+                  ngModel
+                  formControlName="ProjectName"
+                  [(ngModel)]="propertyView.ProjectName">
+                  <div class="error-block"
+                  *ngIf="ProjectName.invalid && (nextClicked || ProjectName.touched)">
+                    <strong> select project name </strong>
+                  </div>
+                </div>
+
                 <div class="form-group col-12">
                 <p>I want to</p>
                   <div class="btn-group"
@@ -186,7 +199,8 @@
 
                 <div class="form-group col-12">
                   <label>Address</label>
-                  <input type="text"
+                  <!-- Address1 -->
+                  <input type="text"      
                   class="form-control"
                   formControlName="Address">
                   <div class="error-block"
@@ -197,12 +211,29 @@
 
                 <div class="form-group col-12">
                   <label>Landmark</label>
-                  <input type="text"
+                  <!-- Address2 -->
+                  <input type="text"      
                   formControlName="LandMark"
                   class="form-control">
                 </div><br>
 
-                 <!-- add fileds for Places to visit around (part of address)-->
+                <div class="row">
+                  <div class="form-group col-6">
+                    <label>Building/Flat#</label>
+                    
+                    <input type="text"      
+                    formControlName="building_flat"
+                    class="form-control">
+                  </div><br>
+
+                  <div class="form-group col-6">
+                    <label>Villa#</label>
+                    
+                    <input type="text"      
+                    formControlName="villa"
+                    class="form-control">
+                  </div>
+                </div><br>
 
                 <div class="form-group col-12">
                   <button type="button" class="btn btn-primary col-12"
@@ -271,8 +302,9 @@
                   </div>
                 </div>
 
+                <!-- add fileds for Places to visit around (part of address)-->
                 <div class="form-group col-12">
-                  <label>Description</label>
+                  <label>Places of Interest</label>
                   <textarea type="text"
                   class="form-control"
                   formControlName="Description"

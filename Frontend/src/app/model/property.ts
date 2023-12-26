@@ -3,6 +3,7 @@ import { IPropertyBase } from './ipropertybase';
 export class Property implements IPropertyBase {
   
   Id: number;
+  ProjectName: string;
   SellRent: number;
   Name: string;
   PType: string;
@@ -13,6 +14,8 @@ export class Property implements IPropertyBase {
   CarpetArea?: number;
   Address: string;
   Address2?: string; // this is landmark in add property
+  building_flat?:number;
+  villa?:number;
   City: string;
   FloorNo?: string;
   TotalFloor?: string;

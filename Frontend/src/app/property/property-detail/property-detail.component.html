@@ -16,10 +16,11 @@
             <h6 *ngIf="property.SellRent == 2">{{property.BHK}} bedroom {{property.PType}}</h6> 
         </div>
         <div>
-           <strong>{{property.Address}}, {{property.Address2}}, Near {{property.LandMark}}<br> {{property.Name}}, {{property.City}}</strong>
+           <strong *ngIf="property.building_flat !=null">{{property.Address}}, Near {{property.Address2}} - Building # {{property.building_flat}}<br> {{property.Name}}, {{property.City}}</strong>
+           <strong *ngIf="property.villa !=null">{{property.Address}}, Near {{property.Address2}} - Villa # {{property.villa}}<br> {{property.Name}}, {{property.City}}</strong>
         </div> <hr>
         <div>
-            <strong>Build Area: </strong>
+            <strong>Build Area: </strong> 
             {{property.BuiltArea}} Sqft
         </div>
 
@@ -54,17 +55,17 @@
               <div class="col-sm-6">
                   <div class="heading">
                       <strong>Project Name</strong>
-                      <p>{{property.Name}}</p>
+                      <p>{{property.ProjectName}}</p>
                   </div>
 
                   <div class="heading">
-                      <strong>Floor Number</strong>
-                      <p>{{property.FloorNo}} floor</p>
+                      <strong *ngIf="property.FloorNo !='NA'">Floor Number</strong>
+                      <p *ngIf="property.FloorNo !='NA'">{{property.FloorNo}} floor</p>
                   </div>
 
                   <div class="heading">
-                    <strong>Total Number of Floors</strong>
-                    <p>{{property.TotalFloor}} floors</p>
+                    <strong *ngIf="property.TotalFloor !='NA'">Total Number of Floors</strong>
+                    <p *ngIf="property.TotalFloor !='NA'">{{property.TotalFloor}} floors</p>
                 </div>
 
                   <div class="heading">

@@ -14,7 +14,10 @@ export class PropertyListComponent implements OnInit{
   properties: IPropertyBase[];
   City ='';
   SearchCity = '';
+  Prop = '';
+  SearchProp = '';
   SortbyParam = '';
+  SearchCar = '';
   SortDirection = 'asc';
 
   constructor(private route: ActivatedRoute, private housingService: HousingService) {}
@@ -43,6 +46,9 @@ export class PropertyListComponent implements OnInit{
   onCityFilterClear(){
     this.SearchCity = '';
     this.City = '';
+    this.SearchProp = '';
+    this.SearchCar = '';
+    this.Prop = '';
   }
 
   onSortDirection() {

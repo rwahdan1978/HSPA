@@ -9,5 +9,6 @@ export interface IPropertyBase {
     BuiltArea: number,
     City: string,
     RTM: number,
-    Image1?: string
+    Image1?: string,
+    ProjectName: string
 }

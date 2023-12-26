@@ -29,7 +29,7 @@ export class AddPropertyComponent implements OnInit {
   property = new Property();
 
   // Will come from masters
-  propertyTypes: Array<string> = ['House', 'Apartment', 'Duplex']
+  propertyTypes: Array<string> = ['House', 'Apartment', 'Villa']
   furnishTypes: Array<string> = ['Fully', 'Semi', 'Unfurnished']
 
   propertyView: IPropertyBase = {
@@ -42,7 +42,8 @@ export class AddPropertyComponent implements OnInit {
     BHK: null as any,
     BuiltArea: null as any,
     City: null as any,
-    RTM: null as any
+    RTM: null as any,
+    ProjectName: null as any
   };
   
   constructor(
@@ -67,6 +68,7 @@ export class AddPropertyComponent implements OnInit {
     
     this.addPropertyForm = this.fb.group({
       BasicInfo: this.fb.group({
+        ProjectName: [null, Validators.required],
         SellRent: ['1' , Validators.required],
         BHK: [null, Validators.required],
         PType: [null, Validators.required],
@@ -87,7 +89,9 @@ export class AddPropertyComponent implements OnInit {
         FloorNo: [null],
         TotalFloor: [null],
         Address: [null, Validators.required],
-        LandMark: [null],
+        LandMark: [null], //address2
+        building_flat:[null],
+        villa:[null]
       }),
 
       OtherInfo: this.fb.group({
@@ -149,6 +153,10 @@ export class AddPropertyComponent implements OnInit {
   // #endregion
 
   //#region <Form Controls>
+
+      get ProjectName() {
+        return this.BasicInfo.controls['ProjectName'] as FormControl;
+  }
       get SellRent() {
         return this.BasicInfo.controls['SellRent'] as FormControl;
       }
@@ -204,9 +212,17 @@ export class AddPropertyComponent implements OnInit {
       get Address() {
         return this.AddressInfo.controls['Address'] as FormControl;
       }
-
+      //address2
       get LandMark() {
         return this.AddressInfo.controls['LandMark'] as FormControl;
+      }
+
+      get building_flat() {
+        return this.AddressInfo.controls['building_flat'] as FormControl;
+      }
+
+      get villa() {
+        return this.AddressInfo.controls['villa'] as FormControl;
       }
 
       get RTM() {
@@ -315,6 +331,7 @@ export class AddPropertyComponent implements OnInit {
   mapProperty(): void {
     //comment
     this.property.Id = this.housingService.newPropID();
+    this.property.ProjectName = this.ProjectName.value;
     this.property.SellRent = +this.SellRent.value;
     this.property.BHK = this.BHK.value;
     this.property.PType = this.PType.value;
@@ -330,6 +347,8 @@ export class AddPropertyComponent implements OnInit {
     this.property.TotalFloor = this.TotalFloor.value;
     this.property.Address = this.Address.value;
     this.property.Address2 = this.LandMark.value;
+    this.property.building_flat = this.building_flat.value;
+    this.property.villa = this.villa.value;
     this.property.RTM = this.RTM.value;
     this.property.AOP = this.AOP.value;
     this.property.PA = this.PA.value;

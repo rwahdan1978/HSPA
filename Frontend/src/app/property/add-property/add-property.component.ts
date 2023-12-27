@@ -21,6 +21,12 @@ export class AddPropertyComponent implements OnInit {
 
   // myScriptElement: HTMLScriptElement;
 
+  mall: any;
+  fastFood: any;
+  zoo:any;
+  beach:any;
+
+
   @ViewChild('formTabs') formTabs: TabsetComponent;
   datePickerConfig: Partial<BsDatepickerConfig>;
   addPropertyForm: FormGroup;
@@ -101,7 +107,8 @@ export class AddPropertyComponent implements OnInit {
         PA: [null,  Validators.required],
         Gated: [null],
         MainEntrance: [null],
-        Description: [null]
+        Description: [null],
+        Interests: [null]
       }),
 
       sellerInfo: this.fb.group({
@@ -253,24 +260,28 @@ export class AddPropertyComponent implements OnInit {
         return this.OtherInfo.controls['Description'] as FormControl;
       }
 
+      get Interests() {
+        return this.OtherInfo.controls['Interests'] as FormControl;
+      }
+
       get Image1() {
-        return this.OtherInfo.controls['Image1'] as FormControl;
+        return this.PhotoInfo.controls['Image1'] as FormControl;
       }
 
       get Image2() {
-        return this.OtherInfo.controls['Image2'] as FormControl;
+        return this.PhotoInfo.controls['Image2'] as FormControl;
       }
 
       get Image3() {
-        return this.OtherInfo.controls['Image3'] as FormControl;
+        return this.PhotoInfo.controls['Image3'] as FormControl;
       }
 
       get Image4() {
-        return this.OtherInfo.controls['Image4'] as FormControl;
+        return this.PhotoInfo.controls['Image4'] as FormControl;
       }
 
       get Image5() {
-        return this.OtherInfo.controls['Image5'] as FormControl;
+        return this.PhotoInfo.controls['Image5'] as FormControl;
       }
 
       get contactCompany() {
@@ -298,7 +309,7 @@ export class AddPropertyComponent implements OnInit {
       }
 
       get companyImage() {
-        return this.sellerInfo.controls['companyImage'] as FormControl;
+        return this.PhotoInfo.controls['companyImage'] as FormControl;
       }
 
   //#endregion
@@ -370,6 +381,26 @@ export class AddPropertyComponent implements OnInit {
     this.property.contactNumber2 = this.contactNumber2.value;
     this.property.contactEmail = this.contactEmail.value;
     this.property.theaddress = this.contactCompany.value;
+    this.property.mall = this.mall;
+    this.property.zoo = this.zoo;
+    this.property.fastFood = this.fastFood;
+    this.property.beach = this.beach;
+  }
+
+  checkCheckBoxvalue1(event:any){
+    this.mall = event.checked;
+  }
+
+  checkCheckBoxvalue2(event:any){
+    this.zoo = event.checked;
+  }
+
+  checkCheckBoxvalue3(event:any){
+    this.fastFood = event.checked;
+  }
+
+  checkCheckBoxvalue4(event:any){
+    this.beach = event.checked;
   }
 
   allTabsValid(): boolean {

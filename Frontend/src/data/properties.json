@@ -1,6 +1,7 @@
 [
   {
     "Id":1,
+    "ProjectName": "City of lights",
     "SellRent":2,
     "Name":"Abu Dhabi",
     "PType":"House",
@@ -40,15 +41,16 @@
     "bathroom": 2,
     "parking": 4,
     "swimmingPool": 1,
-    "mall": "True",
-    "zoo": "True",
-    "fastFood": "True",
-    "beach": "True",
+    "mall": true,
+    "zoo": true,
+    "fastFood": true,
+    "beach": true,
     "theaddress": "Tamouh Tower"
   },
 
   {
     "Id":2,
+    "ProjectName": "Marina Square",
     "SellRent":2,
     "Name":"Dubai",
     "PType":"Aparment",
@@ -88,16 +90,17 @@
     "bathroom": 3,
     "parking": 6,
     "swimmingPool": 2,
-    "mall": "True",
-    "zoo": "False",
-    "fastFood": "True",
-    "beach": "False",
+    "mall": true,
+    "zoo": false,
+    "fastFood": true,
+    "beach": false,
     "theaddress":"Emirates Schools Establishment Dubai"
     
   },
 
   {
     "Id":3,
+    "ProjectName": "Shams City",
     "SellRent":1,
     "Name":"Dubai",
     "PType":"House",
@@ -137,16 +140,17 @@
     "bathroom": 3,
     "parking": 5,
     "swimmingPool": 1,
-    "mall": "False",
-    "zoo": "True",
-    "fastFood": "True",
-    "beach": "False",
+    "mall": false,
+    "zoo": true,
+    "fastFood": true,
+    "beach": false,
     "theaddress":"Q Holding PSC"
     
   },
 
   {
     "Id":4,
+    "ProjectName": "Reem Island",
     "SellRent":1,
     "Name":"Sharjah",
     "PType":"Villa",
@@ -186,15 +190,16 @@
     "bathroom": 5,
     "parking": 10,
     "swimmingPool": 2,
-    "mall": "False",
-    "zoo": "False",
-    "fastFood": "True",
-    "beach": "False",
+    "mall": false,
+    "zoo": false,
+    "fastFood": true,
+    "beach": false,
     "theaddress":"Pure Home Real Estate"
   },
   {
     "Id":5,
     "SellRent":1,
+    "ProjectName": "Baynona City",
     "Name":"Al Ain",
     "PType":"House",
     "BHK":2,
@@ -233,10 +238,10 @@
     "bathroom": 2,
     "parking": 3,
     "swimmingPool": 0,
-    "mall": "True",
-    "zoo": "False",
-    "fastFood": "True",
-    "beach": "True",
+    "mall": true,
+    "zoo": false,
+    "fastFood": true,
+    "beach": true,
     "theaddress":"Prestige Luxury Real Estate"
   },
 
@@ -282,10 +287,10 @@
     "bathroom": 3,
     "parking": 4,
     "swimmingPool": 1,
-    "mall": "True",
-    "zoo": "False",
-    "fastFood": "True",
-    "beach": "False",
+    "mall": true,
+    "zoo": false,
+    "fastFood": true,
+    "beach": false,
     "theaddress":"Sheikha Bint Saeed Preparatory School"   
   }
 

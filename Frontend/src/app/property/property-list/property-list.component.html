@@ -1,8 +1,9 @@
 <br>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 
 &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 
 <label>Choose Filter:</label>&nbsp;
-<select [(ngModel)] = 'SearchCar'>
-  <option value="Name">Name</option>
+<select [(ngModel)] = 'SearchCar' (change)="ClearList()">
+  <option value="ProjectName">Project Name</option>
+  <option value="Name">City</option>
   <option value="PType">Property Type</option>
 </select>
 &nbsp; &nbsp; 
@@ -15,7 +16,9 @@
  
 <label>Sort by &nbsp;</label>
 <select [(ngModel)] = 'SortbyParam'>
+  <option value="ProjectName">Project Name</option>
   <option value="Name">City</option>
+  <option value="SellRent">Sell/Rent</option>
   <option value="Price">Price</option>
   <option value="PType">Property Type</option>
 </select>

@@ -43,6 +43,13 @@ export class PropertyListComponent implements OnInit{
     this.SearchCity = this.City;
   }
 
+  ClearList(){
+    this.SearchCity = '';
+    this.City = '';
+    this.SearchProp = '';
+    this.Prop = '';
+  }
+
   onCityFilterClear(){
     this.SearchCity = '';
     this.City = '';

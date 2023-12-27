@@ -60,7 +60,7 @@
 
                   <div class="heading">
                       <strong *ngIf="property.FloorNo !='NA'">Floor Number</strong>
-                      <p *ngIf="property.FloorNo !='NA'">{{property.FloorNo}} floor</p>
+                      <p *ngIf="property.FloorNo !='NA'">Floor number {{property.FloorNo}}</p>
                   </div>
 
                   <div class="heading">
@@ -138,69 +138,46 @@
                         <br><br>
                         <strong>Places to visit around:</strong><br>
 
-                        <i *ngIf="property.mall=='True'" class="fa-solid fa-store" aria-hidden="true" 
+                        <i class="fa-solid fa-store" aria-hidden="true" 
                             style="font-size: 30px; padding-top: 15px;">
                         </i>
                         
-                        <strong *ngIf="property.mall=='True'">Shopping Mall</strong>  
+                        <strong>Shopping Mall</strong>  
                         &nbsp;&nbsp; &nbsp;
-                        <strong *ngIf="property.mall=='True'"> 5 minutes walk</strong> 
+                        <strong *ngIf="property.mall"> 5 minutes walk</strong> 
+                        <strong *ngIf="!property.mall" style="color: red;"> Not Available </strong> 
+                        &nbsp; &nbsp; &nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;
 
-                        <i *ngIf="property.mall=='False'" class="fa-solid fa-store" aria-hidden="true" 
-                        style="font-size: 30px; padding-top: 15px;">
-                        </i>
-                        
-                        <strong *ngIf="property.mall=='False'">Shopping Mall</strong>  
-                        &nbsp; &nbsp; &nbsp;
-                        <strong *ngIf="property.mall=='False'" style="color: red;"> Not Available </strong> &nbsp; &nbsp;
-
-                        <i *ngIf="property.zoo=='True'" class="fa-solid fa-hippo" aria-hidden="true" 
+                        <i class="fa-solid fa-hippo" aria-hidden="true" 
                             style="font-size: 30px; padding-top: 15px;" >
                         </i>
-                        &nbsp; &nbsp;
-                        <strong *ngIf="property.zoo=='True'">Zoo</strong> 
+                        &nbsp;
+                        <strong>Zoo</strong> 
                         &nbsp; &nbsp; &nbsp;
-                        <strong *ngIf="property.zoo=='True'"> 25 minutes drive</strong> 
-
-                        <i *ngIf="property.zoo=='False'" class="fa-solid fa-hippo" aria-hidden="true" 
-                            style="font-size: 30px; padding-top: 15px;" >
-                        </i>
-                        &nbsp; &nbsp;
-                        <strong *ngIf="property.zoo=='False'">Zoo</strong> 
-                        &nbsp; &nbsp; &nbsp;
-                        <strong *ngIf="property.zoo=='False'" style="color: red;"> Not Available </strong> <br>
+                        <strong *ngIf="property.zoo"> 25 minutes drive</strong> 
+                        <strong *ngIf="!property.zoo" style="color: red;"> Not Available </strong> <br>
                         
-                        <i *ngIf="property.fastFood=='True'" class="fas fa-hotdog" 
+                        <i class="fas fa-hotdog" 
                             style="font-size: 30px; padding-top: 15px;" >
                         </i> 
                         &nbsp; &nbsp;
-                        <strong *ngIf="property.fastFood=='True'">Fast Food</strong>
+                        <strong>Fast Food</strong>
                         &nbsp; &nbsp; &nbsp;
-                        <strong *ngIf="property.fastFood=='True'"> 5-15 minutes walk</strong> 
+                        <strong *ngIf="property.fastFood"> 5-15 minutes walk</strong> 
+                        <strong *ngIf="!property.fastFood" style="color: red;"> Not Available </strong> 
 
-                        <i *ngIf="property.fastFood=='False'" class="fas fa-hotdog" 
-                            style="font-size: 30px; padding-top: 15px;" >
-                        </i> 
-                        &nbsp; &nbsp;
-                        <strong *ngIf="property.fastFood=='False'">Fast Food</strong>
-                        &nbsp; &nbsp; &nbsp;
-                        <strong *ngIf="property.fastFood=='False'" style="color: red;"> Not Available </strong> 
+                        &nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp;
                         
-                        <i *ngIf="property.beach=='True'" class="fa-solid fa-umbrella-beach" 
+
+                        <i  class="fa-solid fa-umbrella-beach" 
                             style="font-size: 30px; padding-top: 15px;" >
                         </i>
                         
-                        <strong *ngIf="property.beach=='True'">Beach</strong>
+                        &nbsp; &nbsp;&nbsp; 
+                        <strong>Beach</strong>
                         &nbsp; &nbsp; &nbsp;
-                        <strong *ngIf="property.beach=='True'"> 10 minutes drive</strong> 
-
-                        <i *ngIf="property.beach=='False'" class="fa-solid fa-umbrella-beach" 
-                            style="font-size: 30px; padding-top: 15px;" >
-                        </i>
-                        &nbsp; &nbsp;
-                        <strong *ngIf="property.beach=='False'">Beach</strong>
-                        &nbsp; &nbsp; &nbsp;
-                        <strong *ngIf="property.beach=='False'" style="color: red;"> Not Available </strong> 
+                        <strong *ngIf="property.beach"> 10 minutes drive</strong> 
+                        <strong *ngIf="!property.beach" style="color: red;"> Not Available </strong> 
                         
                   </div>
               </div>

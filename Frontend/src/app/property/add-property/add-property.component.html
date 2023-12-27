@@ -1,6 +1,6 @@
 <br>
 <div class="row mb-5">
-  <div class="col-8 shadow-lg p-0 bg-white">
+  <div class="col-7 shadow-lg p-0 bg-white">
     <div class="card">
       <div class="card-header">
         <h3>List your Property</h3>
@@ -301,14 +301,24 @@
                     btnRadio="North"  tabindex="0" role="button" name="Entrance">North</label>
                   </div>
                 </div>
-
-                <!-- add fileds for Places to visit around (part of address)-->
+                <br>
+                <!-- add fileds for Places to visit around (part of address) checkboxes-->
                 <div class="form-group col-12">
-                  <label>Places of Interest</label>
-                  <textarea type="text"
-                  class="form-control"
-                  formControlName="Description"
-                  rows="6"></textarea>
+                  <div formControlName="Interests">
+                    <label>Places of Interest</label><br>
+                    <mat-checkbox (change)="checkCheckBoxvalue1($event)"> <i class="fa-solid fa-store" aria-hidden="true" 
+                                    style="font-size: 30px; padding-top: 15px;"></i>Shopping Mall
+                    </mat-checkbox> &nbsp;  &nbsp;  &nbsp; 
+                    <mat-checkbox (change)="checkCheckBoxvalue2($event)"> <i class="fa-solid fa-hippo" aria-hidden="true" 
+                                    style="font-size: 30px; padding-top: 15px;"></i>Zoo
+                    </mat-checkbox> &nbsp;  &nbsp;  &nbsp; 
+                    <mat-checkbox (change)="checkCheckBoxvalue3($event)"> <i class="fas fa-hotdog" aria-hidden="true" 
+                                    style="font-size: 30px; padding-top: 15px;"></i>Fast Food
+                    </mat-checkbox> &nbsp;  &nbsp;  &nbsp; 
+                    <mat-checkbox (change)="checkCheckBoxvalue4($event)"> <i class="fa-solid fa-umbrella-beach" aria-hidden="true" 
+                                    style="font-size: 30px; padding-top: 15px;"></i>Beach
+                    </mat-checkbox> &nbsp;  &nbsp;  &nbsp; 
+                  </div>
                 </div><br>
 
                 <div class="form-group col-12">
@@ -387,7 +397,7 @@
       </div>
   </div>
   </div>
-  <div class="col-4">
+  <div class="col-5">
     <div class="card-header">
       <h3>Your Property Preview</h3>
     </div>

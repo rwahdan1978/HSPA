@@ -30,6 +30,7 @@ import { UploadComponent } from './upload/upload.component';
 import {GetVariableService} from '../app/property/getVariable.service';
 import { FilterPipe } from './Pipes/filter.pipe';
 import { SortPipe } from './Pipes/sort.pipe';
+import {MatCheckboxModule} from '@angular/material/checkbox';
 
 const appRoutes: Routes = [
   {path: '', component: PropertyListComponent},
@@ -59,6 +60,7 @@ const appRoutes: Routes = [
    ],
   imports: [
     NgxFileDropModule,
+    MatCheckboxModule,
     BrowserModule,
     SlickCarouselModule,
     HttpClientModule,
@@ -71,7 +73,6 @@ const appRoutes: Routes = [
     ButtonsModule.forRoot(),
     BsDatepickerModule.forRoot(),
     GoogleMapsModule
-    
   ],
   providers: [
     HousingService,

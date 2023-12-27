@@ -45,6 +45,8 @@
     "zoo": true,
     "fastFood": true,
     "beach": true,
+    "school": false,
+    "mosque": true,
     "theaddress": "Tamouh Tower"
   },
 
@@ -94,6 +96,8 @@
     "zoo": false,
     "fastFood": true,
     "beach": false,
+    "school": true,
+    "mosque": true,
     "theaddress":"Emirates Schools Establishment Dubai"
     
   },
@@ -144,6 +148,8 @@
     "zoo": true,
     "fastFood": true,
     "beach": false,
+    "school": true,
+    "mosque": true,
     "theaddress":"Q Holding PSC"
     
   },
@@ -194,6 +200,8 @@
     "zoo": false,
     "fastFood": true,
     "beach": false,
+    "school": true,
+    "mosque": true,
     "theaddress":"Pure Home Real Estate"
   },
   {
@@ -242,6 +250,8 @@
     "zoo": false,
     "fastFood": true,
     "beach": true,
+    "school": false,
+    "mosque": true,
     "theaddress":"Prestige Luxury Real Estate"
   },
 
@@ -291,6 +301,8 @@
     "zoo": false,
     "fastFood": true,
     "beach": false,
+    "school": false,
+    "mosque": true,
     "theaddress":"Sheikha Bint Saeed Preparatory School"   
   }
 

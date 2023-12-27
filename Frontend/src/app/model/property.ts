@@ -49,5 +49,7 @@ export class Property implements IPropertyBase {
   zoo: boolean;
   fastFood: boolean;
   beach: boolean;
+  school: boolean;
+  mosque: boolean;
   theaddress: string;
 }

@@ -166,8 +166,9 @@
                         <strong *ngIf="property.fastFood"> 5-15 minutes walk</strong> 
                         <strong *ngIf="!property.fastFood" style="color: red;"> Not Available </strong> 
 
-                        &nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp;
-                        
+                        &nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp;
+                        &nbsp;&nbsp; &nbsp; 
+                      
 
                         <i  class="fa-solid fa-umbrella-beach" 
                             style="font-size: 30px; padding-top: 15px;" >
@@ -178,6 +179,31 @@
                         &nbsp; &nbsp; &nbsp;
                         <strong *ngIf="property.beach"> 10 minutes drive</strong> 
                         <strong *ngIf="!property.beach" style="color: red;"> Not Available </strong> 
+
+                        &nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; 
+                        <br>
+                        <i  class="fa-solid fa-solid fa-school" 
+                            style="font-size: 30px; padding-top: 15px;" >
+                        </i>
+                       
+                        &nbsp; &nbsp;&nbsp; 
+                        <strong>Schools</strong>
+                        &nbsp; &nbsp; &nbsp;
+                        <strong *ngIf="property.school"> 5 minutes walk</strong> 
+                        <strong *ngIf="!property.school" style="color: red;"> Not Available </strong> 
+
+                        &nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; 
+                        &nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; 
+
+                        <i  class="fa-solid fa-mosque" 
+                            style="font-size: 30px; padding-top: 15px;" >
+                        </i>
+                        
+                        &nbsp; &nbsp;&nbsp; 
+                        <strong>Mosque</strong>
+                        &nbsp; &nbsp; &nbsp;
+                        <strong *ngIf="property.mosque"> 10 minutes walk</strong> 
+                        <strong *ngIf="!property.mosque" style="color: red;"> Not Available </strong> 
                         
                   </div>
               </div>

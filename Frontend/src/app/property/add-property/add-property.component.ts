@@ -25,6 +25,8 @@ export class AddPropertyComponent implements OnInit {
   fastFood: any;
   zoo:any;
   beach:any;
+  school:any;
+  mosque:any;
 
 
   @ViewChild('formTabs') formTabs: TabsetComponent;
@@ -385,6 +387,8 @@ export class AddPropertyComponent implements OnInit {
     this.property.zoo = this.zoo;
     this.property.fastFood = this.fastFood;
     this.property.beach = this.beach;
+    this.property.school = this.school;
+    this.property.mosque = this.mosque;
   }
 
   checkCheckBoxvalue1(event:any){
@@ -401,6 +405,14 @@ export class AddPropertyComponent implements OnInit {
 
   checkCheckBoxvalue4(event:any){
     this.beach = event.checked;
+  }
+
+  checkCheckBoxvalue5(event:any){
+    this.school = event.checked;
+  }
+
+  checkCheckBoxvalue6(event:any){
+    this.mosque = event.checked;
   }
 
   allTabsValid(): boolean {

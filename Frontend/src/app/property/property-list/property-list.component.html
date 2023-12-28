@@ -32,7 +32,7 @@
 
 <!-- add pagination here -->
 <div class="row">
-    <div *ngFor="let property of properties|filter:SearchCity:SearchCar|sort:[SortbyParam,SortDirection]| paginate:{ itemsPerPage: 6,
+    <div *ngFor="let property of properties|filter:SearchCity:SearchCar|sort:[SortbyParam,SortDirection]| paginate:{ itemsPerPage: 7,
       currentPage: p}"class="col-sm-4">
       <div class="shadow-lg p-3 mb-4">
         <app-property-card [property]="property"></app-property-card>

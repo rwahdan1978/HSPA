@@ -10,6 +10,7 @@ import { IPropertyBase } from 'src/app/model/ipropertybase';
 })
 
 export class PropertyListComponent implements OnInit{
+  
   public SellRent = 0;
   properties: IPropertyBase[];
   City ='';
@@ -20,7 +21,18 @@ export class PropertyListComponent implements OnInit{
   SearchCar = '';
   SortDirection = 'asc';
 
-  constructor(private route: ActivatedRoute, private housingService: HousingService) {}
+  collection:any = [];
+  p:any = 0;
+  theCount = 0;
+
+
+  constructor(private route: ActivatedRoute, private housingService: HousingService) {
+
+    for (let i:number = 0; i<=1000; i++){
+      this.collection.push(i as never);
+    }
+
+  }
 
   ngOnInit(): void{
 

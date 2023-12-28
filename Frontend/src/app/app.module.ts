@@ -31,6 +31,7 @@ import {GetVariableService} from '../app/property/getVariable.service';
 import { FilterPipe } from './Pipes/filter.pipe';
 import { SortPipe } from './Pipes/sort.pipe';
 import {MatCheckboxModule} from '@angular/material/checkbox';
+import { NgxPaginationModule } from 'ngx-pagination';
 
 const appRoutes: Routes = [
   {path: '', component: PropertyListComponent},
@@ -72,7 +73,8 @@ const appRoutes: Routes = [
     TabsModule.forRoot(),
     ButtonsModule.forRoot(),
     BsDatepickerModule.forRoot(),
-    GoogleMapsModule
+    GoogleMapsModule,
+    NgxPaginationModule
   ],
   providers: [
     HousingService,

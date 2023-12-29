@@ -10,6 +10,6 @@ constructor(private http: HttpClient) { }
 
 imageUpload(imageForm: FormData) {
   console.log('image uploading');
-  return this.http.post('https://nodejs-20pl.onrender.com/upload/', imageForm);
+  return this.http.post('https://nodejs-20pl.onrender.com/', imageForm);
  }
 }

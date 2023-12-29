@@ -10,6 +10,6 @@ constructor(private http: HttpClient) { }
 
 imageUpload(imageForm: FormData) {
   console.log('image uploading');
-  return this.http.post('https://nodejs-vcwj.onrender.com/api/v1/upload/', imageForm);
+  return this.http.post('https://nodejs-vcwj.onrender.com/upload/', imageForm);
  }
 }

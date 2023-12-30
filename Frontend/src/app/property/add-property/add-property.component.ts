@@ -28,15 +28,13 @@ export class AddPropertyComponent implements OnInit {
   school:any;
   mosque:any;
 
-
   @ViewChild('formTabs') formTabs: TabsetComponent;
   datePickerConfig: Partial<BsDatepickerConfig>;
   addPropertyForm: FormGroup;
   nextClicked: boolean;
   myDateValue: Date;
   property = new Property();
-  test: any;
-
+  
   // Will come from masters
   propertyTypes: Array<string> = ['House', 'Apartment', 'Villa']
   furnishTypes: Array<string> = ['Fully', 'Semi', 'Unfurnished']
@@ -328,20 +326,19 @@ export class AddPropertyComponent implements OnInit {
     if (this.allTabsValid()) {
       this.mapProperty();
       this.housingService.addProperty(this.property);
-      this.alertify.success('Congrats, your property listed successfully on our website');
       console.log(this.addPropertyForm);
 
       if(this.SellRent.value === '2') {
         setTimeout(()=>
         {
-          this.test = "ok";
+          this.alertify.success('Congrats, your property listed successfully on our website');
           this.router.navigate(['/rent-property']);
         }, 12000);
         
       } else { 
         setTimeout(()=>
         {
-          this.test = "ok";
+          this.alertify.success('Congrats, your property listed successfully on our website');
           this.router.navigate(['/buy-property']);
         }, 12000);
         

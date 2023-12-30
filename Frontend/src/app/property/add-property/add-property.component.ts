@@ -332,14 +332,18 @@ export class AddPropertyComponent implements OnInit {
       console.log(this.addPropertyForm);
 
       if(this.SellRent.value === '2') {
-        this.router.navigate(['/rent-property']);
+        setTimeout(()=>
+        {
+          this.test = "ok";
+          this.router.navigate(['/rent-property']);
+        }, 10000);
+        
       } else { 
         setTimeout(()=>
         {
           this.test = "ok";
           this.router.navigate(['/buy-property']);
-          //location.reload(); 
-        }, 7000);
+        }, 10000);
         
       }
 

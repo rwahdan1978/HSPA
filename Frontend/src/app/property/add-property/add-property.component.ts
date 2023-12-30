@@ -34,6 +34,7 @@ export class AddPropertyComponent implements OnInit {
   nextClicked: boolean;
   myDateValue: Date;
   property = new Property();
+  test:any;
   
   // Will come from masters
   propertyTypes: Array<string> = ['House', 'Apartment', 'Villa']
@@ -68,6 +69,8 @@ export class AddPropertyComponent implements OnInit {
 
   ngOnInit() {
     this.myDateValue = new Date();
+    let thesave = document.getElementById("saveIT");
+          thesave?.setAttribute("enabled","true");
     this.CreateAddPropertyForm();
   }
 
@@ -331,6 +334,9 @@ export class AddPropertyComponent implements OnInit {
       if(this.SellRent.value === '2') {
         setTimeout(()=>
         {
+          this.test = "ok";
+          let thesave = document.getElementById("saveIT");
+          thesave?.setAttribute("enabled","false");
           this.alertify.success('Congrats, your property listed successfully on our website');
           this.router.navigate(['/rent-property']);
         }, 12000);
@@ -338,6 +344,9 @@ export class AddPropertyComponent implements OnInit {
       } else { 
         setTimeout(()=>
         {
+          this.test = "ok";
+          let thesave = document.getElementById("saveIT");
+          thesave?.setAttribute("enabled","false");
           this.alertify.success('Congrats, your property listed successfully on our website');
           this.router.navigate(['/buy-property']);
         }, 12000);

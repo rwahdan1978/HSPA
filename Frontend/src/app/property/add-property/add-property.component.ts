@@ -333,7 +333,7 @@ export class AddPropertyComponent implements OnInit {
         this.router.navigate(['/rent-property']);
       } else { 
           this.router.navigate(['/']);
-          location.reload(); 
+          //location.reload(); 
       }
 
     } else {

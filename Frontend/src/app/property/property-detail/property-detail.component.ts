@@ -94,7 +94,7 @@ export class PropertyDetailComponent implements OnInit {
       this.likes += 1;
       let data = element.textContent = this.likes;
       localStorage.setItem(this.propidStr,JSON.stringify(data));
-      location.reload();
+      window.location.reload();
     
   }
 

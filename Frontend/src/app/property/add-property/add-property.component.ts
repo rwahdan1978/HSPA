@@ -35,6 +35,7 @@ export class AddPropertyComponent implements OnInit {
   nextClicked: boolean;
   myDateValue: Date;
   property = new Property();
+  test: any;
 
   // Will come from masters
   propertyTypes: Array<string> = ['House', 'Apartment', 'Villa']
@@ -335,10 +336,11 @@ export class AddPropertyComponent implements OnInit {
       } else { 
         setTimeout(()=>
         {
-              
+          this.test = "ok";
+          this.router.navigate(['/']);
+          location.reload(); 
         }, 7000);
-        this.router.navigate(['/']);
-        //location.reload(); 
+        
       }
 
     } else {

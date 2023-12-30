@@ -336,14 +336,14 @@ export class AddPropertyComponent implements OnInit {
         {
           this.test = "ok";
           this.router.navigate(['/rent-property']);
-        }, 10000);
+        }, 12000);
         
       } else { 
         setTimeout(()=>
         {
           this.test = "ok";
           this.router.navigate(['/buy-property']);
-        }, 10000);
+        }, 12000);
         
       }
 

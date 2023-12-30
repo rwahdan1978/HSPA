@@ -338,7 +338,7 @@ export class AddPropertyComponent implements OnInit {
         {
           this.test = "ok";
           this.router.navigate(['/']);
-          location.reload(); 
+          //location.reload(); 
         }, 7000);
         
       }

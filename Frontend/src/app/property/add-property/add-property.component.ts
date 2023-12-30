@@ -70,7 +70,7 @@ export class AddPropertyComponent implements OnInit {
   ngOnInit() {
     this.myDateValue = new Date();
     let thesave = document.getElementById("saveIT");
-          thesave?.setAttribute("enabled","true");
+          thesave?.removeAttribute("disabled");
     this.CreateAddPropertyForm();
   }
 
@@ -332,7 +332,7 @@ export class AddPropertyComponent implements OnInit {
       console.log(this.addPropertyForm);
 
       let thesave = document.getElementById("saveIT");
-      thesave?.setAttribute("enabled","false");
+      thesave?.setAttribute("disabled","true");
 
       if(this.SellRent.value === '2') {
         setTimeout(()=>

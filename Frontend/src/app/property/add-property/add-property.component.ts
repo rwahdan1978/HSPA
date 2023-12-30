@@ -337,7 +337,7 @@ export class AddPropertyComponent implements OnInit {
         {
           this.router.navigate(['/']);
           location.reload();     
-        }, 5000);
+        }, 10000);
       }
 
     } else {

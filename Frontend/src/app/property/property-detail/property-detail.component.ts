@@ -110,7 +110,7 @@ export class PropertyDetailComponent implements OnInit {
         to_name: "Admin",
         from_name: this.form.value.from_name,
         from_email: this.form.value.from_email,
-        subject: this.property.Name + ' located in ' + this.property.City,
+        subject:  + ' located in ' + this.property.ProjectName + this.property.Name + "," + this.property.City,
         message: this.form.value.message,
         });
 

@@ -333,10 +333,14 @@ export class AddPropertyComponent implements OnInit {
       if(this.SellRent.value === '2') {
         this.router.navigate(['/rent-property']);
       } else {
+        
         setTimeout(()=>
         {
-          this.router.navigate(['/']);  
+            
         }, 10000);
+
+        this.router.navigate(['/']);
+
       }
 
     } else {

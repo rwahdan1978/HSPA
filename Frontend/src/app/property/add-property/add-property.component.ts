@@ -331,12 +331,13 @@ export class AddPropertyComponent implements OnInit {
       this.housingService.addProperty(this.property);
       console.log(this.addPropertyForm);
 
+      let thesave = document.getElementById("saveIT");
+      thesave?.setAttribute("enabled","false");
+
       if(this.SellRent.value === '2') {
         setTimeout(()=>
         {
           this.test = "ok";
-          let thesave = document.getElementById("saveIT");
-          thesave?.setAttribute("enabled","false");
           this.alertify.success('Congrats, your property listed successfully on our website');
           this.router.navigate(['/rent-property']);
         }, 12000);
@@ -345,8 +346,6 @@ export class AddPropertyComponent implements OnInit {
         setTimeout(()=>
         {
           this.test = "ok";
-          let thesave = document.getElementById("saveIT");
-          thesave?.setAttribute("enabled","false");
           this.alertify.success('Congrats, your property listed successfully on our website');
           this.router.navigate(['/buy-property']);
         }, 12000);

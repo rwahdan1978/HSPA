@@ -28,15 +28,13 @@ export class AddPropertyComponent implements OnInit {
   school:any;
   mosque:any;
 
-
   @ViewChild('formTabs') formTabs: TabsetComponent;
   datePickerConfig: Partial<BsDatepickerConfig>;
   addPropertyForm: FormGroup;
   nextClicked: boolean;
   myDateValue: Date;
   property = new Property();
-  test: any;
-
+ 
   // Will come from masters
   propertyTypes: Array<string> = ['House', 'Apartment', 'Villa']
   furnishTypes: Array<string> = ['Fully', 'Semi', 'Unfurnished']
@@ -334,13 +332,8 @@ export class AddPropertyComponent implements OnInit {
       if(this.SellRent.value === '2') {
         this.router.navigate(['/rent-property']);
       } else { 
-        setTimeout(()=>
-        {
-          this.test = "ok";
           this.router.navigate(['/']);
-          //location.reload(); 
-        }, 7000);
-        
+          location.reload(); 
       }
 
     } else {

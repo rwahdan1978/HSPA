@@ -349,9 +349,7 @@
             <form [formGroup]="form" action="javascript:void(0)" (submit)="send()" method="POST">
               <input formControlName="from_name" name="from_name" type="text"  placeholder="Full Name"/>
               <input formControlName="from_email" name="from_email" type="text"  placeholder="Email Address"/>
-              <input formControlName="subject" name="subject" type="text" 
-                                                              placeholder="
-                                                              {{property.ProjectName}} - {{this.property.Name}}, {{this.property.City}}"/>
+              <input formControlName="subject" name="subject" type="text" placeholder="{{property.ProjectName}} - {{this.property.Name}}, {{this.property.City}}"/>
               <textarea formControlName="message" name="message" type="text" placeholder="Enter your message"></textarea>
               <button id="clickit" class="button1" type="submit">Submit</button>
             </form>

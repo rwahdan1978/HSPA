@@ -336,8 +336,8 @@ export class AddPropertyComponent implements OnInit {
         setTimeout(()=>
         {
           this.router.navigate(['/']);
-          location.reload();     
-        }, 10000);
+          //location.reload();     
+        }, 7000);
       }
 
     } else {

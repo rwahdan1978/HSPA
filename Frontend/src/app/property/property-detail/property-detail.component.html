@@ -1,4 +1,10 @@
-<div class="row shadow">
+1
+<h4 *ngIf="deviveInfo.deviceType=== 'mobile' 
+&& deviveInfo.orientation=== 'portrait'">You need to swicth to landscape orientation to view the site correctly!</h4>
+
+<div *ngIf="(deviveInfo.deviceType=== 'mobile' 
+              && deviveInfo.orientation=== 'landscape') || deviveInfo.deviceType != 'mobile'"
+ class="row shadow">
   <div class="col-sm-4 p-0">
     <div class="card">
       <div class="card-img-wrapper">

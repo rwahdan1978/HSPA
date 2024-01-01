@@ -43,7 +43,6 @@ export class PropertyDetailComponent implements OnInit {
   propid: number;
   propidStr: string;
   submitted: any;
-  thetab: any;
 
     http: any;
     theButton: any;
@@ -53,20 +52,12 @@ export class PropertyDetailComponent implements OnInit {
     currentTabId = 0;
     token: any;
     dangerousUrl:any;
-  
+   
   constructor(private route: ActivatedRoute, private alert: AlertifyService, 
-              private fb: FormBuilder, private sanitizer: DomSanitizer, private DDS: DeviceDetectorService) {}
+              private fb: FormBuilder, private sanitizer: DomSanitizer, 
+              private DDS: DeviceDetectorService) {}
 
   ngOnInit() {
-
-    window.matchMedia("(orientation:portrait)").addEventListener("change", (e: MediaQueryListEvent) => { 
-      const portrait: boolean = e.matches; 
-      if (portrait) { 
-        location.reload(); 
-      } else { 
-        location.reload(); 
-      } 
-    });
     
     this.deviveInfo = this.DDS.getDeviceInfo();
     this.form.controls['subject'].disable();
@@ -92,7 +83,7 @@ export class PropertyDetailComponent implements OnInit {
 
     return this.urlPath;
      
-  }
+}
 
   showImage(){
     this.visable1 = true;

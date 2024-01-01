@@ -59,6 +59,15 @@ export class PropertyDetailComponent implements OnInit {
 
   ngOnInit() {
 
+    window.matchMedia("(orientation:portrait)").addEventListener("change", (e: MediaQueryListEvent) => { 
+      const portrait: boolean = e.matches; 
+      if (portrait) { 
+        location.reload(); 
+      } else { 
+        location.reload(); 
+      } 
+    });
+    
     this.deviveInfo = this.DDS.getDeviceInfo();
     this.form.controls['subject'].disable();
     this.form1.controls['subject1'].disable();

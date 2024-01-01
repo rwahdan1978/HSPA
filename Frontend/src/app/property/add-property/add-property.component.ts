@@ -73,6 +73,15 @@ export class AddPropertyComponent implements OnInit {
 
   ngOnInit() {
 
+    window.matchMedia("(orientation:portrait)").addEventListener("change", (e: MediaQueryListEvent) => { 
+      const portrait: boolean = e.matches; 
+      if (portrait) { 
+        location.reload(); 
+      } else { 
+        location.reload(); 
+      } 
+    });
+
     this.deviveInfo = this.DDS.getDeviceInfo();
     this.loggedinUser = localStorage.getItem('token') || '';
 

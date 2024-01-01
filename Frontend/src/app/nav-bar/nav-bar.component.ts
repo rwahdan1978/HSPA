@@ -15,6 +15,14 @@ export class NavBarComponent implements OnInit {
   constructor(private alertify: AlertifyService, private router: Router) { }
 
   ngOnInit() {
+    window.matchMedia("(orientation:portrait)").addEventListener("change", (e: MediaQueryListEvent) => { 
+      const portrait: boolean = e.matches; 
+      if (portrait) { 
+        location.reload(); 
+      } else { 
+        location.reload(); 
+      } 
+    });
     setInterval(() => {
       this.today = Date.now();
     }, 100);

@@ -42,6 +42,8 @@ export class PropertyListComponent implements OnInit{
 
       this.deviveInfo = this.DDS.getDeviceInfo();
 
+      //to detect the orientation
+
       window.matchMedia("(orientation:portrait)").addEventListener("change", (e: MediaQueryListEvent) => { 
         const portrait: boolean = e.matches; 
         if (portrait) { 

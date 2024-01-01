@@ -25,6 +25,8 @@ export class PropertyListComponent implements OnInit{
 
   collection:any = [];
   p:any = 0;
+  orP:any = 0;
+  orL:any = 0;
 
   constructor(private route: ActivatedRoute, 
               private housingService: HousingService,
@@ -39,6 +41,17 @@ export class PropertyListComponent implements OnInit{
   ngOnInit(): void{
 
       this.deviveInfo = this.DDS.getDeviceInfo();
+
+      window.matchMedia("(orientation:portrait)").addEventListener("change", (e: MediaQueryListEvent) => { 
+        const portrait: boolean = e.matches; 
+        if (portrait) { 
+          this.orP = 1; 
+          location.reload(); 
+        } else { 
+          this.orL = 1;
+          location.reload(); 
+        } 
+      });
 
       if (this.route.snapshot.url.toString()==="buy-property"){
         this.SellRent = 1;

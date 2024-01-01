@@ -3,6 +3,7 @@ import { FormGroup, FormControl, Validators, ValidationErrors, AbstractControl, 
 import { UserServiceService } from 'src/app/services/user-service.service';
 import { User } from 'src/app/model/user';
 import { AlertifyService } from 'src/app/services/alertify.service';
+import { DeviceDetectorService, DeviceInfo } from 'ngx-device-detector';
 
 @Component({
   selector: 'app-user-register',
@@ -11,15 +12,18 @@ import { AlertifyService } from 'src/app/services/alertify.service';
 })
 export class UserRegisterComponent implements OnInit {
 
+  deviveInfo: DeviceInfo;
   registerationForm: FormGroup;
   countrycode: string = "971";
   user: User;
   userSubmitted: boolean;
 
   constructor(private fb: FormBuilder, private UserServiceService: UserServiceService,
-            private alertify: AlertifyService) { }
+            private alertify: AlertifyService, private DDS: DeviceDetectorService) { }
 
   ngOnInit() {
+
+    this.deviveInfo = this.DDS.getDeviceInfo();
     this.registerationForm = new FormGroup({
       userName: new FormControl(null, Validators.required),
       countrycode: new FormControl(null, Validators.required),
@@ -29,7 +33,6 @@ export class UserRegisterComponent implements OnInit {
       mobile: new FormControl(null, [Validators.required, 
         Validators.pattern("^[0-9]{9}$")
         
-      
     ]),
       
     }, {validators : this.passwordMatchingValidator})

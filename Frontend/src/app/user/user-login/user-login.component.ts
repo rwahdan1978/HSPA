@@ -3,6 +3,7 @@ import { NgForm } from '@angular/forms';
 import { AlertifyService } from 'src/app/services/alertify.service';
 import { AuthService } from 'src/app/services/auth.service';
 import { Router } from '@angular/router';
+import { DeviceDetectorService, DeviceInfo } from 'ngx-device-detector';
 
 @Component({
   selector: 'app-user-login',
@@ -11,11 +12,14 @@ import { Router } from '@angular/router';
 })
 export class UserLoginComponent implements OnInit {
 
+  deviveInfo: DeviceInfo;
+
   constructor(private authServive: AuthService, 
               private alertify: AlertifyService,
-              private router: Router) { }
+              private router: Router, private DDS: DeviceDetectorService) { }
 
   ngOnInit() {
+    this.deviveInfo = this.DDS.getDeviceInfo();
   }
 
   onlogin(loginForm: NgForm){

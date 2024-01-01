@@ -1,5 +1,6 @@
-import { Component, Input } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import { IPropertyBase } from 'src/app/model/ipropertybase';
+import { DeviceDetectorService, DeviceInfo } from 'ngx-device-detector';
 
 @Component({
 
@@ -12,9 +13,15 @@ import { IPropertyBase } from 'src/app/model/ipropertybase';
 
 })
 
-export class PropertycardComponent
+export class PropertycardComponent implements OnInit
 {   
+    deviveInfo: DeviceInfo;
     @Input() property : IPropertyBase;
     @Input() hideIcons: boolean;
 
+    constructor(private DDS: DeviceDetectorService) { }
+
+    ngOnInit() {
+        this.deviveInfo = this.DDS.getDeviceInfo();
+      }
 }

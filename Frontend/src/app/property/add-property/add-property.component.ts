@@ -9,6 +9,7 @@ import { AlertifyService } from 'src/app/services/alertify.service';
 import { BsDatepickerConfig } from 'ngx-bootstrap/datepicker';
 import { HttpClient } from '@angular/common/http';
 import {GetVariableService} from '../getVariable.service';
+import { DeviceDetectorService, DeviceInfo } from 'ngx-device-detector';
 
 //declare function test():any;
 
@@ -21,6 +22,7 @@ export class AddPropertyComponent implements OnInit {
 
   // myScriptElement: HTMLScriptElement;
 
+  deviveInfo: DeviceInfo;
   mall: any;
   fastFood: any;
   zoo:any;
@@ -35,6 +37,7 @@ export class AddPropertyComponent implements OnInit {
   myDateValue: Date;
   property = new Property();
   test:any;
+  loggedinUser:any;
   
   // Will come from masters
   propertyTypes: Array<string> = ['House', 'Apartment', 'Villa']
@@ -58,7 +61,8 @@ export class AddPropertyComponent implements OnInit {
     private fb: FormBuilder,
     private router: Router, private getVariable: GetVariableService,
     private housingService: HousingService,
-    private alertify: AlertifyService, private http: HttpClient) 
+    private alertify: AlertifyService, private http: HttpClient,
+    private DDS: DeviceDetectorService) 
     {
       this.datePickerConfig = Object.assign({},{customTodayClass: 'custom-today-class',
       containerClass: 'theme-dark-blue', dateInputFormat: 'DD-MM-YYYY', 
@@ -68,6 +72,10 @@ export class AddPropertyComponent implements OnInit {
     }
 
   ngOnInit() {
+
+    this.deviveInfo = this.DDS.getDeviceInfo();
+    this.loggedinUser = localStorage.getItem('token') || '';
+
     this.myDateValue = new Date();
     let thesave = document.getElementById("saveIT");
           thesave?.removeAttribute("disabled");

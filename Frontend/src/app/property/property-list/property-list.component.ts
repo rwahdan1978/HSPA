@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { HousingService } from 'src/app/services/housing.service';
 import { ActivatedRoute } from '@angular/router';
 import { IPropertyBase } from 'src/app/model/ipropertybase';
+import { DeviceDetectorService, DeviceInfo } from 'ngx-device-detector';
 
 @Component({
   selector: 'app-property-list',
@@ -11,6 +12,7 @@ import { IPropertyBase } from 'src/app/model/ipropertybase';
 
 export class PropertyListComponent implements OnInit{
   
+  deviveInfo: DeviceInfo;
   public SellRent = 0;
   properties: IPropertyBase[];
   City ='';
@@ -23,10 +25,10 @@ export class PropertyListComponent implements OnInit{
 
   collection:any = [];
   p:any = 0;
-  theCount = 0;
 
-
-  constructor(private route: ActivatedRoute, private housingService: HousingService) {
+  constructor(private route: ActivatedRoute, 
+              private housingService: HousingService,
+              private DDS: DeviceDetectorService) {
 
     for (let i:number = 0; i<=1000; i++){
       this.collection.push(i as never);
@@ -35,6 +37,8 @@ export class PropertyListComponent implements OnInit{
   }
 
   ngOnInit(): void{
+
+      this.deviveInfo = this.DDS.getDeviceInfo();
 
       if (this.route.snapshot.url.toString()==="buy-property"){
         this.SellRent = 1;

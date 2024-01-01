@@ -214,30 +214,25 @@
 
           <h5 *ngIf="property.theaddress != null">
                     For directions, click on <strong 
-                    style="color: red;">Directions.</strong>
+                    style="color: red;">Directions.</strong><br>
                     For contact details, click on <strong 
-                    style="color: red;">View large map</strong>
+                    style="color: red;">View large map.</strong>
           </h5><br>
          
           <div>
-            <iframe 
+            <iframe *ngIf="deviveInfo.deviceType != 'mobile'"
               [src]= urlPath
-              width="840" height="450" style="border:0;" loading="lazy" 
+              width="800" height="450" style="border:0;" loading="lazy" 
               referrerpolicy="no-referrer-when-downgrade">
             </iframe>
           </div>
 
-          <div *ngIf="property.theaddress == null" class="card" style="width: 850px;">
-            <strong>Location Map not available, Updating Records...</strong><br>
-            <img class="card-img-top" src="https://angular-upload-files-2023-2024.s3.ap-south-1.amazonaws.com/default_house.png"
-            style="width: 850px;">
-            <div class="card-body">
-              <h5 class="card-title">Commission {{property.contactCommission}} AED</h5><br><br>
-              <p class="card-text" *ngIf="!property.companyImage">Company Name: {{property.contactCompany}}</p>
-              <p class="card-text" *ngIf="!property.companyImage">Contact Name: {{property.contactName}}</p>
-              <p class="card-text" *ngIf="!property.companyImage">Company Email: {{property.contactEmail}}</p>
-              <p class="card-text" *ngIf="!property.companyImage">Company Number: {{property.contactNumber}}</p>
-            </div>
+          <div>
+            <iframe *ngIf="deviveInfo.deviceType=== 'mobile' && deviveInfo.orientation=== 'landscape'"
+              [src]= urlPath
+              width="300" height="450" style="border:0;" loading="lazy" 
+              referrerpolicy="no-referrer-when-downgrade">
+            </iframe>
           </div>
           
         </tab>
@@ -260,10 +255,10 @@
             
                 </ol>
 
-                <a class="carousel-control-prev" href="#carousel" role="button" data-slide="prev">
+                <a class="carousel-control-prev" style="width: 100px;" href="#carousel" role="button" data-slide="prev">
                   <img src="https://angular-upload-files-2023-2024.s3.ap-south-1.amazonaws.com/properties2023/left-arrow.svg" alt="Prev"> 
                 </a>
-                <a class="carousel-control-next" href="#carousel" role="button" data-slide="next">
+                <a class="carousel-control-next" style="width: 100px;" href="#carousel" role="button" data-slide="next">
                   <img src="https://angular-upload-files-2023-2024.s3.ap-south-1.amazonaws.com/properties2023/right-arrow.svg" alt="Next">
                 </a>
 
@@ -326,10 +321,8 @@
         </tab>
 
         <tab  heading="Contact" tabindex="3" [active]="currentTabId === 3">
-          
-          <h3>You need to login to see seller information!</h3>
 
-          <div *ngIf="token" class="card text-center" style="max-width: 100vw; min-height: 10vw;">
+          <div class="card text-center" style="max-width: 100vw; min-height: 10vw;">
             <div class="card-header">
               <strong> Commission: {{property.contactCommission}} AED </strong>
             </div>
@@ -343,15 +336,27 @@
             </div>
           </div>
 
-          <br><br>
-          <strong style="padding-left: 250px;">or you can fill out the form otherwise</strong>
+          <br>
+          <strong>You can fill out the form otherwise</strong><br><br>
           <div>
-            <form [formGroup]="form" action="javascript:void(0)" (submit)="send()" method="POST">
-              <input formControlName="from_name" name="from_name" type="text"  placeholder="Full Name"/>
+            <form *ngIf="deviveInfo.deviceType != 'mobile'" [formGroup]="form" action="javascript:void(0)" (submit)="send()" method="POST">
+              <input style="size: 1px;" formControlName="from_name" name="from_name" type="text"  placeholder="Full Name"/>
               <input formControlName="from_email" name="from_email" type="text"  placeholder="Email Address"/>
               <input formControlName="subject" name="subject" type="text" placeholder="{{property.ProjectName}} - {{this.property.Name}}, {{this.property.City}}"/>
               <textarea formControlName="message" name="message" type="text" placeholder="Enter your message"></textarea>
               <button id="clickit" class="button1" type="submit">Submit</button>
+            </form>
+          </div>
+
+          <br><br>
+
+          <div>
+            <form *ngIf="deviveInfo.deviceType=== 'mobile' && deviveInfo.orientation=== 'landscape'" class="form1" [formGroup]="form1" action="javascript:void(0)" (submit)="send()" method="POST">
+              <input style="size: 1px;" formControlName="from_name1" name="from_name" type="text"  placeholder="Full Name"/>
+              <input formControlName="from_email" name="from_email1" type="text"  placeholder="Email Address"/>
+              <input formControlName="subject1" name="subject" type="text" placeholder="{{property.ProjectName}} - {{this.property.Name}}"/>
+              <textarea formControlName="message1" name="message" type="text" placeholder="Enter your message"></textarea>
+              <button id="clickit2" class="button2" type="submit">Submit</button>
             </form>
           </div>
           

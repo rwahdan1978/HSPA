@@ -1,12 +1,11 @@
-import { CommonModule } from '@angular/common';
 import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
-import { ActivatedRoute, Router } from '@angular/router';
+import { ActivatedRoute } from '@angular/router';
 import { Property } from 'src/app/model/property';
 import emailjs from '@emailjs/browser';
-import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { AlertifyService } from 'src/app/services/alertify.service';
-import { DomSanitizer, SafeResourceUrl, SafeUrl} from '@angular/platform-browser';
-import { timeout } from 'rxjs';
+import { DomSanitizer} from '@angular/platform-browser';
+import { DeviceDetectorService, DeviceInfo } from 'ngx-device-detector';
 
 @Component({
   selector: 'app-property-detail',
@@ -16,6 +15,7 @@ import { timeout } from 'rxjs';
 
 export class PropertyDetailComponent implements OnInit {
 
+  deviveInfo: DeviceInfo;
   public urlPath: any;
 
   @ViewChild('iframe') iframe: ElementRef
@@ -26,6 +26,14 @@ export class PropertyDetailComponent implements OnInit {
     from_email: [null, Validators.required],
     subject: [null, Validators.required],
     message: [null, Validators.required],
+  });
+
+  form1: FormGroup = this.fb.group({
+    from_name1: [null, Validators.required],
+    to_name1: ['Admin', Validators.required],
+    from_email1: [null, Validators.required],
+    subject1: [null, Validators.required],
+    message1: [null, Validators.required],
   });
 
   public propertyId: number;
@@ -47,11 +55,13 @@ export class PropertyDetailComponent implements OnInit {
     dangerousUrl:any;
   
   constructor(private route: ActivatedRoute, private alert: AlertifyService, 
-              private fb: FormBuilder, private sanitizer: DomSanitizer) {}
+              private fb: FormBuilder, private sanitizer: DomSanitizer, private DDS: DeviceDetectorService) {}
 
   ngOnInit() {
 
+    this.deviveInfo = this.DDS.getDeviceInfo();
     this.form.controls['subject'].disable();
+    this.form1.controls['subject1'].disable();
     this.token = localStorage.getItem('token');
     this.propertyId = +this.route.snapshot.params['id'];
     this.route.data.subscribe(
@@ -112,6 +122,36 @@ export class PropertyDetailComponent implements OnInit {
         from_email: this.form.value.from_email,
         subject:  this.property.ProjectName + "    " + this.property.Name + "," + this.property.City,
         message: this.form.value.message,
+        });
+
+        this.alert.success("email sent");
+
+        setTimeout(()=>
+        {
+          location.reload();     
+        }, 1000);
+      }    
+      else
+      {
+        this.currentTabId = 3;
+        this.alert.error("Please fill all fields!")
+      }  
+  }
+
+  async send1(){
+
+    if (this.form1.valid)
+    {
+      this.theButton = document.getElementById("clickit2");
+      this.theButton.setAttribute("hidden",true);
+
+      emailjs.init("IclaYU2yrPjG2MHfm");
+      let response = await emailjs.send("service_ytxrv42","template_6j13ark",{
+        to_name: "Admin",
+        from_name: this.form.value.from_name1,
+        from_email: this.form.value.from_email1,
+        subject:  this.property.ProjectName + "    " + this.property.Name + "," + this.property.City,
+        message: this.form.value.message1,
         });
 
         this.alert.success("email sent");

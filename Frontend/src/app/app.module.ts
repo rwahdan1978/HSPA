@@ -32,7 +32,8 @@ import {GetVariableService} from '../app/property/getVariable.service';
 import { FilterPipe } from './Pipes/filter.pipe';
 import { SortPipe } from './Pipes/sort.pipe';
 import {MatCheckboxModule} from '@angular/material/checkbox';
-import { NgxPaginationModule } from 'ngx-pagination';
+import { NgxPaginationModule } from 'ngx-pagination'; 
+import {MatTabsModule} from '@angular/material/tabs';
 
 const appRoutes: Routes = [
   {path: '', component: PropertyListComponent},
@@ -75,7 +76,8 @@ const appRoutes: Routes = [
     ButtonsModule.forRoot(),
     BsDatepickerModule.forRoot(),
     GoogleMapsModule,
-    NgxPaginationModule
+    NgxPaginationModule,
+    MatTabsModule
   ],
   providers: [
     {provide: LocationStrategy, useClass: HashLocationStrategy},

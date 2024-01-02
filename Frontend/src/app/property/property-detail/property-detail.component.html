@@ -51,9 +51,8 @@
 
   <div class="col-sm-8 p-0">
     <div class="tab-panel">
-      <tabset *ngIf="visable2" class="member-tabset">
-
-        <tab heading="Overview" [active]="currentTabId === 0">
+      <mat-tab-group #tabGroup (selectedTabChange)="tabChanged($event)">
+        <mat-tab label="Overview">
           <h1>Overview</h1>
           <div class="row">
               <div class="col-sm-6">
@@ -212,9 +211,9 @@
                   </div>
               </div>
             </div>
-        </tab>
+        </mat-tab>
 
-        <tab heading="Address" [active]="currentTabId === 1">
+        <mat-tab label="Address">
 
           <h5 *ngIf="property.theaddress != null">
                     For directions, click on <strong 
@@ -239,9 +238,9 @@
             </iframe>
           </div>
           
-        </tab>
+        </mat-tab>
 
-        <tab  id="photosTab" heading="Photos" [active]="currentTabId === 2"> 
+        <mat-tab  id="photosTab" label="Photos"> 
 
           <section class="home">
 
@@ -322,9 +321,9 @@
 
           </section>
           
-        </tab>
+        </mat-tab>
 
-        <tab  heading="Contact" tabindex="3" [active]="currentTabId === 3">
+        <mat-tab label="Contact">
 
           <div class="card text-center" style="max-width: 100vw; min-height: 10vw;">
             <div class="card-header">
@@ -362,9 +361,9 @@
             </form>
           </div>
           
-        </tab>
-        
-        </tabset>
+        </mat-tab>
+
+      </mat-tab-group>
 
         <section *ngIf="visable1" class="slider_container">
           <section class="slider">

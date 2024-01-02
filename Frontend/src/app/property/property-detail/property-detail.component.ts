@@ -1,26 +1,26 @@
 import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
-import { ActivatedRoute} from '@angular/router';
+import { ActivatedRoute, NavigationEnd, Router} from '@angular/router';
 import { Property } from 'src/app/model/property';
 import emailjs from '@emailjs/browser';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { AlertifyService } from 'src/app/services/alertify.service';
 import { DomSanitizer} from '@angular/platform-browser';
 import { DeviceDetectorService, DeviceInfo } from 'ngx-device-detector';
-//import {MatTabsModule} from '@angular/material/tabs';
+import { MatTabChangeEvent } from '@angular/material/tabs';
+import { filter, first } from 'rxjs';
+
 
 @Component({
   selector: 'app-property-detail',
   templateUrl: './property-detail.component.html',
   styleUrls: ['./property-detail.component.css'],
-  //standalone: true,
-  //imports: [MatTabsModule]
 })
 
 export class PropertyDetailComponent implements OnInit {
 
-  @ViewChild('tabGroup') tabGroup:any;
   deviveInfo: DeviceInfo;
   public urlPath: any;
+  public theIndex: any = 0;
 
   @ViewChild('iframe') iframe: ElementRef
 
@@ -58,12 +58,12 @@ export class PropertyDetailComponent implements OnInit {
     dangerousUrl:any;
    
   constructor(private route: ActivatedRoute, private alert: AlertifyService, 
-              private fb: FormBuilder, private sanitizer: DomSanitizer, private DDS: DeviceDetectorService) {}
-
+              private fb: FormBuilder, private sanitizer: DomSanitizer, 
+              private DDS: DeviceDetectorService, private router: Router) {}
+  
   ngOnInit() {
     
     this.deviveInfo = this.DDS.getDeviceInfo();
-
     this.form.controls['subject'].disable();
     this.form1.controls['subject1'].disable();
     this.token = localStorage.getItem('token');
@@ -73,17 +73,21 @@ export class PropertyDetailComponent implements OnInit {
         this.property = data['prp'];
       }
     )
+      // check if user navigate to other page and delete the lastTab in local storage
+    this.router.events
+      .pipe(
+        filter((e) => e instanceof NavigationEnd && !e.url.startsWith('claim')),
+        first()
+      )
+      .subscribe(() => {
+        localStorage.removeItem('lastTab');
+      });
 
     this.propid = this.propertyId;
     this.propidStr = "nums" + this.propid.toString()
 
     let data2:any = localStorage.getItem(this.propidStr);
     this.likes = JSON.parse(data2);
-
-    // if (this.deviveInfo.orientation === "landscape")
-    // {
-    //   this.router.navigate(['/property-detail/'+ this.propertyId]);
-    // }
 
     setTimeout(() => {
       this.dangerousUrl = "https://www.google.com/maps?q=" + this.property.theaddress + "&output=embed";
@@ -92,6 +96,12 @@ export class PropertyDetailComponent implements OnInit {
 
     return this.urlPath;
      
+}
+
+tabChanged(tabChangeEvent: MatTabChangeEvent): void {
+  localStorage.removeItem('lastTab');
+  this.theIndex = tabChangeEvent.index;
+  localStorage.setItem('lastTab', this.theIndex);
 }
 
   showImage(){

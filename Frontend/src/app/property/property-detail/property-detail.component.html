@@ -1,10 +1,8 @@
-1
-<h4 *ngIf="deviveInfo.deviceType=== 'mobile' 
-&& deviveInfo.orientation=== 'portrait'">You need to swicth to landscape orientation to view the site correctly!</h4>
+<h5 *ngIf="deviveInfo.deviceType=== 'mobile' && deviveInfo.orientation=== 'portrait'">Rotate your mobile to view the page!</h5>
 
 <div *ngIf="(deviveInfo.deviceType=== 'mobile' 
-              && deviveInfo.orientation=== 'landscape') || deviveInfo.deviceType != 'mobile'"
- class="row shadow">
+    && deviveInfo.orientation=== 'landscape') || deviveInfo.deviceType != 'mobile'" class="row shadow">
+    
   <div class="col-sm-4 p-0">
     <div class="card">
       <div class="card-img-wrapper">
@@ -343,19 +341,16 @@
           </div>
 
           <br>
-          <strong *ngIf="(deviveInfo.deviceType != 'mobile') || (deviveInfo.deviceType=== 'mobile' && deviveInfo.orientation=== 'landscape')">You can fill out the form otherwise</strong><br><br>
-          <strong *ngIf="deviveInfo.deviceType=== 'mobile' && deviveInfo.orientation=== 'portrait'">Please make the mobile in landscape view to fill out the contact form</strong><br><br>
+          <strong>You can fill out the form otherwise<br><br></strong>
           <div>
-            <form *ngIf="deviveInfo.deviceType != 'mobile'" [formGroup]="form" action="javascript:void(0)" (submit)="send()" method="POST">
-              <input style="size: 1px;" formControlName="from_name" name="from_name" type="text"  placeholder="Full Name"/>
+            <form *ngIf="deviveInfo.deviceType != 'mobile'" [formGroup]="form" class="form" action="javascript:void(0)" (submit)="send()" method="POST">
+              <input formControlName="from_name" name="from_name" type="text"  placeholder="Full Name"/>
               <input formControlName="from_email" name="from_email" type="text"  placeholder="Email Address"/>
               <input formControlName="subject" name="subject" type="text" placeholder="{{property.ProjectName}} - {{this.property.Name}}, {{this.property.City}}"/>
               <textarea formControlName="message" name="message" type="text" placeholder="Enter your message"></textarea>
               <button id="clickit" class="button1" type="submit">Submit</button>
             </form>
           </div>
-
-          <br><br>
 
           <div>
             <form *ngIf="deviveInfo.deviceType=== 'mobile' && deviveInfo.orientation=== 'landscape'" class="form1" [formGroup]="form1" action="javascript:void(0)" (submit)="send()" method="POST">

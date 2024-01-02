@@ -96,10 +96,11 @@
     }
 }
 
-form {
+.form {
     display: flex;
     flex-direction: column;
-    width: 50rem;
+    margin-left: 150px;
+    width: 35rem;
     gap: 1rem;
     
 }
@@ -123,7 +124,7 @@ textarea{
 }
 
 .button1{
-    width: 50rem;
+    width: 35rem;
     padding: 1rem;
     cursor: pointer;
     background-color: green;

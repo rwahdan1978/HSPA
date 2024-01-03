@@ -51,7 +51,7 @@
 
   <div class="col-sm-8 p-0">
     <div class="tab-panel">
-      <mat-tab-group #tabGroup (selectedTabChange)="tabChanged($event)">
+      <mat-tab-group #tabGroup [selectedIndex]="selectedIndex" (selectedTabChange)="tabChanged($event)">
         <mat-tab label="Overview">
           <h1>Overview</h1>
           <div class="row">

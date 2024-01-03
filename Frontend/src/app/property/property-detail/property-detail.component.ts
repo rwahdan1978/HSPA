@@ -47,6 +47,7 @@ export class PropertyDetailComponent implements OnInit {
   propid: number;
   propidStr: string;
   submitted: any;
+  selectedIndex: any;
 
     http: any;
     theButton: any;
@@ -56,6 +57,8 @@ export class PropertyDetailComponent implements OnInit {
     currentTabId = 0;
     token: any;
     dangerousUrl:any;
+  _activatedRoute: any;
+  transactionTabIndex: any;
    
   constructor(private route: ActivatedRoute, private alert: AlertifyService, 
               private fb: FormBuilder, private sanitizer: DomSanitizer, 
@@ -63,6 +66,9 @@ export class PropertyDetailComponent implements OnInit {
   
   ngOnInit() {
     
+    const savedTabIndex = localStorage.getItem('lastTab');
+    this.selectedIndex= savedTabIndex;
+
     this.deviveInfo = this.DDS.getDeviceInfo();
     this.form.controls['subject'].disable();
     this.form1.controls['subject1'].disable();

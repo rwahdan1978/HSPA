@@ -10,7 +10,9 @@ import { BsDatepickerConfig } from 'ngx-bootstrap/datepicker';
 import { HttpClient } from '@angular/common/http';
 import {GetVariableService} from '../getVariable.service';
 import { DeviceDetectorService, DeviceInfo } from 'ngx-device-detector';
-//import * as aws from 'aws-sdk';
+import AWSS3UploadAsh from 'aws-s3-upload-ash';
+import { config } from 'rxjs';
+import { environment } from 'src/environments/environment.development';
 
 @Component({
   selector: 'app-add-property',
@@ -71,6 +73,19 @@ export class AddPropertyComponent implements OnInit {
     }
 
   ngOnInit() {
+
+    const config = {
+      bucketName: 'angular-upload-files-2023-2024',
+      dirName: '/properties2023/',
+      region: 'ap-south-1',
+      accessKeyId: environment.accessKeyId,
+      secretAccessKey: environment.secretAccessKey,
+      s3Url: 'https://angular-upload-files-2023-2024.s3.amazonaws.com/'
+  }
+  
+  const S3CustomClient = new AWSS3UploadAsh(config);
+
+
 
     window.matchMedia("(orientation:portrait)").addEventListener("change", (e: MediaQueryListEvent) => { 
       const portrait: boolean = e.matches; 

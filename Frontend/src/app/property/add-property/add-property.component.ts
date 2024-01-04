@@ -10,8 +10,7 @@ import { BsDatepickerConfig } from 'ngx-bootstrap/datepicker';
 import { HttpClient } from '@angular/common/http';
 import {GetVariableService} from '../getVariable.service';
 import { DeviceDetectorService, DeviceInfo } from 'ngx-device-detector';
-
-//declare function test():any;
+//import * as aws from 'aws-sdk';
 
 @Component({
   selector: 'app-add-property',

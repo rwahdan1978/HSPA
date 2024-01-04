@@ -8,7 +8,9 @@
   "files": [
     "src/main.ts"
   ],
-  
+  "types":[
+    "node"
+  ],
   "include": [
     "src/**/*.d.ts"
   ]

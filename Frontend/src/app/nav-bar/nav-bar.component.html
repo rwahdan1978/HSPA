@@ -32,12 +32,12 @@
 
         <ul class="nav navbar-nav" style="margin-right: 75px;">
 
-          <li *ngIf="!loggedin()" class="nav-item">
+          <!-- <li *ngIf="!loggedin()" class="nav-item">
             <a class="nav-link"
             routerLink="user/register"
             routerLinkActive="active"
             >Register</a>
-          </li>
+          </li> -->
 
           <li *ngIf="!loggedin()" class="nav-item">
             <a class="nav-link"
@@ -53,8 +53,6 @@
             </a>
 
             <div class="dropdown-menu" *dropdownMenu>
-              <a href="/" class="dropdown-item">
-                <i class="far fa-user-circle"></i>My Purchases</a>
               <a (click)="onlogout()" class="dropdown-item">
                 <i class="fas fa-sign-out-alt"></i>Logout</a>
             </div>

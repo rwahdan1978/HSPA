@@ -113,13 +113,13 @@ tabChanged(tabChangeEvent: MatTabChangeEvent): void {
   showImage(){
     this.visable1 = true;
     this.visable2 = false;
-    this.currentTabId = 2;
+   // this.currentTabId = 2;
   }
 
   hideImage(){
     this.visable1 = false;
     this.visable2 = true;
-    this.currentTabId = 2;
+  //  this.currentTabId = 2;
   } 
 
   addLike(element:any){

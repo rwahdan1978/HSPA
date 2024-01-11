@@ -39,8 +39,9 @@ export class UserRegisterComponent implements OnInit {
       email: new FormControl(null, [Validators.required, Validators.email]),
       password: new FormControl(null, [Validators.required, Validators.minLength(8)]),
       confirmPassword: new FormControl(null, [Validators.required]),
-      mobile: new FormControl(null, [Validators.required, 
-        Validators.pattern("^[0-9]{9}$")
+      adminPass: new FormControl(null, [Validators.required]),
+      mobile: new FormControl(null, [Validators.required, Validators.pattern("^[0-9]{9}$"),
+      
         
     ]),
       
@@ -82,6 +83,9 @@ export class UserRegisterComponent implements OnInit {
   get mobile() {
     return this.registerationForm.get('mobile') as FormControl;
   }
+  get adminPass() {
+    return this.registerationForm.get('adminPass') as FormControl;
+  }
 
   onSubmit() {
 
@@ -89,12 +93,15 @@ export class UserRegisterComponent implements OnInit {
     
     if (this.registerationForm.valid)
     {
-      console.log(this.registerationForm.value);
-      //this.user = Object.assign(this.user, this.registerationForm.value);
+      if (this.adminPass.value === "Fatima@2020"){
       this.UserServiceService.addUser(this.userData());
       this.registerationForm.reset();
       this.userSubmitted = false;
       this.alertify.success('You have registered successfully!');
+      }
+      else{
+        this.alertify.error('You need to be an admin! Enter the correct admin password!');
+      }
     }
     else{
       this.alertify.error('Please fill all required fields!');

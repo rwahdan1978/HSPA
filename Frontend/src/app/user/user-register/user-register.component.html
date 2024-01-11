@@ -2,7 +2,7 @@
   <div class="col-8 m-auto">
   <div class="card m-auto">
     <div class="card-header">
-      Register
+      Register (Admin Only)
     </div>
     <div class="card-body">
       <form [formGroup]="registerationForm" (ngSubmit)="onSubmit()">
@@ -71,6 +71,16 @@
             </span>
           </div>
 
+        </div>
+
+        <div class="form-group col-12">
+          <label for="adminPass" class="form-label required">Admin Password</label>
+          <input type="password" class="form-control" formControlName="adminPass">
+          <span class="error-block" *ngIf="(!adminPass.touched) || userSubmitted">
+            <span *ngIf="adminPass.hasError('required')">
+              Please confirm admin password
+            </span>
+          </span>
         </div>
 
         <hr/>

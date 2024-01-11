@@ -10,6 +10,7 @@ import { MatTabChangeEvent } from '@angular/material/tabs';
 import { filter, first } from 'rxjs';
 
 
+
 @Component({
   selector: 'app-property-detail',
   templateUrl: './property-detail.component.html',

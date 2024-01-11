@@ -3,6 +3,7 @@ import { HousingService } from 'src/app/services/housing.service';
 import { ActivatedRoute } from '@angular/router';
 import { IPropertyBase } from 'src/app/model/ipropertybase';
 import { DeviceDetectorService, DeviceInfo } from 'ngx-device-detector';
+import { LocationStrategy } from '@angular/common';
 
 @Component({
   selector: 'app-property-list',
@@ -28,7 +29,13 @@ export class PropertyListComponent implements OnInit{
 
   constructor(private route: ActivatedRoute, 
               private housingService: HousingService,
-              private DDS: DeviceDetectorService) {
+              private DDS: DeviceDetectorService,
+              private location: LocationStrategy) { 
+
+                history.pushState(null, '', window.location.href);  
+                this.location.onPopState(() => {
+                history.pushState(null, '', window.location.href);
+              });  
 
     for (let i:number = 0; i<=1000; i++){
       this.collection.push(i as never);

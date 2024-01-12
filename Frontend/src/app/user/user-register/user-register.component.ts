@@ -4,6 +4,7 @@ import { UserServiceService } from 'src/app/services/user-service.service';
 import { User } from 'src/app/model/user';
 import { AlertifyService } from 'src/app/services/alertify.service';
 import { DeviceDetectorService, DeviceInfo } from 'ngx-device-detector';
+import {environment} from 'src/environments/environment.development'
 
 @Component({
   selector: 'app-user-register',
@@ -93,7 +94,7 @@ export class UserRegisterComponent implements OnInit {
     
     if (this.registerationForm.valid)
     {
-      if (this.adminPass.value === "Fatima@2020"){
+      if (this.adminPass.value === environment.adminPass){
       this.UserServiceService.addUser(this.userData());
       this.registerationForm.reset();
       this.userSubmitted = false;

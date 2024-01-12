@@ -13,7 +13,7 @@ addUser(user: User) {
   if(localStorage.getItem('Users')) 
   {
     users = JSON.parse(localStorage.getItem('Users') as string);
-    users = [user, ...[users]];
+    users = [user, ...users];
   } 
   else
   {

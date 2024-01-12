@@ -33,7 +33,7 @@
         <ul class="nav navbar-nav" style="margin-right: 75px;">
 
           <!-- *ngIf="loggedinUser" -->
-          <li class="nav-item">
+          <li *ngIf="!loggedinUser" class="nav-item">
             <a class="nav-link"
             routerLink="user/register"
             routerLinkActive="active"
@@ -54,7 +54,7 @@
             </a>
 
             <div class="dropdown-menu" *dropdownMenu>
-              <a (click)="onFamilyDocs()" class="dropdown-item">
+              <a *ngIf="loggedinUser === 'rwahdan'" (click)="onFamilyDocs()" class="dropdown-item">
                 <i class="fa-solid fa-file"></i>Family Documents</a>
               <a (click)="onlogout()" class="dropdown-item">
                 <i class="fas fa-sign-out-alt"></i>Logout</a>

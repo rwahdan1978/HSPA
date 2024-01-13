@@ -11,6 +11,7 @@ import { HttpClient, HttpParams } from '@angular/common/http';
 
 export class UploadComponent {
 
+  //variables
   imageObj: any;
   imageUrl: string;
   thedata: string;

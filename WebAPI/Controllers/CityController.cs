@@ -8,7 +8,7 @@ namespace WebAPI.Controllers
     public class CityController : ControllerBase
     {
         [HttpGet]
-        public IEnumerable<string> Get()
+        public IEnumerable<string> GetStrings()
         {
             return new string[] {"Abu-Dhabi", "Dubai"};
         }

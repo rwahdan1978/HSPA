@@ -16,21 +16,22 @@ export class SortPipe implements PipeTransform {
       multiply = -1;
     }
 
-    value.sort((a: any, b: any) => {
+    if (value)
+    {  
+      value.sort((a: any, b: any) => {
 
-      if (a[sortField] < b[sortField]){
-        return -1 * multiply;
-      }
-      else if (a[sortField] > b[sortField]){
-        return 1 * multiply;
-      }
-      else{
-        return 0;
-      }
-
-    });
-    
-    return value;
-  
+        if (a[sortField] < b[sortField]){
+          return -1 * multiply;
+        }
+        else if (a[sortField] > b[sortField]){
+          return 1 * multiply;
+        }
+        else{
+          return 0;
+        }
+        });
+        
+        return value;
+    }
   }
 }

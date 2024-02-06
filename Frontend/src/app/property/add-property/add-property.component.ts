@@ -11,7 +11,6 @@ import { HttpClient } from '@angular/common/http';
 import {GetVariableService} from '../getVariable.service';
 import { DeviceDetectorService, DeviceInfo } from 'ngx-device-detector';
 import AWSS3UploadAsh from 'aws-s3-upload-ash';
-import { config } from 'rxjs';
 import { environment } from 'src/environments/environment.development';
 
 @Component({
@@ -43,6 +42,7 @@ export class AddPropertyComponent implements OnInit {
   // Will come from masters
   propertyTypes: Array<string> = ['House', 'Apartment', 'Villa']
   furnishTypes: Array<string> = ['Fully', 'Semi', 'Unfurnished']
+  cityList: any[];
 
   propertyView: IPropertyBase = {
     Id: null as any,
@@ -53,7 +53,7 @@ export class AddPropertyComponent implements OnInit {
     FType: null as any,
     BHK: null as any,
     BuiltArea: null as any,
-    City: null as any,
+    City: '' as any,
     RTM: null as any,
     ProjectName: null as any
   };
@@ -85,8 +85,6 @@ export class AddPropertyComponent implements OnInit {
   
   const S3CustomClient = new AWSS3UploadAsh(config);
 
-
-
     window.matchMedia("(orientation:portrait)").addEventListener("change", (e: MediaQueryListEvent) => { 
       const portrait: boolean = e.matches; 
       if (portrait) { 
@@ -94,6 +92,11 @@ export class AddPropertyComponent implements OnInit {
       } else { 
         location.reload(); 
       } 
+    });
+
+    this.housingService.getAllCities().subscribe(data => {
+      this.cityList = data;
+      console.log(data);
     });
 
     this.deviveInfo = this.DDS.getDeviceInfo();
@@ -497,5 +500,4 @@ export class AddPropertyComponent implements OnInit {
       this.formTabs.tabs[NextTabId].active = true;
     }
   }
-
 }
